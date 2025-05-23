@@ -102,8 +102,8 @@ const Navbar = () => {
         </div></Link>
 
 
-        <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'} overflow-hidden`}>
-            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
+        <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
+            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh]'/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
