@@ -1,11 +1,13 @@
 import { formatDistanceToNow } from 'date-fns'
 import Link from 'next/link'
 import React from 'react'
+import type {Post} from "./IsMobile"
+import ImageKit from '../Image'
 
-const MobileCarousel = ({post}:any) => {
+const MobileCarousel = ({post}:{post:Post}) => {
   return (
     <div className="p-[.5vh] md:p-[.5vw] lg:p-[.5vw] relative rounded-xl bg-gradient-to-b from-zinc-100 to-green-200">
-            <Link href={`/article/${post?.slug}`} ><img src={post?.coverImg} alt={post?.altText} className="w-full h-[24vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl object-cover" /></Link>
+            <Link href={`/article/${post?.slug}`} ><ImageKit w={800} h={800} src={post?.coverImg} alt={post?.altText} className="w-full h-[24vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl object-cover" /></Link>
 
             <div className="pt-[1vh] md:pt-[.4vw] lg:pt-[.4vw] flex gap-[1vh] md:gap-[1vw] items-center md:justify-start px-[.8vh]">
                 <h1 className='text-[1.5vh] md:text-[1.4vw] lg:text-[1.2vw] font-second text-zinc-700 leading-none cursor-pointer hover:underline font-semibold'>{post?.title}</h1>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import ImageKit from '../Image'
 
-interface Post {
+export interface Post {
   title: string;
   slug: string;
   coverImg: string;

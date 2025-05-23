@@ -10,11 +10,27 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import MobileCarousel from './MobileCarousel'
 
-const IsMobile = ({posts}:any) => {
+export interface Post {
+  id: string | number; // unique id for key usage
+  title: string;
+  slug: string;
+  coverImg: string;
+  altText: string;
+  createdAt: string;
+  isFeatured: boolean;
+  ismobile: boolean;
+}
 
-  let filteredPosts = posts.filter(
-    (post: any) => post.isFeatured && post.ismobile
-  );
+interface IsMobileProps {
+  posts: Post[];
+}
+
+const IsMobile: React.FC<IsMobileProps> = ({posts}) => {
+
+ // Filter only featured laptop posts
+  let filteredPosts = posts
+  .filter(post => post.isFeatured && post.ismobile)
+  .map(post => ({ ...post, id: String(post.id) }));
 
   if (filteredPosts.length > 6) {
     filteredPosts = filteredPosts.slice(filteredPosts.length - 6);
@@ -38,7 +54,7 @@ const IsMobile = ({posts}:any) => {
           className='mt-[1.2vh] md:mt-[.8vw] lg:mt-[.8vw]'
         >
           <CarouselContent>
-            {filteredPosts.map((post: any, index: number) => (
+            {filteredPosts.map((post, index: number) => (
               <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/2 '>
                 <MobileCarousel post={post} />
               </CarouselItem>

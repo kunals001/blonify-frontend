@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ShareLinks from "./ShareLinks";
 import type {Post} from "./Laptop/LaptopPostPage"
+import ImageKit from "./Image";
 
 // types/post.ts
 
@@ -48,7 +49,9 @@ const SuggestedPosts = ({ post }: { post: Post }) => {
             key={item._id}
             className=" p-3 rounded hover:shadow-md transition flex gap-[1vh] md:gap-[.5vw]"
           >
-            <img
+            <ImageKit 
+              w={500}
+              h={400}
               src={
                 typeof item.coverImg === "string" ? item.coverImg : "/placeholder.jpg"
               }

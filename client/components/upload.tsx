@@ -8,10 +8,17 @@ import {
   ImageKitUploadNetworkError,
   upload,
 } from "@imagekit/next";
-import { useRef, useState } from "react";
+import { useRef} from "react";
+import ImageKit from "./Image";
 
-const Upload = ({ coverImg, setCoverImg, onUploadComplete }: any) => {
-  const [progress, setProgress] = useState(0);
+interface UploadProps {
+  coverImg: string;
+  setCoverImg: (url: string) => void;
+  onUploadComplete?: (url: string) => void;
+}
+
+
+const Upload = ({ coverImg, setCoverImg, onUploadComplete }: UploadProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const abortController = new AbortController();
 
@@ -47,19 +54,20 @@ const Upload = ({ coverImg, setCoverImg, onUploadComplete }: any) => {
         token,
         signature,
         publicKey,
-        onProgress: (event) => {
-          setProgress((event.loaded / event.total) * 100);
-        },
         abortSignal: abortController.signal,
       });
 
-      const uploadedURL = uploadResponse.url;
-      setCoverImg(uploadedURL);
+     const uploadedURL = uploadResponse.url;
 
-      // ✅ Notify parent if needed
-      if (onUploadComplete) {
-        onUploadComplete(uploadedURL);
-      }
+         if (uploadedURL) {
+           setCoverImg(uploadedURL);
+
+           if (onUploadComplete) {
+             onUploadComplete(uploadedURL);  // ✅ Now this is guaranteed to be string
+           }
+         } else {
+           console.error("Upload response URL is undefined");
+         }
 
     } catch (error) {
       if (error instanceof ImageKitAbortError) {
@@ -97,7 +105,7 @@ const Upload = ({ coverImg, setCoverImg, onUploadComplete }: any) => {
           </a>
           <br />
           {coverImg.match(/\.(jpeg|jpg|png|gif)$/) ? (
-            <img src={coverImg} alt="Preview" className="mt-2 w-48 h-auto rounded" />
+            <ImageKit w={400} h={400} src={coverImg} alt="Preview" className="mt-2 w-48 h-auto rounded" />
           ) : coverImg.match(/\.(mp4|webm)$/) ? (
             <video controls className="mt-2 w-48 h-auto rounded">
               <source src={coverImg} type="video/mp4" />

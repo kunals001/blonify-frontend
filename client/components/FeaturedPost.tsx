@@ -9,17 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import FeaturedCarsol from './FeaturedCarsol';
-
-
-interface Post {
-  _id: string;
-  title: string;
-  slug: string;
-  isFeatured: boolean;
-  coverImg: string;     // <-- Add this
-  altText: string;      // <-- Add this (was probably a typo as `altTextts`)
-  // Add more if your component expects other fields like `description`, `isdaily`, etc.
-}
+import type{Post} from "@/app/page"
 
 
 const FeaturedPost = ({posts}: {posts: Post[]}) => {

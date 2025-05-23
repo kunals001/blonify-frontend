@@ -9,19 +9,25 @@ import ShareLinks from "@/components/ShareLinks"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-type Post = {
-  coverImg: string | File | null;
+// /types/Post.ts
+
+export type Post = {
+  coverImg: string; // ✅ Only allow string if that's what's expected in components
   title: string;
-  slug: string | null;
-  desc: string | null;
+  slug: string;
+  desc: string;
   content: string;
-  category: string | null;
-  isFeatured: boolean | null;
-  altText: string | null;
+  category: string;
+  isFeatured: boolean;
+  altText: string;
   _id: string;
   createdAt?: string | number | null;
   updatedAt?: string | number | null;
+  ismobile?: boolean;
+  islaptop?: boolean;
+  isdaily?: boolean;
 };
+
 
 
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3

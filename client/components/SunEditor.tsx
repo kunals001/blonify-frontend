@@ -2,6 +2,7 @@ import React, {useState } from 'react';
 import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import Upload from './upload';
+import type SunEditorCore from 'suneditor/src/lib/core';
 
 interface Props {
   setcontent: string;
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const SunEditorComponent: React.FC<Props> = ({ setcontent, onchange }) => {
-  const [editorInstance, setEditorInstance] = useState<any>(null);
+  const [editorInstance, setEditorInstance] = useState<SunEditorCore | null>(null);
   const [coverImg, setCoverImg] = useState("");
 
   const insertMedia = (url: string) => {

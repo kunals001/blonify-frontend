@@ -7,12 +7,21 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'react-hot-toast'
 import axios from 'axios';
 import { useEffect } from 'react';
+import ImageKit from './Image'
+import Image from 'next/image'
+
+interface Post {
+  _id: string;
+  title: string;
+  slug: string;
+}
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isSearch, setIsSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState<any[]>([]);
+    const [searchResults, setSearchResults] = useState<Post[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const {user,logout} = useAuthStore();
     const router = useRouter();
@@ -63,7 +72,7 @@ const Navbar = () => {
    }, [searchTerm]);
 
   return (
-    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0'>
+    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0 overflow-hidden'>
 
         
         {/*  Mobile Menu */}
@@ -88,13 +97,13 @@ const Navbar = () => {
         {/*  Logo */}
 
         <Link href="/"><div  className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
-            <img src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
+            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
 
-        <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
-            <img src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
+        <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'} overflow-hidden`}>
+            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
@@ -165,14 +174,32 @@ const Navbar = () => {
             <div className="flex md:hidden lg:hidden">
                 <Link href={'/profile'}>
                     <div className='group  relative border-1 border-prime h-[4.5vh] w-[4.5vh] rounded-full flex items-center justify-center '>
-                        <img src={user?.profilePic} alt="profile" className="w-full h-full rounded-full object-cover" />
+                        {user && typeof user.profilePic === 'string' && (
+                                         <Image
+                                           src={user.profilePic}
+                                           alt="User Profile"
+                                           width={100}
+                                           height={100}
+                                           className="rounded-full object-cover"
+                                         />
+                                       )}
                     </div>
                 </Link>
             </div>
 
 
-            <div className={` group relative hidden md:w-[3.2vw] md:h-[3.2vw] lg:w-[3.3vw] lg:h-[3.3vw] rounded-full border-2 border-prime md:flex lg:flex items-center justify-center cursor-pointer`}>
-                <Link href={'/profile'}><img src={user?.profilePic} alt="profile" className="w-full h-full rounded-full object-cover" /></Link>
+            <div className={` group relative hidden md:w-[3.2vw] md:h-[3.2vw] lg:w-[3.3vw] lg:h-[3.3vw] rounded-full border-2 border-prime md:flex lg:flex items-center justify-center cursor-pointer overflow-hidden`}>
+                <Link href={'/profile'}>
+                {user && typeof user.profilePic === 'string' && (
+                                 <Image
+                                   src={user.profilePic}
+                                   alt="User Profile"
+                                   width={100}
+                                   height={100}
+                                   className="rounded-full object-cover"
+                                 />
+                               )}
+                </Link>
 
                 <div className="hidden z-40 md:flex lg:flex absolute bg-zinc-800 rounded-md -right-[11vw] top-[2.5vw] md:px-[1vw] md:py-[.5vw] lg:px-[1vw] lg:py-[.6vw] transform scale-0 group-hover:scale-100 transition-all duration-300 flex-col gap-[.5vh] md:w-[10vw] lg:w-[11vw]">
                    <Link href={'/profile'}> <h3 className='text-zinc-100 text-[1vw] px-[.4vw] py-[.1vw] rounded-md hover:bg-zinc-600 cursor-pointer transition-all duration-300 md:w-full lg:w-full'>{user.name}</h3></Link>

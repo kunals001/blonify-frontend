@@ -2,9 +2,10 @@
 import React, { useEffect, useState } from 'react'
 import PostListItems from './PostListItems'
 import ShareLinks from './ShareLinks'
-import Pagination from "./Pagination"; // import karo
+import Pagination from "./Pagination"; 
+import type{Post} from "@/app/page"
 
-const PostList = ({ posts }: { posts: any[] }) => {
+const PostList = ({ posts }: { posts: Post[] }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
 
