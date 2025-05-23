@@ -34,6 +34,7 @@ export type Post = {
 const Page = () => {
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
   const [posts,setposts] = useState<Post []>([]);
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
    const fetchPosts = async () => {

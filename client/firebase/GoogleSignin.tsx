@@ -11,7 +11,7 @@ import { useAuthStore } from '../store/authStore'
 const GoogleSignin = () => {
     const auth = getAuth(app);
     const router = useRouter();
-    const {isLoading,error,googleSignin} = useAuthStore();
+    const {isLoading,googleSignin} = useAuthStore();
 
     type UserInfo = {
         email: string;

@@ -29,6 +29,7 @@ const Page = () => {
   const { user } = useAuthStore()
 
   const postId = params.postId as string
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     const fetchPost = async () => {

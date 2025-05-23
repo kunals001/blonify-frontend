@@ -28,6 +28,7 @@ const Page = () => {  // <-- Uppercase 'P'
   const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
+  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     const fetchPosts = async () => {
