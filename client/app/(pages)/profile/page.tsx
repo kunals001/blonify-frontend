@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { useEffect} from 'react';
+import Image from 'next/image';
 
 
 const Page = () => {
@@ -22,6 +23,7 @@ const Page = () => {
         }
         
       }, [isAuthenticated]);
+
 
     const handlelogout = async () => {
         try {
@@ -55,7 +57,15 @@ const Page = () => {
 
             <div className=" pt-[1vh] md:pt-[.7vw] lg:pt-[.7vw]  w-[10vh] h-[10vh] md:w-[6vw] md:h-[6vw] lg:w-[6vw] lg:h-[6vw] relative mx-auto">
 
-                <img src={ user?.profilePic} alt="user profile pic" className='w-[9vh] h-[9vh] md:w-[6vw] md:h-[6vw] lg:w-[6vw] lg:h-[6vw] rounded-full object-cover mx-auto relative' />
+              {user && typeof user.profilePic === 'string' && (
+                 <Image
+                   src={user.profilePic}
+                   alt="User Profile"
+                   width={100}
+                   height={100}
+                   className="rounded-full object-cover"
+                 />
+               )}
             </div>
 
             <form onSubmit={handleUpdate} className='flex flex-col w-full mt-[1vh] md:mt-[.8vw] lg:mt-[.8vw]'>
