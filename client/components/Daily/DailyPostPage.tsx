@@ -4,20 +4,9 @@ import SuggestedPosts from '../SuggestedPosts'
 import RefreshManage from "@/components/RefreshManage";
 import Comments from '../Comments';
 import NavigationBreadcrumb from '../navigate';
+import type {Post} from "../Laptop/LaptopPostPage"
+import ImageKit from '../Image';
 
-interface Post {
-  createdAt: string;
-  title: string;
-  slug: string;
-  coverImg: string;
-  altText: string;
-  highlight?: string
-  content: string;
-  desc: string;
-  _id: string;
-  category: string;     
-  isFeatured: boolean;
-}
 
 const DailyPostPage = ({ post }: { post: Post}) => {
     
@@ -40,7 +29,7 @@ const DailyPostPage = ({ post }: { post: Post}) => {
             <p className='md:text-[1vw] font-second font-medium text-zinc-700 hidden md:block lg:block md:w-[38vw] lg:w-[38vw] leading-none'>{post?.desc}</p>
         </div>
 
-        <img src={post?.coverImg} alt={post?.altText} className="w-full h-[24vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover"/>
+        <ImageKit w={800} h={800} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[24vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover"/>
         
       </div>
       {/* About post */}
@@ -63,7 +52,7 @@ const DailyPostPage = ({ post }: { post: Post}) => {
             
           </div>
 
-          <Comments postId={post?._id}/>
+          {post?._id && <Comments postId={post._id} />}
        </div>
 
       <div className="w-full md:w-[35vw]">

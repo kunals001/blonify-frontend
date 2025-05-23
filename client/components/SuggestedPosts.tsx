@@ -6,14 +6,13 @@ import ShareLinks from "./ShareLinks";
 import type {Post} from "./Laptop/LaptopPostPage"
 import ImageKit from "./Image";
 
-// types/post.ts
 
-
+ 
 
 const SuggestedPosts = ({ post }: { post: Post }) => {
   const [suggested, setSuggested] = useState<Post[]>([]);
+ 
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
-
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -37,7 +36,7 @@ const SuggestedPosts = ({ post }: { post: Post }) => {
     };
 
     fetchPosts();
-  }, [post]);
+  }, [post,API_URL_3]);
 
   return (
     <div className="mt-[2vh] md:mt-[5vw] lg:mt-[6vw]">

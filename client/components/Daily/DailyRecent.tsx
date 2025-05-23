@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import DailyRecentPost from './DailyRecentPost'
 import Pagination from "../Pagination";
 
-interface Post {
+export type Post ={
   _id: string;
   title: string;
   slug: string;
@@ -13,7 +13,6 @@ interface Post {
   desc: string;
   createdAt: string;
   isdaily: boolean;
-  [key: string]: any; // Optional: allows extra keys without throwing type error
 }
 
 const DailyRecent = ({posts}: {posts: Post[]}) => {

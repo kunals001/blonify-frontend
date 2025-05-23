@@ -2,14 +2,7 @@ import React from 'react'
 import { formatDistanceToNow } from 'date-fns';
 import Link from 'next/link';
 import ImageKit from '../Image';
-
-interface Post {
-  createdAt: string;
-  title: string;
-  slug: string;
-  coverImg: string;
-  altText: string;
-}
+import type{Post} from "@/app/page"
 
 
 const DailyCarsol = ({ post }: { post: Post}) => {

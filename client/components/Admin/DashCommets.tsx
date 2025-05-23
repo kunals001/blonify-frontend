@@ -44,9 +44,10 @@ interface Comment {
   };
 }
 
-  const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4;
+  
 
 const DashComments = () => {
+  const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4;
   const { user } = useAuthStore();
   const [comments, setComments] = useState<Comment[]>([]);
 

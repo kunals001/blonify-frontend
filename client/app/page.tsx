@@ -30,9 +30,9 @@ export type Post = {
 
 
 
-  const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
 
 const Page = () => {
+  const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
   const [posts,setposts] = useState<Post []>([]);
 
   useEffect(() => {

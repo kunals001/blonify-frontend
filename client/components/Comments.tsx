@@ -24,13 +24,14 @@ interface Comment {
 }
 
 
+
 const Comments = ({postId}:CommentsProps) => {
   const [content,setContent] = useState<string>("")
-  const [comment,setComment] = useState<any>([])
+  const [comment,setComment] = useState<Comment[]>([])
+  const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4
 
   const {user} = useAuthStore()
 
-  const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -46,15 +47,18 @@ const Comments = ({postId}:CommentsProps) => {
        if (response.status === 200) {
          setContent("");
        }
-     } catch (error:any) {
-       // Console me error dikhao
-       console.error("Error from backend:", error);
-
-       if (error.response && error.response.data && error.response.data.message) {
-         alert(error.response.data.message); 
-       } else {
-         alert("You are not logged in.");
-       }
+     } catch (error: unknown) {
+      console.error('Error from backend:', error);
+      if (
+        axios.isAxiosError(error) &&
+        error.response?.data &&
+        typeof error.response.data === 'object' &&
+        'message' in error.response.data
+      ) {
+        alert((error.response.data as { message: string }).message);
+      } else {
+        alert('You are not logged in.');
+      }
      }
   }
 
@@ -70,7 +74,7 @@ const Comments = ({postId}:CommentsProps) => {
     };
 
     fetchComments();
-  },[postId])
+  },[postId,API_URL_4])
 
 
   return (

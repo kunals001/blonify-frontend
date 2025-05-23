@@ -9,7 +9,9 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const DailyTrending = ({ posts }: { posts: any[] }) => {
+import type { Post } from "@/app/page";
+
+const DailyTrending = ({ posts }: { posts: Post[] }) => {
   
   let filteredPosts = posts.filter(
     (post: any) => post.isFeatured && post.isdaily
@@ -38,7 +40,7 @@ const DailyTrending = ({ posts }: { posts: any[] }) => {
           className='mt-[1.2vh] md:mt-[.8vw] lg:mt-[.8vw]'
         >
           <CarouselContent>
-            {filteredPosts.map((post: any, index: number) => (
+            {filteredPosts.map((post, index: number) => (
               <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/2 '>
                 <DailyCarsol post={post} />
               </CarouselItem>
