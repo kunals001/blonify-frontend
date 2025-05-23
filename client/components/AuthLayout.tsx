@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import FloatingShape from './FloatingShape'
 
-const AuthLayout = ({children}:any) => {
+type AuthLayoutProps = {
+  children: ReactNode
+}
+
+const AuthLayout = ({children}:AuthLayoutProps) => {
   return (
     <div className="w-full h-[calc(100vh-5.5vh)] md:h-[calc(100vh-4vw)] flex items-center justify-center bg-gradient-to-t from-second via-green-300 to-second relative overflow-hidden">
         <FloatingShape color='bg-lime-400' size='w-64 h-64' top='10%' left='10%' delay={0} />

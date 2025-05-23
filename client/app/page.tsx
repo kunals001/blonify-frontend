@@ -25,7 +25,7 @@ type Post = {
 
 
 
-const page = () => {
+const Page = () => {
   const [posts,setposts] = useState<Post []>([]);
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
 
@@ -74,5 +74,5 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
 

@@ -24,7 +24,7 @@ type Post = {
 
 const POSTS_PER_PAGE = 10;
 
-const page = () => {
+const Page = () => {  // <-- Uppercase 'P'
   const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
@@ -40,7 +40,7 @@ const page = () => {
     };
 
     fetchPosts();
-  }, []);
+  }, [API_URL_3]);  // <-- Add API_URL_3 here
 
   // Filter posts for mobiles only
   const filteredPosts = posts.filter(post => post.ismobile);
@@ -117,4 +117,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

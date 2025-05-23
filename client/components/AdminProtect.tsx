@@ -9,13 +9,12 @@ type Props = {
 }
 
 const ProtectedAdminRoute: React.FC<Props> = ({ children }) => {
-  const { isAuthenticated, user} = useAuthStore()
+  const { isAuthenticated, user } = useAuthStore()
   const router = useRouter()
   const [checking, setChecking] = useState(true)
 
   useEffect(() => {
     const verify = async () => {
-
       if (!isAuthenticated || user?.isAdmin === false) {
         router.push('/')
       } else {
@@ -24,7 +23,7 @@ const ProtectedAdminRoute: React.FC<Props> = ({ children }) => {
     }
 
     verify()
-  }, [isAuthenticated, user])
+  }, [isAuthenticated, user, router])  // <-- Added router here
 
   if (checking) {
     return <div>Checking permissions...</div>

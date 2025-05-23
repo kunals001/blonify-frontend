@@ -4,8 +4,25 @@ import { formatDistanceToNow } from 'date-fns';
 import axios from 'axios';
 import {toast} from 'react-hot-toast'
 
+interface User {
+  profilePic: string
+  name: string
+  isAdmin?: boolean
+}
 
-const Comment = ({ comment }: any) => {
+interface CommentType {
+  _id: string
+  user: User
+  createdAt?: string
+  content: string
+}
+
+interface CommentProps {
+  comment: CommentType
+}
+
+
+const Comment = ({ comment }: CommentProps) => {
   const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4;
   const { user } = useAuthStore();
 

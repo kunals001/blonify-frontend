@@ -22,8 +22,7 @@ type Post = {
   isdaily?: boolean | null;
 };
 
-const page = () => {
-
+const Page = () => {
   const [posts, setposts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
@@ -41,7 +40,7 @@ const page = () => {
    }
 
    fetchPosts();
-  }, []); 
+  }, [API_URL_3]);  // add API_URL_3 here to fix dependency warning
 
   // Filter laptop posts
   const filteredPosts = posts.filter(post => post.islaptop);
@@ -119,4 +118,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

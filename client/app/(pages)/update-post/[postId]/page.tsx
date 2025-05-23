@@ -12,7 +12,7 @@ import axios from 'axios'
 import { useParams } from 'next/navigation'
 
 
-const page = () => {
+const Page = () => {
     const [post,setPost] = useState<any>(null);
     const [content,setContent] = useState('');
     const [coverImg,setCoverImg] = useState("");
@@ -59,7 +59,7 @@ const page = () => {
         if (!user?.isAdmin) {
           router.push("/signin");
         }
-    }, [user]);
+    }, [user, postId, router]);
 
     const handleSubmit = async (e:any) =>{
         e.preventDefault();
@@ -98,7 +98,7 @@ const page = () => {
 
                 {/* title */}
                 <div className="relative w-full flex items-center justify-center">
-                    <input name='title' value={title} onChange={(e) => setTitle(e.target.value)} type="title" placeholder="Title" className='w-full px-[2.5vh] md:px-[2vw] lg:px-[2vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative' />
+                    <input name='title' value={title} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)} type="title" placeholder="Title" className='w-full px-[2.5vh] md:px-[2vw] lg:px-[2vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative' />
 
                     <LetterText className='absolute text-prime left-0 pl-[.5vh] md:pl-[.5vw] lg:pl-[.5vw] cursor-pointer size-6 md:size-8 lg:size-8'/>
 
@@ -118,7 +118,7 @@ const page = () => {
                 {/* altText */}
 
                 <div className="relative w-full flex items-center justify-center">
-                    <input name='altText' value={altText} onChange={(e) => setAltText(e.target.value)} type="text" placeholder="Alternate Text" className='w-full px-[2.5vh] md:px-[2vw] lg:px-[2vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative' />
+                    <input name='altText' value={altText} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAltText(e.target.value)} type="text" placeholder="Alternate Text" className='w-full px-[2.5vh] md:px-[2vw] lg:px-[2vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative' />
 
                     <Pen className='absolute text-prime left-0 pl-[.5vh] md:pl-[.5vw] lg:pl-[.5vw] cursor-pointer size-6 md:size-8 lg:size-8'/>
                 </div>
@@ -134,13 +134,13 @@ const page = () => {
                 {/* HighLight */}
 
                 <div className="w-full">
-                  <InputPost value={highlight} onChange={(e:any) => setHighlight(e.target.value)} name='highlight' placeholder='Highlight' />
+                  <InputPost value={highlight} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setHighlight(e.target.value)} name='highlight' placeholder='Highlight' />
                 </div>
 
                 {/* KeyWord */}
 
                  <div className="w-full">
-                  <InputPost value={keywords} onChange={(e:any) => setKeywords(e.target.value)} name='keywords' placeholder='Keywords' />
+                  <InputPost value={keywords} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setKeywords(e.target.value)} name='keywords' placeholder='Keywords' />
                 </div>
 
                 {/* cover image */}
@@ -179,4 +179,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

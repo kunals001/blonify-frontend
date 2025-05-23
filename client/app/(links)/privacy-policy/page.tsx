@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-const page = () => {
+const Page = () => { 
   return (
-    <div className='w-full mt-[4vh] md:mt-[2vw] min-h-screen  md:px-[13vw] lg:px-[15vw] md:pt-[2vw] lg:p-[2.1vw] flex flex-col items-center  px-[1vh] overflow-hidden'>
+    <div className='w-full mt-[4vh] md:mt-[2vw] min-h-screen md:px-[13vw] lg:px-[15vw] md:pt-[2vw] lg:p-[2.1vw] flex flex-col items-center px-[1vh] overflow-hidden'>
         <div className="">
         <h1 className='text-[3vh] md:text-[2vw] lg:text-[2vw] select-none mx-auto font-semibold text-center bg-gradient-to-r from-prime to-emerald-500 text-transparent bg-clip-text'>Privacy Policy</h1>
 
@@ -35,9 +35,9 @@ const page = () => {
         <div className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw] px-[1vh] md:px-[1vw]'>
             <p className=''><span className='font-semibold '>• Account </span> means a unique account created for You to access our Service or parts of our Service.</p>
             <br />
-            <p><span className='font-semibold'>• Affiliate </span>means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
+            <p><span className='font-semibold'>• Affiliate </span>means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
             <br />
-            <p><span className='font-semibold'>• Company </span>(referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Blonify.</p>
+            <p><span className='font-semibold'>• Company </span>(referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Blonify.</p>
             <br />
             <p><span className='font-semibold'>• Cookies </span>are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
             <br />
@@ -81,11 +81,11 @@ const page = () => {
         </div>
         <br />
         <h4 className='text-[1.5vh] md:text-[1.1vw] lg:text-[1.1vw] select-none mx-auto font-semibold text-zinc-800 '>Usage Data</h4>
-        
+
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw] '>
             Usage Data is collected automatically when using the Service.
             <br /> <br />
-          Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+          Usage Data may include information such as Your Device&apos;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
           <br /> <br />
           When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
           <br /> <br />
@@ -103,12 +103,12 @@ const page = () => {
             <p className=''><span className='font-semibold '>• Cookies or Browser Cookies </span>  A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</p>
             <br />
             <p><span className='font-semibold'>• Web Beacons </span> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</p>
-            
+
         </div>
         <br />
 
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw] '>
-            Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on TermsFeed website article.
+            Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on TermsFeed website article.
             <br />
 
             We use both Session and Persistent Cookies for the purposes set out below:
@@ -116,8 +116,8 @@ const page = () => {
         <br />
 
         <div className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw] px-[1vh] md:px-[1vw]'>
-            <p className=''><span className='font-semibold '>• Necessary / Essential Cookies </span> <br /> 
-            Type: Session Cookies 
+            <p className=''><span className='font-semibold '>• Necessary / Essential Cookies </span> <br />
+            Type: Session Cookies
              <br />
             Administered by: Us
 
@@ -138,7 +138,7 @@ const page = () => {
            Administered by: Us  <br /> <br />
 
            Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
-            
+
         </div>
         <br />
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw]'>
@@ -168,7 +168,7 @@ const page = () => {
 
             <br />
 
-            <p><span className='font-semibold'>• To contact You: </span>To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
+            <p><span className='font-semibold'>• To contact You: </span>To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application&apos;s push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
 
             <br />
 
@@ -240,7 +240,7 @@ const page = () => {
         <br />
 
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw]'>
-            Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+            Your information, including Personal Data, is processed at the Company&apos;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
             <br /> <br />
 
             Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
@@ -310,13 +310,13 @@ const page = () => {
         </p>
         <br />
         <h2 className='text-[2vh] md:text-[1.5vw] lg:text-[1.5vw] select-none mx-auto font-semibold text-zinc-800 '>
-           Children's Privacy
+           Children&apos;s Privacy
         </h2>
         <br />
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw]'>
             Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
             <br /><br />
-           If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
+           If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent&apos;s consent before We collect and use that information.
 
 
         </p>
@@ -327,7 +327,7 @@ const page = () => {
         </h2>
         <br />
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw]'>
-            Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
+            Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&apos;s site. We strongly advise You to review the Privacy Policy of every site You visit.
             <br /><br />
            We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
 
@@ -342,7 +342,7 @@ const page = () => {
         <p className='w-full md:w-[40vw] text-[1.3vh] md:text-[1vw]'>
             We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
             <br /><br />
-           We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
+           We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.
             <br /><br />
             You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
         </p>
@@ -360,7 +360,7 @@ const page = () => {
      </div>
     </div>
 
-  )
+  );
 }
 
-export default page
+export default Page;

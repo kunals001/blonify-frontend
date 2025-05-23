@@ -6,13 +6,12 @@ import Input from '@/components/Input'
 import { Lock, Mail, User,Loader } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useAuthStore } from '@/store/authStore'
-import { toast } from 'react-hot-toast'
 import PasswordStrengthMeter from '@/components/PasswordStrengthMeter'
 import GoogleSignup from '@/firebase/GoogleSignup'
 import Link from 'next/link'
 import { useEffect } from 'react'
 
-const page = () => {
+const Page = () => {
 
     const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -27,7 +26,7 @@ const page = () => {
     }
   }, [isAuthenticated]);
 
-    const handleSignup = async (e:any) => {
+    const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
 		try {
@@ -52,21 +51,21 @@ const page = () => {
 				type='text'
 				placeholder='Full Name'
 				value={name}
-				onChange={(e:any) => setName(e.target.value)}
+				onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
 					/>
 				<Input
 				icon={Mail}
 				type='email'
 				placeholder='Email Address'
 				value={email}
-				onChange={(e:any) => setEmail(e.target.value)}
+				onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
 					/>
 				<Input
 				icon={Lock}
 				type='password'
 				placeholder='Password'
 				value={password}
-				onChange={(e:any) => setPassword(e.target.value)}
+				onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
 					/>
 
                 {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
@@ -100,4 +99,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

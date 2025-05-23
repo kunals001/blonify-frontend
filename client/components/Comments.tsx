@@ -7,8 +7,12 @@ import { useAuthStore } from '@/store/authStore'
 import { toast } from 'react-hot-toast'
 
 
+interface CommentsProps {
+  postId: string
+}
 
-const Comments = ({postId}:any) => {
+
+const Comments = ({postId}:CommentsProps) => {
   const [content,setContent] = useState<string>("")
   const [comment,setComment] = useState<any>([])
 

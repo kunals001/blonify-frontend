@@ -140,7 +140,7 @@ interface Post {
 }
 
 
-const page = () => {
+const Page = () => {
   const [post, setPost] = useState<Post | null>(null);
   const [loading, setLoading] = useState(false);
   const params = useParams()
@@ -161,7 +161,7 @@ const page = () => {
     }
 
     fetchPost();
-  },[slug])
+  },[slug, API_URL_3])
 
   if(loading){
     return <LoadingSpinner/>
@@ -185,4 +185,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
