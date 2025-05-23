@@ -11,6 +11,18 @@ interface CommentsProps {
   postId: string
 }
 
+interface Comment {
+  _id: string;
+  content: string;
+  createdAt: string;
+  postId: string;
+  user: {
+    name: string;
+    email: string;
+    profilePic: string;
+  };
+}
+
 
 const Comments = ({postId}:CommentsProps) => {
   const [content,setContent] = useState<string>("")
@@ -20,7 +32,7 @@ const Comments = ({postId}:CommentsProps) => {
 
   const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4
 
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     try {
@@ -75,7 +87,7 @@ const Comments = ({postId}:CommentsProps) => {
         <p className='text-[1.3vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 py-[1vh] md:py-[.5vw] lg:py-[.5vw]'>No comments yet</p>
       ) : (
         <div>
-          {comment.slice(0, 10).map((comment: any) => (
+          {comment.slice(0, 10).map((comment: Comment) => (
             <Comment key={comment._id} comment={comment} />
           ))}
         </div>

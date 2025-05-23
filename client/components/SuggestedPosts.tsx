@@ -3,26 +3,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ShareLinks from "./ShareLinks";
+import type {Post} from "./Laptop/LaptopPostPage"
 
-type Post = {
-  coverImg: string | File | null;
-  title: string;
-  slug: string | null;
-  desc: string | null;
-  content: string;
-  category: string | null;
-  isFeatured: boolean | null;
-  altText: string | null;
-  _id: string;
-  createdAt?: string | number | null;
-  updatedAt?: string | number | null;
-  ismobile?: boolean | null;
-  islaptop?: boolean | null;
-  isdaily?: boolean | null;
-};
+// types/post.ts
+
+
 
 const SuggestedPosts = ({ post }: { post: Post }) => {
-  const [posts, setPosts] = useState<Post[]>([]);
   const [suggested, setSuggested] = useState<Post[]>([]);
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
 
@@ -31,8 +18,6 @@ const SuggestedPosts = ({ post }: { post: Post }) => {
       try {
         const response = await axios.get(`${API_URL_3}/get-all-posts`);
         const data = response.data;
-
-        setPosts(data);
 
         let filtered: Post[] = [];
 

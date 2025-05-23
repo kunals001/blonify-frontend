@@ -6,9 +6,10 @@ import ShareLinks from '../ShareLinks';
 import "@/app/globals.css";
 import RefreshManage from "@/components/RefreshManage";
 import NavigationBreadcrumb from '../navigate';
+import type {Post} from "../Laptop/LaptopPostPage"
 
 
-const MobilePostPage = ({post}:any) => {
+const MobilePostPage = ({post}:{post:Post}) => {
 
 
    const infoItems = [
@@ -556,7 +557,7 @@ const MobilePostPage = ({post}:any) => {
 
        </div>
 
-       <Comments postId={post?._id}/>
+       {post?._id && <Comments postId={post._id} />}
         
     </div>
 

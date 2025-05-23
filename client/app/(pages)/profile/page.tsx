@@ -22,7 +22,7 @@ const Page = () => {
           router.push('/');
         }
         
-      }, [isAuthenticated]);
+      }, [isAuthenticated,router]);
 
 
     const handlelogout = async () => {

@@ -3,11 +3,23 @@ import React, { useEffect, useState } from 'react'
 import DailyRecentPost from './DailyRecentPost'
 import Pagination from "../Pagination";
 
-const DailyRecent = ({posts}: {posts: any}) => {
+interface Post {
+  _id: string;
+  title: string;
+  slug: string;
+  coverImg: string;
+  altText: string;
+  content: string;
+  desc: string;
+  createdAt: string;
+  isdaily: boolean;
+  [key: string]: any; // Optional: allows extra keys without throwing type error
+}
 
-  // Filter first
-  const filteredPosts = posts.filter((post: any) => post.isdaily);
+const DailyRecent = ({posts}: {posts: Post[]}) => {
 
+
+  const filteredPosts = posts.filter((post) => post.isdaily);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 10;
 
@@ -41,7 +53,7 @@ const DailyRecent = ({posts}: {posts: any}) => {
       {filteredPosts.length > 0 ? (
         <div className="flex flex-col gap-[1vh]">
           <div className="mt-[1vh] md:mt-[1vw] lg:mt-[1vw] flex flex-col gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw]">
-              {currentPosts.map((post: any, index: number) => (
+              {currentPosts.map((post, index: number) => (
                   <DailyRecentPost key={index} post={post} />
               ))}
           </div>

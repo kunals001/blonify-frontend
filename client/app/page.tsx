@@ -24,10 +24,10 @@ type Post = {
 };
 
 
+  const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
 
 const Page = () => {
   const [posts,setposts] = useState<Post []>([]);
-  const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
 
   useEffect(() => {
    const fetchPosts = async () => {
@@ -41,7 +41,7 @@ const Page = () => {
    }
 
    fetchPosts();
-  }, []); 
+  }, [API_URL_3]); 
 
   return (
     <div className="w-full min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] pt-[2vh] md:pt-[2vw] lg:p-[2.1vw] flex flex-col gap-[1vh] md:gap[.8vw] lg:gap-[.9vw]">

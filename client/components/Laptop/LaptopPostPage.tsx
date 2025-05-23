@@ -6,9 +6,128 @@ import ShareLinks from '../ShareLinks';
 import "@/app/globals.css";
 import RefreshManage from "@/components/RefreshManage";
 import NavigationBreadcrumb from '../navigate';
+import ImageKit from '../Image';
+ export interface Post {
+  _id?: string;  // MongoDB ObjectId as string
+  userId: string;
+  coverImg?: string;
+  innerImage?: string;
+  title: string;
+  slug: string;
+  altText?: string;
+  desc?: string;
+  category?: string;
+  content: string;
+  isFeatured?: boolean;
+  keywords?: string;
+  visits?: number;
+  highlight?: string;
+  network?: {
+    technology?: string;
+    towbands?: string;
+    threebands?: string;
+    fourbands?: string;
+    fivebands?: string;
+    speed?: string;
+  }[];
+  launch?: {
+    date?: string;
+    status?: string;
+  }[];
+  body?: {
+    dimensions?: string;
+    weight?: string;
+    build?: string;
+    sim?: string;
+  }[];
+  display?: {
+    type?: string;
+    resolution?: string;
+    size?: string;
+    refreshrate?: string;
+    protection?: string;
+    pixel?: string;
+    big?: string;
+  }[];
+  platform?: {
+    os?: string;
+    osversion?: string;
+    chipset?: string;
+    gpu?: string;
+    cpu?: string;
+    process?: string;
+    ram?: string;
+  }[];
+  memory?: {
+    cardslot?: string;
+    ram?: string;
+    storage?: string;
+  }[];
+  permormance?: {
+    antutuscore?: string;
+    geeksbenchscore?: string;
+    fps?: string;
+  }[];
+  battery?: {
+    type?: string;
+    capacity?: string;
+    fastcharge?: string;
+    gamingbackup?: string;
+    standbybackup?: string;
+    mah?: string;
+    wiredcharge?: string;
+    wirelesscharge?: string;
+  }[];
+  maincam?: {
+    type?: string;
+    mp?: string;
+    resolution?: string;
+    zoom?: string;
+    features?: string;
+    videofps?: string;
+    mega?: string;
+    pixel?: string;
+  }[];
+  frontcam?: {
+    type?: string;
+    mp?: string;
+    resolution?: string;
+    features?: string;
+    videofps?: string;
+  }[];
+  sound?: {
+    speaker?: string;
+    headphonejack?: string;
+    quality?: string;
+  }[];
+  comms?: {
+    wifi?: string;
+    bluetooth?: string;
+    gps?: string;
+    nfc?: string;
+  }[];
+  features?: {
+    sensor?: string;
+    fingerprint?: string;
+    faceunlock?: string;
+    ir?: string;
+  }[];
+  mics?: {
+    color?: string;
+    quality?: string;
+    model?: string;
+    price?: string;
+  }[];
+  ismobile?: boolean;
+  islaptop?: boolean;
+  isdaily?: boolean;
+
+  createdAt?: string;
+  updatedAt?: string;
+}
 
 
-const LaptopPostPage = ({post}:any) => {
+const LaptopPostPage = ({post}:{post:Post}) => {
 
 
    const infoItems = [
@@ -88,7 +207,7 @@ const LaptopPostPage = ({post}:any) => {
                     </h2>
                   <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg flex flex-col gap-[2vh] md:gap-[1vw] ">
                          <div className="">
-                            <img src={post?.coverImg} alt={post?.altText} className='w-full h-[23vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' />
+                            <ImageKit w={800} h={800} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[23vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' />
                          </div>
 
                          <div className="flex gap-[1vh] md:gap-[1vw] text-zinc-700">
@@ -533,8 +652,8 @@ const LaptopPostPage = ({post}:any) => {
 
        </div>
 
-       <Comments postId={post?._id}/>
-        
+       {post?._id && <Comments postId={post._id} />}
+
     </div>
 
     <div className="w-full md:w-[35vw]">

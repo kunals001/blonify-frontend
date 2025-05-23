@@ -5,7 +5,21 @@ import RefreshManage from "@/components/RefreshManage";
 import Comments from '../Comments';
 import NavigationBreadcrumb from '../navigate';
 
-const DailyPostPage = ({post}:any) => {
+interface Post {
+  createdAt: string;
+  title: string;
+  slug: string;
+  coverImg: string;
+  altText: string;
+  highlight?: string
+  content: string;
+  desc: string;
+  _id: string;
+  category: string;     
+  isFeatured: boolean;
+}
+
+const DailyPostPage = ({ post }: { post: Post}) => {
     
   return (
     <RefreshManage>

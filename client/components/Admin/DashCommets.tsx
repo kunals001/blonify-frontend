@@ -25,6 +25,7 @@ import {
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import Image from 'next/image';
 
 interface Comment {
   _id: string;
@@ -43,10 +44,12 @@ interface Comment {
   };
 }
 
+  const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4;
+
 const DashComments = () => {
   const { user } = useAuthStore();
   const [comments, setComments] = useState<Comment[]>([]);
-  const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4;
+
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -61,7 +64,7 @@ const DashComments = () => {
     if (user?.isAdmin) {
       fetchComments();
     }
-  }, [user?._id]);
+  }, [user?._id, user?.isAdmin,API_URL_4]);
 
   const handleDelete = async (commentId: string) => {
     try {
@@ -92,11 +95,15 @@ const DashComments = () => {
               <TableRow key={comment._id} className='hover:bg-green-200'>
                 <TableCell className="text-gray-600">{comment.updatedAt ? new Date(comment.updatedAt).toLocaleDateString() : "N/A"}</TableCell>
                 <TableCell>
-                    <img
-                      src={comment.user?.profilePic || "/placeholder.jpg"}
-                      alt={"user image"}
-                      className='w-20 h-20 rounded-full object-cover bg-gray-300'
+                    {user && typeof user.profilePic === 'string' && (
+                    <Image
+                     src={user.profilePic}
+                      alt="User Profile"
+                     width={60}
+                     height={60}
+                     className="rounded-full object-cover"
                     />
+                  )}
                 </TableCell>
                 <TableCell className="font-medium text-prime hover:underline">
                   <Link href={`/article/${comment.post?.slug || ""}`}>

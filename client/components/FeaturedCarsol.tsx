@@ -1,9 +1,19 @@
 import Link from 'next/link'
+import ImageKit from './Image'
 
-const FeaturedCarsol = ({post}:any) => {
+interface Post {
+  _id: string;
+  title: string;
+  slug: string;
+  coverImg: string;
+  altText: string;
+}
+
+
+const FeaturedCarsol = ({ post }: { post: Post}) => {
   return (
     <div  className='relative overflow-hidden rounded-xl'>
-        <Link href={`/article/${post?.slug}`}><img src={post?.coverImg}
+        <Link href={`/article/${post?.slug}`}><ImageKit w={800} h={800} src={post?.coverImg}
               alt={post?.altText}
               className="w-full relative h-[24vh] md:w-full md:h-[31vw] lg:w-full lg:h-[31vw] rounded-xl object-cover overflow-hidden"
               /></Link>

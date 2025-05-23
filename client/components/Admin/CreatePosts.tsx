@@ -10,10 +10,9 @@ import Upload from '@/components/upload'
 import { useAuthStore } from '@/store/authStore'
 import MobilePost from '../MobilePost'
 import InputPost from '../InputPost'
-import { set } from 'date-fns'
 
 
-const page = () => {
+const Page = () => {
     const [content,setContent] = useState('');
     const [coverImg,setCoverImg] = useState("");
     const [innerImage,setInnerImage] = useState("");
@@ -25,12 +24,12 @@ const page = () => {
         if (!user?.isAdmin) {
           router.push("/signin");
         }
-    }, [user]);
+    }, [user,router]);
 
-    const handleSubmit = async (e:any) =>{
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         try {
-            const formData = new FormData(e.target);
+            const formData = new FormData(e.currentTarget);
 
              // 1. Network Section
             const network = [
@@ -331,4 +330,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

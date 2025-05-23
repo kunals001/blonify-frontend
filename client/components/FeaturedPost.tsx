@@ -10,7 +10,19 @@ import {
 } from "@/components/ui/carousel"
 import FeaturedCarsol from './FeaturedCarsol';
 
-const FeaturedPost = ({posts}:any) => {
+
+interface Post {
+  _id: string;
+  title: string;
+  slug: string;
+  isFeatured: boolean;
+  coverImg: string;     // <-- Add this
+  altText: string;      // <-- Add this (was probably a typo as `altTextts`)
+  // Add more if your component expects other fields like `description`, `isdaily`, etc.
+}
+
+
+const FeaturedPost = ({posts}: {posts: Post[]}) => {
 
   
 
@@ -26,8 +38,8 @@ const FeaturedPost = ({posts}:any) => {
           ]} className='w-full md:w-full lg:w-full'>
           <CarouselContent>
             {posts
-              .filter((post: any) => post.isFeatured)
-              .map((post: any, index: number) => (
+              .filter((post: Post) => post.isFeatured)
+              .map((post: Post, index: number) => (
                 <CarouselItem key={index}>
                   <FeaturedCarsol post={post} />
                 </CarouselItem>

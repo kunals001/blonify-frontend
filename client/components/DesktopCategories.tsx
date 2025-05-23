@@ -6,11 +6,15 @@ import { Search } from 'lucide-react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
+interface Post {
+  _id: string;
+  title: string;
+  slug: string;
+}
+
 const DesktopCategories = () => {
-  const [selected, setSelected] = useState("/");
-  const [isSearch, setIsSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const menuItems = [
@@ -40,7 +44,7 @@ useEffect(() => {
 
   const delayDebounce = setTimeout(() => {
     fetchSearchResults();
-  }, 500); // debounce 500ms
+  }, 500); 
 
   return () => clearTimeout(delayDebounce);
 }, [searchTerm]);
@@ -52,7 +56,6 @@ useEffect(() => {
             {menuItems.map((item) => (
               <Link href={item.href} key={item.href}>
                 <li
-                  onClick={() => setSelected(item.href)}
                   className={`px-[1vw] py-[.3vw] rounded-full bg-green-200
                    text-center flex items-center justify-center text-[1vw] text-medium text-zinc-700 ease-in-out hover:bg-green-400 hover:text-white transition-all duration-300 border-1 border-prime cursor-pointer`}
                 >

@@ -3,6 +3,7 @@ import { useAuthStore } from '@/store/authStore'
 import { formatDistanceToNow } from 'date-fns';
 import axios from 'axios';
 import {toast} from 'react-hot-toast'
+import ImageKit from './Image';
 
 interface User {
   profilePic: string
@@ -26,7 +27,7 @@ const Comment = ({ comment }: CommentProps) => {
   const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4;
   const { user } = useAuthStore();
 
-  const handleDelete = async (commentId:any) => {
+  const handleDelete = async (commentId:string) => {
     try {
      const response = await axios.delete(`${API_URL_4}/delete-comment/${commentId}`);
 
@@ -44,9 +45,11 @@ const Comment = ({ comment }: CommentProps) => {
   return (
     <div className='w-full px-[.5vh] md:px-[.5vw] lg:px-[.5vw] py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl bg-zinc-100 mt-[1vh]'>
       <div className="flex gap-[.5vh] md:gap-[.5vw] lg:gap-[.6vw] items-center text-center">
-        <img
+        <ImageKit
           src={comment?.user?.profilePic}
           alt="profile pic"
+          w={30}
+          h={30}
           className="w-[2.8vh] md:w-[2vw] lg:w-[2vw] h-[2.8vh] md:h-[2vw] lg:h-[2vw] rounded-full object-cover"
         />
 

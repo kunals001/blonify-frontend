@@ -24,6 +24,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import ImageKit from '../Image';
+
+interface UserItem {
+  _id: string;
+  name: string;
+  profilePic: string;
+  updatedAt?: string;
+  isAdmin: boolean;
+}
 
 const DashPosts = () => {
   const {
@@ -49,7 +58,7 @@ const DashPosts = () => {
     if (user?.isAdmin) {
       fetchUsers();
     }
-  }, [user?._id]);
+  }, [user?._id, user?.isAdmin, getUsers]);
 
   const handleDelete = async (userId: string) => {
   try {
@@ -77,17 +86,19 @@ const DashPosts = () => {
               </TableRow>
             </TableHeader>
             <TableBody className='text-[2vh] cursor-pointer'>
-              {userData.map((userItem: any) => (
+              {userData.map((userItem: UserItem) => (
                 <TableRow key={userItem._id} className='hover:bg-green-200'>
                   <TableCell className="font-medium text-gray-600 hover:underline">
                     {userItem.updatedAt ? new Date(userItem.updatedAt).toLocaleDateString() : "N/A"}
                   </TableCell>
 
                   <TableCell>
-                    <img
+                    <ImageKit
                       src={userItem.profilePic}
                       alt="profile"
-                      className='w-8 h-8 rounded-full object-cover bg-gray-500'
+                      className='w-12 h-12 rounded-full object-cover bg-gray-500'
+                      w={30}
+                      h={30}
                     />
                   </TableCell>
 

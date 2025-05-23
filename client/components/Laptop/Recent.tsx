@@ -1,12 +1,22 @@
 import { formatDistanceToNow } from 'date-fns'
 import Link from 'next/link'
 import React from 'react'
+import ImageKit from '../Image'
 
-const Recent = ({post}: any) => {
+interface Post {
+  title: string;
+  slug: string;
+  coverImg: string;
+  altText: string;
+  desc: string;
+  createdAt: string;
+}
+
+const Recent = ({post}: {post:Post}) => {
   return (
     <div className='w-full flex gap-[1vh] md:gap-[.5vw] lg:gap-[.5vw] relative'>
 
-        <Link href={`/article/${post?.slug}`} ><img src={post?.coverImg} alt={post?.altText} className="w-[16vh] h-[10vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover"/></Link>
+        <Link href={`/article/${post?.slug}`} ><ImageKit w={800} h={800} src={post?.coverImg} alt={post?.altText} className="w-[16vh] h-[10vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover"/></Link>
 
         {/* details */}
 

@@ -26,10 +26,11 @@ import {
 } from "@/components/ui/table"
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import ImageKit from '../Image';
 
 
 const DashPosts = () => {
-  const { posts, getPosts, getMorePosts, showMore, isLoading,deletePost } = usePostStore();
+  const { posts, getPosts, getMorePosts, showMore, isLoading,deletePost,error } = usePostStore();
   const { user } = useAuthStore();
 
   useEffect(() => {
@@ -37,21 +38,21 @@ const DashPosts = () => {
       try {
         await getPosts();
       } catch (error) {
-        console.log("❌ Error fetching posts:", error);
+        console.log("Error fetching posts:", error);
       }
     };
 
     if (user?.isAdmin) {
       fetchPosts();
     }
-  }, [user?._id]);
+  }, [user?._id, user?.isAdmin, getPosts]);
 
   const handleDelete = async (postId: string) => {
   try {
     await deletePost(postId);
     toast.success("Post deleted successfully");
   } catch (err) {
-    alert("Failed to delete post");
+    alert("Failed to delete post" + err);
   }
   };
 
@@ -77,7 +78,7 @@ const DashPosts = () => {
                 <TableRow key={post._id} className='hover:bg-green-200'>
                   <TableCell className="font-medium text-gray-600 hover:underline">{post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : "N/A"}</TableCell>
                   <TableCell>
-                    <Link href={`/article/${post.slug}`}><img src={post?.coverImg as string} alt={post?.altText as string} className='w25 h-15 rounded-md object-cover bg-gray-500'/></Link>
+                    <Link href={`/article/${post.slug}`}><ImageKit src={post?.coverImg as string} alt={post?.altText as string} w={50} h={50} className='w-25 h-15 rounded-md object-cover bg-gray-500'/></Link>
 
                   </TableCell>
                   <TableCell className="font-medium hover:underline hover:text-gray-700 text-prime"><Link href={`/article/${post.slug}`}>{post.title}</Link></TableCell>
@@ -116,6 +117,10 @@ const DashPosts = () => {
         </>
       ) : (
         <p className='text-[2vh] md:text-[1.5vw] lg:text-[1.5vw] select-none mx-auto font-semibold text-zinc-800 '>No posts found</p>
+      )}
+
+      {error && (
+        <p className='text-[2vh] md:text-[1.5vw] lg:text-[1.5vw] select-none mx-auto font-semibold text-zinc-800 '>{error}</p>
       )}
 
       {showMore && (

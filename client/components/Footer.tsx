@@ -1,15 +1,9 @@
-import Link from 'next/link'
+
 import React from 'react'
+import ImageKit from './Image'
+import Link from 'next/link'
 
 const Footer = () => {
-
-    const QuickLinks = [
-    { label: "About", href: "/about" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms & Conditions", href: "/terms-and-conditions" },
-    { label: "Disclaimer", href: "/disclaimer" },
-    { label: "Contact Us", href: "/contact-us" },
-    ]
 
   return (
     
@@ -18,26 +12,26 @@ const Footer = () => {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-              <a href="https://blonify.com/" className="flex items-center">
-                  <img src="/logo.svg" className="h-8 me-3" alt="blonify Logo" />
+              <Link href="https://blonify.com/" className="flex items-center">
+                  <ImageKit w={20} h={20} src="https://ik.imagekit.io/8jagcyqun/logo.svg?updatedAt=1748001400021" className="h-8 w-8 mr-3" alt="blonify Logo" />
                   <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Blonify</span>
-              </a>
+              </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick links</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li>
-                          <a href="/" className="hover:underline">Home</a>
+                          <Link href="/" className="hover:underline">Home</Link>
                       </li>
                       <li>
-                          <a href="/daily" className="hover:underline">Daily</a>
+                          <Link href="/daily" className="hover:underline">Daily</Link>
                       </li>
                       <li>
-                          <a href="/mobiles" className="hover:underline">Mobiles</a>
+                          <Link href="/mobiles" className="hover:underline">Mobiles</Link>
                       </li>
                       <li>
-                          <a href="/laptops" className="hover:underline">Laptops</a>
+                          <Link href="/laptops" className="hover:underline">Laptops</Link>
                       </li>
 
                   </ul>
@@ -46,19 +40,19 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                      <li>
-                          <a href="/about" className="hover:underline">About Us</a>
+                          <Link href="/about" className="hover:underline">About Us</Link>
                       </li>
                       <li >
-                          <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+                          <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
                       </li>
                       <li>
-                          <a href="/terms-and-conditions" className="hover:underline">Terms &amp; Conditions</a>
+                          <Link href="/terms-and-conditions" className="hover:underline">Terms &amp; Conditions</Link>
                       </li>
                       <li>
-                          <a href="/disclaimer" className="hover:underline">Disclaimer</a>
+                          <Link href="/disclaimer" className="hover:underline">Disclaimer</Link>
                       </li>
                       <li>
-                          <a href="/contact-us" className="hover:underline">Contact Us</a>
+                          <Link href="/contact-us" className="hover:underline">Contact Us</Link>
                       </li>
                   </ul>
               </div>
@@ -66,7 +60,7 @@ const Footer = () => {
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://blonify.com/" className="hover:underline">Blonify™</a>. All Rights Reserved.
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <Link href="https://blonify.com/" className="hover:underline">Blonify™</Link>. All Rights Reserved.
           </span>
       </div>
     </div>
