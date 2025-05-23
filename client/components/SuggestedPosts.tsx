@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ShareLinks from "./ShareLinks";
-import type {Post} from "./Laptop/LaptopPostPage"
+import type {Post} from "@/app/(pages)/article/[slug]/page"
 import ImageKit from "./Image";
 
 

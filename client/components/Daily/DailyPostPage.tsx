@@ -4,7 +4,7 @@ import SuggestedPosts from '../SuggestedPosts'
 import RefreshManage from "@/components/RefreshManage";
 import Comments from '../Comments';
 import NavigationBreadcrumb from '../navigate';
-import type {Post} from "../Laptop/LaptopPostPage"
+import type {Post} from "@/app/(pages)/article/[slug]/page"
 import ImageKit from '../Image';
 
 

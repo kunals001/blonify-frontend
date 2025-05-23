@@ -6,7 +6,7 @@ import ShareLinks from '../ShareLinks';
 import "@/app/globals.css";
 import RefreshManage from "@/components/RefreshManage";
 import NavigationBreadcrumb from '../navigate';
-import type {Post} from "../Laptop/LaptopPostPage"
+import type {Post} from "@/app/(pages)/article/[slug]/page"
 import ImageKit from '../Image';
 
 

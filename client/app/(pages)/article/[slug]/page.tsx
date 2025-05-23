@@ -9,22 +9,23 @@ import DailyPostPage from '@/components/Daily/DailyPostPage';
 import "../../../globals.css"
 import LaptopPostPage from '@/components/Laptop/LaptopPostPage';
 
-interface Post {
+export type Post ={
   _id?: string;
   title: string;
   slug: string;
   content: string;
   desc?: string;
   coverImg?: string;
+  innerImage?: string;
   altText?: string;
   category?: string;
-  isFeatured?: string;
+  isFeatured?: boolean;
   keywords?: string;
   highlight?: string;
   visits?: number;
-  ismobile?: string;
-  islaptop?: string;
-  isdaily?: string;
+  ismobile?: boolean;
+  islaptop?: boolean;
+  isdaily?: boolean;
   createdAt: string | number;
   updatedAt: string | number;
 
@@ -82,7 +83,7 @@ interface Post {
   }[];
 
   battery?: {
-    battery?: string;
+    type?: string;
     capacity?: string;
     fastcharge?: string;
     gamingbackup?: string;
@@ -137,6 +138,7 @@ interface Post {
     model?: string;
     price?: string;
   }[];
+  userId?: string;
 }
 
 
