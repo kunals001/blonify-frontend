@@ -29,6 +29,7 @@ const Comments = ({postId}:CommentsProps) => {
   const [content,setContent] = useState<string>("")
   const [comment,setComment] = useState<Comment[]>([])
   const API_URL_4 = process.env.NEXT_PUBLIC_API_KEY_4
+  
 
   const {user} = useAuthStore()
 

@@ -14,7 +14,7 @@ import type { Post } from "@/app/page";
 const DailyTrending = ({ posts }: { posts: Post[] }) => {
   
   let filteredPosts = posts.filter(
-    (post: any) => post.isFeatured && post.isdaily
+    (post) => post.isFeatured && post.isdaily
   );
 
   if (filteredPosts.length > 6) {
