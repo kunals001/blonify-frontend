@@ -2,18 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import DailyRecentPost from './DailyRecentPost'
 import Pagination from "../Pagination";
-
-export type Post ={
-  _id: string;
-  title: string;
-  slug: string;
-  coverImg: string;
-  altText: string;
-  content: string;
-  desc: string;
-  createdAt: string;
-  isdaily: boolean;
-}
+import type { Post } from "@/app/(pages)/daily/page";
 
 const DailyRecent = ({posts}: {posts: Post[]}) => {
 

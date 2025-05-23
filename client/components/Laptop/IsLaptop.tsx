@@ -11,17 +11,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import LaptopCarousel from './LaptopCarousel'
 import RefreshManage from "@/components/RefreshManage";
 
-// Define the Post type interface according to your data structure
-interface Post {
-  id: string | number; // unique id for key usage
-  title: string;
-  slug: string;
-  coverImg: string;
-  altText: string;
-  createdAt: string;
-  isFeatured: boolean;
-  islaptop: boolean;
-}
+import type { Post } from "@/app/(pages)/laptops/page";
 
 interface IsLaptopProps {
   posts: Post[];
@@ -31,7 +21,7 @@ const IsLaptop: React.FC<IsLaptopProps> = ({ posts }) => {
   // Filter only featured laptop posts
   let filteredPosts = posts
   .filter(post => post.isFeatured && post.islaptop)
-  .map(post => ({ ...post, id: String(post.id) }));
+  .map(post => ({ ...post, id: String(post._id) }));
 
   if (filteredPosts.length > 6) {
     filteredPosts = filteredPosts.slice(filteredPosts.length - 6);

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import NavigationBreadcrumb from '@/components/navigate'
 
-type Post = {
+export type Post = {
   coverImg: string | File | null;
   title: string;
   slug: string | null;

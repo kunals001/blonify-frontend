@@ -1,14 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import { formatDistanceToNow } from 'date-fns'
-import type{Post} from "./DailyRecent"
+import type{Post} from "@/app/(pages)/mobiles/page"
 import ImageKit from '../Image'
 
 const DailyRecentPost = ({post}:{post :Post}) => {
   return (
     <div className='w-full flex gap-[1vh] md:gap-[.5vw] lg:gap-[.5vw] relative'>
 
-        <Link href={`/article/${post?.slug}`} ><ImageKit w={600} h={500} src={post?.coverImg} alt={post?.altText} className="w-[16vh] h-[10vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover"/></Link>
+        <Link href={`/article/${post?.slug}`} ><ImageKit w={600} h={500} src={post?.coverImg as string} alt={post?.altText as string} className="w-[16vh] h-[10vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover"/></Link>
 
         {/* details */}
 
