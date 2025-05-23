@@ -22,7 +22,7 @@ const Page = () => {
 	
   useEffect(() => {
     if (isAuthenticated) {
-      router.replace("/");
+      router.push("/");
     }
   }, [isAuthenticated]);
 
