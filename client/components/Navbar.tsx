@@ -1,5 +1,5 @@
 "use client"
-import { Profiler, useState } from 'react'
+import { useState } from 'react'
 import {Menu,Search,X} from 'lucide-react'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/authStore'
