@@ -72,7 +72,7 @@ const Navbar = () => {
    }, [searchTerm]);
 
   return (
-    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0 overflow-x-hidden'>
+    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0 overflow-hidden md:overflow-visible'>
 
         
         {/*  Mobile Menu */}
