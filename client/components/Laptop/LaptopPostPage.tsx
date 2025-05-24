@@ -76,7 +76,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
     <article className='w-full flex flex-col md:flex-row min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden'>
     <div className="w-full">
         <div className="flex flex-col gap-[.4vh] md:gap-[.2vw] lg:gap-[.2vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
-            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none'>{post?.title}</h1>
+            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none md:w-[40vw] w-full'>{post?.title}</h1>
 
             <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-700 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-prime'> Kunal Singh </span> on <span className='text-gray-500'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
         </div>
