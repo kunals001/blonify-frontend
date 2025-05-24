@@ -14,7 +14,7 @@ const Recent = ({post}: {post:Post}) => {
 
         <div className=" mt-[1vh] px-[1vh] md:px-[1vw] lg:px-[1vw] flex flex-col gap-[.3vh] md:gap-[.2vw] lg:gap-[.2vw]">
 
-            <Link href={`/article/${post?.slug}`} ><h1 className='text-[1.8vh] md:text-[1.7vw] lg:text-[1.7vw] font-second font-semibold text-zinc-700 hover:underline leading-none cursor-pointer'>{post?.title}</h1></Link> 
+            <Link href={`/article/${post?.slug}`} ><h1 className='text-[1.8vh] md:text-[1.7vw] lg:text-[1.7vw] font-second font-semibold text-zinc-700 hover:underline leading-none cursor-pointer w-[53vw] md:w-[40vw] md:mb-[1.5vw]'>{post?.title}</h1></Link> 
 
              {/* discription */}
 
@@ -22,7 +22,7 @@ const Recent = ({post}: {post:Post}) => {
               <Link href={`/article/${post?.slug}`} ><span className='text-prime text-[1vh] md:text-[1vw] lg:text-[1vw] px-[.5vh] md:px-[.5vw] lg:px-[.5vw] rounded-full cursor-pointer border-1 border-prime ml-[1vh] md:ml-[.5vw] inline-block'>Read more</span></Link>
             </p>
 
-            <div className="text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 hover:underline leading-none ">
+            <div className="text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 hover:underline leading-none hidden md:block mt-[1vw]">
                 <p>Written by <span className='text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] text-prime '>Kunal Singh </span> on <span className='ext-[1vh] md:text-[1.1vw] lg:text-[1.2vw] text-gray-500 '> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span></p>
             </div>
         </div>
