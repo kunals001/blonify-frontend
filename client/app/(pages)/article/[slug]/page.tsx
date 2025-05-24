@@ -178,20 +178,6 @@ const Page = () => {
         <meta name="description" content={post?.desc} />
         <meta name="keywords" content={post?.keywords} />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="preload"
-          href="/client/public/fonts/Barlow-Black.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/client/public/fonts/Poppins-Black.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </Head>
 
         <div className='overflow-hidden'>
