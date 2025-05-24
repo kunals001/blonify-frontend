@@ -4,8 +4,6 @@ import { useAuthStore } from "./authStore";
 
 const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
 
-
-
 axios.defaults.withCredentials = true;
 
 type Post = {

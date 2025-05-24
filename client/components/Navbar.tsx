@@ -188,7 +188,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className={` group relative hidden md:w-[3.2vw] md:h-[3.2vw] lg:w-[3.3vw] lg:h-[3.3vw] rounded-full border-2 border-prime md:flex lg:flex items-center justify-center cursor-pointer overflow-hidden`}>
+            <div className={` group relative hidden md:w-[3.2vw] md:h-[3.2vw] lg:w-[3.3vw] lg:h-[3.3vw] rounded-full border-2 border-prime md:flex lg:flex items-center justify-center cursor-pointer `}>
                 <Link href={'/profile'}>
                 {user && typeof user.profilePic === 'string' && (
                                  <Image
