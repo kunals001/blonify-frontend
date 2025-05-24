@@ -4,10 +4,9 @@ import Head from 'next/head';
 import { useParams } from 'next/navigation';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import axios from 'axios';
-import MobilePostPage from '@/components/Mobile/MobilePostPage';
-import DailyPostPage from '@/components/Daily/DailyPostPage';
 import "../../../globals.css"
-import LaptopPostPage from '@/components/Laptop/LaptopPostPage';
+import dynamic from 'next/dynamic';
+
 
 export type Post ={
   _id?: string;
@@ -140,6 +139,19 @@ export type Post ={
   }[];
   userId?: string;
 }
+
+
+const DailyPostPage = dynamic(() => import('@/components/Daily/DailyPostPage'), {
+  ssr: false, // Isse ye component sirf client side pe load hoga
+});
+
+const MobilePostPage = dynamic(() => import('@/components/Mobile/MobilePostPage'), {
+  ssr: false, // Isse ye component sirf client side pe load hoga
+});
+
+const LaptopPostPage = dynamic(() => import('@/components/Laptop/LaptopPostPage'), {
+  ssr: false, // Isse ye component sirf client side pe load hoga
+});
 
 
 const Page = () => {
