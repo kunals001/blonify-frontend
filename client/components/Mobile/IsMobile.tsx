@@ -10,6 +10,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import MobileCarousel from './MobileCarousel'
 import type{Post} from "@/app/(pages)/mobiles/page"
+import { Skeleton } from '../ui/skeleton'
 
 interface IsMobileProps {
   posts: Post[];
@@ -54,7 +55,7 @@ const IsMobile: React.FC<IsMobileProps> = ({posts}) => {
           <CarouselNext className='hidden md:block lg:block' />
         </Carousel>
       ) : (
-        <h1>No Featured Post</h1>
+         <Skeleton className='w-full h-[24vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl bg-green-200' />
       )}
     </div>
   )

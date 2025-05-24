@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import DailyRecentPost from './DailyRecentPost'
 import Pagination from "../Pagination";
 import type { Post } from "@/app/(pages)/daily/page";
+import { Skeleton } from '../ui/skeleton';
 
 const DailyRecent = ({posts}: {posts: Post[]}) => {
 
@@ -55,7 +56,7 @@ const DailyRecent = ({posts}: {posts: Post[]}) => {
           )}
         </div>
       ) : (
-         <h1>No recent article</h1>
+         <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' />
       )}
       
     </div>

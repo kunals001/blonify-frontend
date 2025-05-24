@@ -2,6 +2,7 @@
 import BestMobiles from '@/components/Mobile/BestMobiles'
 import IsMobile from '@/components/Mobile/IsMobile'
 import NavigationBreadcrumb from '@/components/navigate';
+import { Skeleton } from '@/components/ui/skeleton';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
@@ -110,7 +111,7 @@ const Page = () => {  // <-- Uppercase 'P'
             )}
           </>
         ) : (
-          <h1>No recent article</h1>
+          <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' />
         )}
 
       </div>

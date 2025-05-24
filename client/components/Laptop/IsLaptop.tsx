@@ -12,6 +12,7 @@ import LaptopCarousel from './LaptopCarousel'
 import RefreshManage from "@/components/RefreshManage";
 
 import type { Post } from "@/app/(pages)/laptops/page";
+import { Skeleton } from '../ui/skeleton'
 
 interface IsLaptopProps {
   posts: Post[];
@@ -55,7 +56,7 @@ const IsLaptop: React.FC<IsLaptopProps> = ({ posts }) => {
             <CarouselNext className='hidden md:block lg:block' />
           </Carousel>
         ) : (
-          <h1>No Featured Post</h1>
+          <Skeleton className='w-full h-[24vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl bg-green-200' />
         )}
       </div>
     </RefreshManage>

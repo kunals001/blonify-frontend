@@ -4,6 +4,8 @@ import Recent from '@/components/Laptop/Recent'
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import NavigationBreadcrumb from '@/components/navigate'
+import { Skeleton } from "@/components/ui/skeleton"
+
 
 export type Post = {
   coverImg: string | File | null;
@@ -86,7 +88,7 @@ const Page = () => {
             ))}
           </div>
         ) : (
-          <h1>No recent article</h1>
+          <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' />
         )}
 
         {/* Pagination */}
