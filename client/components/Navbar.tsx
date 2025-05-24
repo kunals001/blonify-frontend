@@ -72,7 +72,7 @@ const Navbar = () => {
    }, [searchTerm]);
 
   return (
-    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0 overflow-hidden md:overflow-visible'>
+    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0'>
 
         
         {/*  Mobile Menu */}
@@ -109,7 +109,7 @@ const Navbar = () => {
 
         {/* Mobile Search bar */}
 
-        <div className={`relative mobile-search md:hidden lg:hidden flex flex-col w-full overflow-visible`}>
+        <div className={`relative mobile-search md:hidden lg:hidden flex flex-col w-full overflow-hidden`}>
             {/* Search Input */}
               <div className='relative w-full'>
                 <input 
@@ -171,7 +171,7 @@ const Navbar = () => {
         ):(
             <div className="">
 
-            <div className="flex md:hidden lg:hidden">
+            <div className="flex md:hidden lg:hidden ">
                 <Link href={'/profile'}>
                     <div className='group  relative border-1 border-prime h-[4.5vh] w-[4.5vh] rounded-full flex items-center justify-center '>
                         {user && typeof user.profilePic === 'string' && (
