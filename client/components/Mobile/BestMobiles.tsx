@@ -14,7 +14,7 @@ const BestMobiles = ({post}:{post:Post}) => {
 
         <div className=" mt-[1vh] px-[1vh] md:px-[1vw] lg:px-[1vw] flex flex-col gap-[.3vh] md:gap-[.2vw] lg:gap-[.2vw]">
 
-            <Link href={`/article/${post?.slug}`} ><h1 className='text-[1.8vh] md:text-[1.7vw] lg:text-[1.7vw] font-second font-semibold text-zinc-700 hover:underline leading-none cursor-pointer w-[53vw] md:w-[40vw] md:mb-[1.5vw]'>{post?.title}</h1></Link> 
+            <Link href={`/article/${post?.slug}`} ><h1 className='text-[1.6vh] md:text-[1.7vw] lg:text-[1.7vw] font-second font-semibold text-zinc-700 hover:underline leading-none cursor-pointer w-[53vw] md:w-[40vw] md:mb-[1.5vw]'>{post?.title}</h1></Link> 
 
              {/* discription */}
 
