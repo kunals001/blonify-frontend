@@ -17,29 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <head>
-        <link
-          rel="preload"
-          href="/client/public/fonts/Barlow-Black.ttf"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/client/public/fonts/Poppins-Black.ttf"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/client/public/fonts/Jaldi-Regular.ttf"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className="font-prime" cz-shortcut-listen="true">
         <AuthProvider>
         <Navbar />
