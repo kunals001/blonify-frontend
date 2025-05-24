@@ -53,7 +53,7 @@ const Comment = ({ comment }: CommentProps) => {
           className="w-[2.8vh] md:w-[2vw] lg:w-[2vw] h-[2.8vh] md:h-[2vw] lg:h-[2vw] rounded-full object-cover"
         />
 
-        <p className='text-[.8vh] md:text-[.7vw] lg:text-[.7vw] text-zinc-800 font-second text-center'>
+        <p className='text-[1vh] md:text-[.7vw] lg:text-[.7vw] text-zinc-800 font-second text-center'>
           @{comment?.user?.name}
         </p>
 
@@ -66,14 +66,14 @@ const Comment = ({ comment }: CommentProps) => {
           </button>
         )}
 
-        <p className='text-[.8vh] md:text-[.7vw] lg:text-[.7vw] text-zinc-500 font-second text-center'>
+        <p className='text-[.9vh] md:text-[.7vw] lg:text-[.7vw] text-zinc-500 font-second text-center'>
           {comment?.createdAt
             ? formatDistanceToNow(new Date(comment.createdAt), { addSuffix: true })
             : 'Unknown'}
         </p>
       </div>
 
-      <p className='text-[1vh] md:text-[1vw] lg:text-[1vw] text-zinc-800 font-second pl-[3.5vh] md:pl-[3vw] leading-none'>
+      <p className='text-[1.5vh] md:text-[1vw] lg:text-[1vw] text-zinc-800 font-second pl-[3.5vh] md:pl-[3vw] leading-none'>
         {comment.content}
       </p>
     </div>

@@ -69,7 +69,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
 
     <div className="w-full">
         <div className="flex flex-col gap-[.4vh] md:gap-[.2vw] lg:gap-[.2vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
-            <h1 className='text-[2.6vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none'>{post?.title}</h1>
+            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none'>{post?.title}</h1>
 
             <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-700 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-prime'> Kunal Singh </span> on <span className='text-gray-500'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
 
@@ -81,7 +81,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         {/* Featured Card And Info */}
 
         <div className="w-full overflow-hidden relative">
-                   <h2 className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-300 text-zinc-700 font-second text-[1.6vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold rounded-t-lg">{post?.altText}
+                   <h2 className="w-full px-[1.3vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-300 text-zinc-700 font-second text-[1.6vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold rounded-t-lg">{post?.altText}
                     </h2>
                      <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg pb-[.5vh] md:pb-[.5vw] flex gap-[2vh] md:gap-[1vw] ">
                          <div className="pb-[.5vh] md:pb-[.5vw]">
@@ -92,7 +92,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                           {infoItems.map(({ icon: Icon, value }, index) => (
                             <span
                               key={index}
-                              className="text-[1vh] md:text-[1vw] flex gap-[.5vh] md:gap-[.5vw] items-center"
+                              className="text-[1.2vh] md:text-[1vw] flex gap-[.5vh] md:gap-[.5vw] items-center"
                             >
                               <Icon className="size-3 md:size-6" />
                               {value || "N/A"}
@@ -107,7 +107,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                          className="flex flex-col w-[6.7vh] md:w-[7.6vw] bg-green-300 rounded-sm min-h-[6vh] md:min-h-[10vh] p-[.4vh] md:p-[.5vw] gap-[.4vh]"
                        >
                          <Icon className="size-4 md:size-8" />
-                         <span className="text-[1.2vh] md:text-[1.2vw] font-semibold leading-none">
+                         <span className="text-[1.3vh] md:text-[1.2vw] font-semibold leading-none">
                            {title || "N/A"}
                          </span>
                          <span className="text-[.8vh] md:text-[.8vw] font-medium leading-none">
@@ -124,7 +124,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
 
         <div className="flex gap-[.5vh] md:h-[5vh] lg:h-[6vh] h-[3.5vh] mt-[1.2vh] md:mt-[1vw] items-center bg-green-200 rounded-r-sm"> 
             <div className='bg-prime h-full md:w-[1vh] w-[.8vh] rounded-sm'></div>
-             <h3 className='text-[1.6vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold text-zinc-600 '>Specification</h3> 
+             <h3 className='text-[1.8vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold text-zinc-600 '>Specification</h3> 
         </div>
 
         {/* Technology */}
@@ -132,7 +132,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>NETWORK</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>NETWORK</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -146,7 +146,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -164,7 +164,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>LAUNCH</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>LAUNCH</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -174,7 +174,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -192,7 +192,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BODY</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BODY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -204,7 +204,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -221,7 +221,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>DISPLAY</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>DISPLAY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -234,7 +234,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -251,7 +251,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PLATFORM</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PLATFORM</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -263,7 +263,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -280,7 +280,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>MEMORY</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>MEMORY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -291,7 +291,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -308,7 +308,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BATTERY</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BATTERY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -323,7 +323,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -340,7 +340,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PERFORMANCE</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PERFORMANCE</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -351,7 +351,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -368,7 +368,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MAIN CAMERA</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MAIN CAMERA</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -381,7 +381,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -398,7 +398,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SELFIE CAMERA</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SELFIE CAMERA</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -410,7 +410,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -427,7 +427,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SOUND</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SOUND</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -438,7 +438,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -455,7 +455,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>COMMS</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>COMMS</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -467,7 +467,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -484,7 +484,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>FEATURES</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>FEATURES</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -496,7 +496,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
@@ -513,7 +513,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.4vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MICS</h5>
+                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MICS</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -525,7 +525,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.6vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >

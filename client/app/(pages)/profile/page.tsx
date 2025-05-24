@@ -84,9 +84,9 @@ const Page = () => {
                 {error && <p className='text-sm text-red-500 '>{error}</p>}
 
                 <div className="flex items-center justify-between pt-[1vh] md:pt-[.8vw] lg:pt-[.8vw] px-[1vh] md:px-[.5vw] lg:px-[.5vw]">
-                   <button type='submit' className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-prime px-[1.1vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-green-600 py-[.5vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Update User'}</button>
+                   <button type='submit' className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-prime px-[1.3vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-green-600 py-[.8vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Update User'}</button>
 
-                    <button onClick={handlelogout} disabled={isLoading} className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-red-500 px-[1.1vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-red-600 py-[.5vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Logout'}</button>
+                    <button onClick={handlelogout} disabled={isLoading} className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-red-500 px-[1.3vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-red-600 py-[.8vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Logout'}</button>
                 </div>
                 
             </form>
