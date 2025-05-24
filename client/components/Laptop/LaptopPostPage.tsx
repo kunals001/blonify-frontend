@@ -8,6 +8,7 @@ import RefreshManage from "@/components/RefreshManage";
 import NavigationBreadcrumb from '../navigate';
 import ImageKit from '../Image';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
+import "@/app/globals.css";
 
 
 const LaptopPostPage = ({post}:{post:Post}) => {
@@ -75,7 +76,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
     <article className='w-full flex flex-col md:flex-row min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden'>
     <div className="w-full">
         <div className="flex flex-col gap-[.4vh] md:gap-[.2vw] lg:gap-[.2vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
-            <h1 className='text-[2.4vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none'>{post?.title}</h1>
+            <h1 className='text-[2.6vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none'>{post?.title}</h1>
 
             <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-700 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-prime'> Kunal Singh </span> on <span className='text-gray-500'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
         </div>
@@ -86,7 +87,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         {/* Featured Card And Info */}
 
         <div className="w-full overflow-hidden relative">
-                   <h2 className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-300 text-zinc-700 font-second text-[1.6vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold rounded-t-lg">{post?.altText}
+                   <h2 className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-300 text-zinc-700 font-second text-[1.7vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold rounded-t-lg">{post?.altText}
                     </h2>
                   <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg flex flex-col gap-[2vh] md:gap-[1vw] ">
                          <div className="">
@@ -112,10 +113,10 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                          className="flex flex-col w-[8vh] md:w-[8vw] bg-green-300 rounded-sm min-h-[6vh] md:min-h-[10vh] p-[.4vh] md:p-[.5vw] gap-[.4vh] text-zinc-700"
                        >
                          <Icon className="size-4 md:size-8" />
-                         <span className="text-[1.1vh] md:text-[1.2vw] font-semibold leading-none">
+                         <span className="text-[1.2vh] md:text-[1.2vw] font-semibold leading-none">
                            {title || "N/A"}
                          </span>
-                         <span className="text-[.7vh] md:text-[.8vw] font-medium leading-none">
+                         <span className="text-[.8vh] md:text-[.8vw] font-medium leading-none">
                            {subtitle || "N/A"}
                          </span>
                        </div>
@@ -130,7 +131,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
 
         <div className="flex gap-[.5vh] md:h-[5vh] lg:h-[6vh] h-[3.5vh] mt-[1.2vh] md:mt-[1vw] items-center bg-green-200 rounded-r-sm"> 
             <div className='bg-prime h-full md:w-[1vh] w-[.8vh] rounded-sm'></div>
-             <h3 className='text-[1.6vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold text-zinc-600 '>Specification</h3> 
+             <h3 className='text-[1.7vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold text-zinc-600 '>Specification</h3> 
         </div>
 
 
@@ -150,12 +151,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -180,12 +181,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -210,12 +211,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -239,12 +240,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -267,12 +268,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -299,12 +300,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.                  4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.                  4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -327,12 +328,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -357,12 +358,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -386,12 +387,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -414,12 +415,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -443,12 +444,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -472,12 +473,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>
@@ -501,12 +502,12 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     ].map((item, index) => (
                     <div
                         key={index}
-                        className={`text-[1.1vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
+                        className={`text-[1.4vh] md:text-[1vw] lg:text-[1vw] text-zinc-600 px-2 py-1 flex  md:flex-row gap-[.4vh] md:gap-[.4vw] ${
                         item.bg ?? ''
                         }`}
                     >
                         <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
-                        <p className="text-[1vh] md:text-[.9vw] font-medium break-words whitespace-normal">{item.value}</p>
+                        <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
                 </div>

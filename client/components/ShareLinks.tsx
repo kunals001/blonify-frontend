@@ -29,19 +29,19 @@ const ShareLinks = ({ className }: { className?: string }) => {
 
         {/* Instagram */}
         <a href={shareLinks.instagram} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-instagram-logo.svg?updatedAt=1747225348664" alt="Instagram" className="w-[2vh] h-[2vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
+          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-instagram-logo.svg?updatedAt=1747225348664" alt="Instagram" className="w-[2.6vh] h-[2.6vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Instagram</span>
         </a>
 
         {/* Facebook */}
         <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-facebook.svg?updatedAt=1747225348707" alt="Facebook" className="w-[2vh] h-[2vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
+          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-facebook.svg?updatedAt=1747225348707" alt="Facebook" className="w-[2vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Facebook</span>
         </a>
 
         {/* WhatsApp */}
         <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-whatsapp.svg?updatedAt=1747225348817" alt="WhatsApp" className="w-[2vh] h-[2vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
+          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-whatsapp.svg?updatedAt=1747225348817" alt="WhatsApp" className="w-[3vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
           <span className='hidden md:block text-[.9vw] text-zinc-700'>WhatsApp</span>
         </a>
 
