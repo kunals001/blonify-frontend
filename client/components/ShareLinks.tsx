@@ -1,6 +1,7 @@
 import { Send, Copy } from 'lucide-react'
 import React, { useState } from 'react'
 import ImageKit from './Image'
+import Link from 'next/link';
 
 const ShareLinks = ({ className }: { className?: string }) => {
   const url = typeof window !== "undefined" ? window.location.href : "";
@@ -28,22 +29,22 @@ const ShareLinks = ({ className }: { className?: string }) => {
       <div className="md:w-[10vw] w-full flex md:flex-col flex-row md:px-[.5vw] rounded-md cursor-pointer gap-[.5vh] md:gap-[.3vw]">
 
         {/* Instagram */}
-        <a href={shareLinks.instagram} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-instagram-logo.svg?updatedAt=1747225348664" alt="Instagram" className="w-[2.6vh] h-[2.6vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
+        <Link href={shareLinks.instagram} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
+          <ImageKit src="/icons8-instagram-logo.svg" alt="Instagram share" className="w-[2.6vh] h-[2.6vh] md:w-[1.5vw] md:h-[1.5vw]" w={20} h={20} />
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Instagram</span>
-        </a>
+        </Link>
 
         {/* Facebook */}
-        <a href={shareLinks.facebook} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-facebook.svg?updatedAt=1747225348707" alt="Facebook" className="w-[2vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
+        <Link href={shareLinks.facebook} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
+          <ImageKit src="/icons8-facebook.svg" alt="Facebook share" className="w-[2vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={20} h={20} />
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Facebook</span>
-        </a>
+        </Link>
 
         {/* WhatsApp */}
-        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="https://ik.imagekit.io/8jagcyqun/icons8-whatsapp.svg?updatedAt=1747225348817" alt="WhatsApp" className="w-[3vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={50} h={50} />
+        <Link href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
+          <ImageKit src="/icons8-whatsapp.svg" alt="WhatsApp share" className="w-[3vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={20} h={20} />
           <span className='hidden md:block text-[.9vw] text-zinc-700'>WhatsApp</span>
-        </a>
+        </Link>
 
         {/* Copy Link Button */}
         <button onClick={copyLink} className='flex items-center mt-1 rounded-md hover:bg-green-200 gap-[.2vw] px-1 py-[.3vh]'>

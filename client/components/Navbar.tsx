@@ -96,14 +96,14 @@ const Navbar = () => {
 
         {/*  Logo */}
 
-        <Link href="/"><div  className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
-            <ImageKit w={50} h={50} src="https://ik.imagekit.io/8jagcyqun/logo.svg?updatedAt=1748001400021" alt="logo" className='w-[3.5vh] h-[3.5vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
+        <Link href="/"><div className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
+            <ImageKit w={30} h={30} src="/logo.svg" alt="logo" className='w-[3.5vh] h-[3.5vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
 
-        <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
-            <ImageKit w={50} h={50} src="https://ik.imagekit.io/8jagcyqun/logo.svg?updatedAt=1748001400021" alt="logo" className='w-[3.2vh] h-[3.2vh]'/>
+        <Link href="/"><div className={`nav-logo-mobile w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
+            <ImageKit w={30} h={30} src="/logo.svg" alt="logo" className='w-[3.2vh] h-[3.2vh]'/>
             <h6 className='font-second text-[2.4vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 

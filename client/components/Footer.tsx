@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
               <Link href="https://blonify.com/" className="flex items-center">
-                  <ImageKit w={20} h={20} src="https://ik.imagekit.io/8jagcyqun/logo.svg?updatedAt=1748001400021" className="h-8 w-8 mr-3" alt="blonify Logo" />
+                  <ImageKit w={20} h={20} src="/logo.svg" className="h-8 w-8 mr-3" alt="blonify footer Logo" />
                   <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Blonify</span>
               </Link>
           </div>
