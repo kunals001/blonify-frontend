@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import { Profiler, useState } from 'react'
 import {Menu,Search,X} from 'lucide-react'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/authStore'
@@ -97,13 +97,13 @@ const Navbar = () => {
         {/*  Logo */}
 
         <Link href="/"><div  className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
-            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3.5vh] h-[3.5vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
+            <ImageKit w={50} h={50} src="https://ik.imagekit.io/8jagcyqun/logo.svg?updatedAt=1748001400021" alt="logo" className='w-[3.5vh] h-[3.5vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
 
         <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
-            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3.2vh] h-[3.2vh]'/>
+            <ImageKit w={50} h={50} src="https://ik.imagekit.io/8jagcyqun/logo.svg?updatedAt=1748001400021" alt="logo" className='w-[3.2vh] h-[3.2vh]'/>
             <h6 className='font-second text-[2.4vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
@@ -175,19 +175,18 @@ const Navbar = () => {
         </div>
         ):(
             <div className="">
-
             <div className="flex md:hidden lg:hidden ">
                 <Link href={'/profile'}>
                     <div className='group  relative border-1 border-prime h-[4.5vh] w-[4.5vh] rounded-full flex items-center justify-center '>
                         {user && typeof user.profilePic === 'string' && (
-                                         <Image
-                                           src={user.profilePic}
-                                           alt="User Profile"
-                                           width={100}
-                                           height={100}
-                                           className="rounded-full object-cover"
-                                         />
-                                       )}
+                          <Image
+                            src={user.profilePic}
+                            alt="User Profile"
+                            width={100}
+                            height={100}
+                            className="rounded-full object-cover"
+                          />
+                        )}
                     </div>
                 </Link>
             </div>
@@ -196,14 +195,14 @@ const Navbar = () => {
             <div className={` group relative hidden md:w-[3.2vw] md:h-[3.2vw] lg:w-[3.3vw] lg:h-[3.3vw] rounded-full border-2 border-prime md:flex lg:flex items-center justify-center cursor-pointer `}>
                 <Link href={'/profile'}>
                 {user && typeof user.profilePic === 'string' && (
-                                 <Image
-                                   src={user.profilePic}
-                                   alt="User Profile"
-                                   width={100}
-                                   height={100}
-                                   className="rounded-full object-cover"
-                                 />
-                               )}
+                  <Image
+                    src={user.profilePic}
+                    alt="User Profile"
+                    width={100}
+                    height={100}
+                    className="rounded-full object-cover"
+                  />
+                )}
                 </Link>
 
                 <div className="hidden z-40 md:flex lg:flex absolute bg-zinc-800 rounded-md -right-[11vw] top-[2.5vw] md:px-[1vw] md:py-[.5vw] lg:px-[1vw] lg:py-[.6vw] transform scale-0 group-hover:scale-100 transition-all duration-300 flex-col gap-[.5vh] md:w-[10vw] lg:w-[11vw]">

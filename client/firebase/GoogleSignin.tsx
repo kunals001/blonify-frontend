@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'react-hot-toast'
 import { Loader } from 'lucide-react'
 import { useAuthStore } from '../store/authStore'
+import ImageKit from '@/components/Image'
 
 
 
@@ -41,7 +42,7 @@ const GoogleSignin = () => {
 
   return (
     <div className="">
-    <button onClick={handleClick} className='mt-5 w-full py-[.7vh] px-2 md:px-2 text-white font-bold rounded-lg text-lg md:text-xl focus:outline-none focus:bg-gradient-to-r  from-fourth to-third focus:text-white transition duration-200 hover:cursor-pointer border-2 border-green-300 flex items-center gap-1 justify-center'> <img className='w-[3vh] h-[3vh] md:w-[2vw] md:h-[2vw]' src="/google.svg" alt="Sign Up with Google" />{isLoading ? <Loader className='animate-spin w-6 h-6 mx-auto' /> : "Sign In with Google"}</button>
+    <button onClick={handleClick} className='mt-5 w-full py-[.7vh] px-2 md:px-2 text-white font-bold rounded-lg text-lg md:text-xl focus:outline-none focus:bg-gradient-to-r  from-fourth to-third focus:text-white transition duration-200 hover:cursor-pointer border-2 border-green-300 flex items-center gap-1 justify-center'> <ImageKit w={20} h={20} className='w-[3vh] h-[3vh] md:w-[2vw] md:h-[2vw]' src="https://ik.imagekit.io/8jagcyqun/google.svg?updatedAt=1748070836794" alt="Sign Up with Google" />{isLoading ? <Loader className='animate-spin w-6 h-6 mx-auto' /> : "Sign In with Google"}</button>
     </div>
   )
 }
