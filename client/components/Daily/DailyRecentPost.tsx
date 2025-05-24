@@ -14,11 +14,11 @@ const DailyRecentPost = ({post}:{post :Post}) => {
 
         <div className=" mt-[1vh] px-[1vh] md:px-[1vw] lg:px-[1vw] flex flex-col gap-[.3vh] md:gap-[.2vw] lg:gap-[.2vw]">
 
-            <Link href={`/article/${post?.slug}`} ><h1 className='text-[1.6vh] md:text-[1.7vw] lg:text-[1.7vw] font-second font-semibold text-zinc-700 hover:underline leading-none cursor-pointer'>{post?.title}</h1></Link> 
+            <Link href={`/article/${post?.slug}`} ><h1 className='text-[1.8vh] md:text-[1.7vw] lg:text-[1.7vw] font-second font-semibold text-zinc-700 hover:underline leading-none cursor-pointer'>{post?.title}</h1></Link> 
 
              {/* discription */}
 
-             <p className='text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 w-[25vh] md:w-[30vw] lg:w-[30vw]'>{post?.desc?.slice(0, 130)}
+             <p className='text-[1.2vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 w-[25vh] md:w-[30vw] lg:w-[30vw]'>{post?.desc?.slice(0, 130)}
               <Link href={`/article/${post?.slug}`} ><span className='text-prime text-[1vh] md:text-[1vw] lg:text-[1vw] px-[.5vh] md:px-[.5vw] lg:px-[.5vw] rounded-full cursor-pointer border-1 border-prime ml-[1vh] md:ml-[.5vw] inline-block'>Read more</span></Link>
             </p>
 

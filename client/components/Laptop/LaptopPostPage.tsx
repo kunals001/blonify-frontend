@@ -112,11 +112,11 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                          key={index}
                          className="flex flex-col w-[8vh] md:w-[8vw] bg-green-300 rounded-sm min-h-[6vh] md:min-h-[10vh] p-[.4vh] md:p-[.5vw] gap-[.4vh] text-zinc-700"
                        >
-                         <Icon className="size-4 md:size-8" />
+                         <Icon className="size-5 md:size-8" />
                          <span className="text-[1.3vh] md:text-[1.2vw] font-semibold leading-none">
                            {title || "N/A"}
                          </span>
-                         <span className="text-[.9vh] md:text-[.8vw] font-medium leading-none">
+                         <span className="text-[1vh] md:text-[.8vw] font-medium leading-none">
                            {subtitle || "N/A"}
                          </span>
                        </div>
@@ -141,7 +141,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>LAUNCH</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>LAUNCH</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -169,7 +169,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BODY</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BODY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -198,7 +198,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>DISPLAY</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>DISPLAY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -228,7 +228,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PLATFORM</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PLATFORM</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -257,7 +257,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>MEMORY</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>MEMORY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -285,7 +285,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BATTERY</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>BATTERY</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -317,7 +317,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PERFORMANCE</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>PERFORMANCE</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -345,7 +345,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MAIN CAMERA</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MAIN CAMERA</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -375,7 +375,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SELFIE CAMERA</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SELFIE CAMERA</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -404,7 +404,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SOUND</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>SOUND</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -432,7 +432,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>COMMS</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>COMMS</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -461,7 +461,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>FEATURES</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>FEATURES</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -490,7 +490,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.7vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MICS</h5>
+                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime'>MICS</h5>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">

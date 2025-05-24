@@ -72,7 +72,7 @@ const Navbar = () => {
    }, [searchTerm]);
 
   return (
-    <nav className='z-20 w-full flex items-center h-[5.5vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0'>
+    <nav className='z-20 w-full flex items-center h-[6vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0'>
 
         
         {/*  Mobile Menu */}
@@ -97,19 +97,19 @@ const Navbar = () => {
         {/*  Logo */}
 
         <Link href="/"><div  className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
-            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
+            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3.5vh] h-[3.5vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]'/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
 
         <Link href="/"><div  className={`nav-logo w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
-            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3vh] h-[3vh]'/>
-            <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
+            <ImageKit w={100} h={100} src="/logo.svg" alt="logo" className='w-[3.2vh] h-[3.2vh]'/>
+            <h6 className='font-second text-[2.4vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
         {/* Mobile Search bar */}
 
-        <div className={`relative mobile-search md:hidden lg:hidden flex flex-col w-full overflow-hidden`}>
+        <div className={`relative mobile-search md:hidden lg:hidden flex flex-col w-full items-center justify-center transition-all duration-500 ${isSearch ? 'visible' : 'overflow-hidden'}`} >
             {/* Search Input */}
               <div className='relative w-full'>
                 <input 
@@ -117,22 +117,22 @@ const Navbar = () => {
                   placeholder='Search...'
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className={`relative px-[1.5vh] pt-[.4vh] pb-[.2vw] w-full h-[3.8vh] bg-white outline-none rounded-full transition-all duration-300 ${isSearch ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} border-1 border-green-200 text-zinc-700`}
+                  className={`relative px-[1.5vh] pt-[.4vh] pb-[.2vw] w-full h-[4.2vh] bg-white outline-none rounded-full transition-all duration-300 ${isSearch ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} border-1 border-green-200 text-zinc-700 transition-all duration-300`}
                   name='search'
                 />
-                <div onClick={() => setIsSearch(prev => !prev)} className="rounded-full absolute right-0 top-0 bg-prime w-[4.5vh] flex items-center justify-center h-full">
+                <div onClick={() => setIsSearch(prev => !prev)} className="rounded-full absolute right-0 top-0 bg-prime w-[5vh] flex items-center justify-center h-full">
                   <Search className='text-white'/>
                 </div>
               </div>
 
               {/* Search Results Dropdown */}
               {searchTerm && searchResults.length > 0 && (
-                <div className="absolute z-50 top-[4.5vh] left-0 w-full bg-white border border-zinc-200 shadow-lg rounded-lg max-h-[40vh] overflow-auto">
+                <div className="absolute z-50 top-[4.5vh] left-[0%] w-full bg-white border border-zinc-200 shadow-lg rounded-lg max-h-[40vh] overflow-auto">
                   {searchResults.map((post) => (
                     <div 
                       key={post._id}
                       className="px-4 py-2 text-sm hover:bg-zinc-100 cursor-pointer"
-                      onClick={() => router.push(`/posts/${post._id}`)}
+                      onClick={() => router.push(`/article/${post.slug}`)}
                     >
                       {post.title}
                     </div>
@@ -140,8 +140,13 @@ const Navbar = () => {
                 </div>
               )}
 
-              {/* Optional loading state */}
-              {isLoading && <p className="text-sm text-center text-zinc-500 mt-2">Searching...            </p>}
+              {isLoading && (
+                <div className="absolute z-50 top-[4.5vh] left-[0%] w-full bg-white border border-zinc-200 shadow-lg rounded-lg max-h-[40vh] overflow-auto">
+                  <div className="px-4 py-2 text-prime text-sm hover:bg-zinc-100 cursor-pointer">
+                    Loading...
+                  </div>
+                </div>
+              )}
             </div>
 
 
@@ -164,7 +169,7 @@ const Navbar = () => {
 
         {!user?(
              <div className=" flex md:gap-[.6vw] lg:gap-[.5vw]">
-        <Link href={'/signin'}><button className='group  relative text-zinc-800 px-[1vh] py-[.4vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.7vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-all duration-200'>Signin</button></Link>
+        <Link href={'/signin'}><button className='group  relative text-zinc-800 px-[1vh] py-[.5vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.8vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-all duration-200'>Signin</button></Link>
 
         <Link href={'/signup'}><button className='group hidden md:block lg:block relative text-zinc-800 px-[1vh] py-[.4vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.7vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-ease duration-200'>Signup</button></Link>
         </div>

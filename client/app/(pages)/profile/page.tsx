@@ -55,7 +55,7 @@ const Page = () => {
         <div className="w-full md:w-[35vw] lg:w-[35vw] p-[1vh] md:p-[1vw] lg:p-[1vw] rounded-xl bg-green-200">
             <h1 className="text-[2.6vh] md:text-[2vw] lg:text-[2vw] font-semibold text-zinc-700 leading-none text-center select-none">Hello, {user?.name}</h1>
 
-            <div className=" pt-[1vh] md:pt-[.7vw] lg:pt-[.7vw]  w-[10vh] h-[10vh] md:w-[6vw] md:h-[6vw] lg:w-[6vw] lg:h-[6vw] relative mx-auto pb-1">
+            <div className=" pt-[1vh] md:pt-[.7vw] lg:pt-[.7vw] pb-[10vh] md:pb-[1vh] w-[10vh] h-[10vh] md:w-[6vw] md:h-[6vw] lg:w-[6vw] lg:h-[6vw] relative mx-auto ">
 
               {user && typeof user.profilePic === 'string' && (
                  <Image
