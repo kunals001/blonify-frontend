@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel"
 import FeaturedCarsol from './FeaturedCarsol';
 import type{Post} from "@/app/page"
+import { Skeleton } from './ui/skeleton';
 
 
 const FeaturedPost = ({posts}: {posts: Post[]}) => {
@@ -40,7 +41,7 @@ const FeaturedPost = ({posts}: {posts: Post[]}) => {
            <CarouselNext className='hidden md:block lg:block cursor-pointer'/>
         </Carousel>
         ) :(
-          <h1>No Featured Post</h1>
+          <Skeleton className='w-full h-[24vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl bg-green-200' />
         )}
 
     </div>

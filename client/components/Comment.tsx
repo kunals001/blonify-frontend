@@ -60,7 +60,7 @@ const Comment = ({ comment }: CommentProps) => {
         {user?.isAdmin === true && (
           <button
             onClick={() => handleDelete(comment._id)}
-            className='text-red-500 cursor-pointer'
+            className='text-red-500 cursor-pointer text-[1.3vh]'
           >
             Delete
           </button>

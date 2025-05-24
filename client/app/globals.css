@@ -106,8 +106,8 @@ body{
 @media (max-width: 768px) {
   .post-content p {
     font-family: var(--font-second);
-    font-size: 1.7vh;
-    line-height: 1.2;
+    font-size: 1.8vh;
+    line-height: 1.3;
     margin-top: .7vh;
     color: rgb(50, 50, 50);
   }
@@ -116,29 +116,29 @@ body{
   border-radius: 1.5vh;
   object-fit: cover;
   width: 100%;
-  height: 24vh;
+  height: 25vh;
   }
    .post-content h2{
   font-family: var(--font-prime);
-  font-size: 2.2vh;
+  font-size: 2.4vh;
   margin-top: .7vh;
   font-weight: 600;
 }
 .post-content h3{
   font-family: var(--font-prime);
-  font-size: 2.2vh;
+  font-size: 2.3vh;
   margin-top: .7vh;
   font-weight: 600;
 }
 .post-content h4{
   font-family: var(--font-prime);
-  font-size: 2vh;
+  font-size: 2.1vh;
   margin-top: .7vh;
   font-weight: 500;
 }
 .post-content h5{
   font-family: var(--font-prime);
-  font-size: 1.8vh;
+  font-size: 1.9vh;
   margin-top: .7vh;
   font-weight: 400;
 }
