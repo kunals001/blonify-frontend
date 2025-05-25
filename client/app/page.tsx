@@ -6,8 +6,10 @@ import FeaturedPost from "@/components/FeaturedPost"
 import PostList from "@/components/PostList"
 import MobileCategories from "@/components/MobileCategories"
 import ShareLinks from "@/components/ShareLinks"
-import Navigate from "@/components/navigate"
 import WebHeadline from "@/components/WebHeadline"
+import dynamic from 'next/dynamic'
+
+const Navigate = dynamic(() => import('@/components/navigate'), { ssr: false })
 
 
 

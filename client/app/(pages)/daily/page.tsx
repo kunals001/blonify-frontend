@@ -2,9 +2,11 @@
 
 import DailyRecent from "@/components/Daily/DailyRecent";
 import DailyTrending from "@/components/Daily/DailyTrending";
-import NavigationBreadcrumb from "@/components/navigate";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import dynamic from 'next/dynamic'
+
+const NavigationBreadcrumb = dynamic(() => import('@/components/navigate'), { ssr: false })
 
 export type Post = {
   coverImg: string | File | null;

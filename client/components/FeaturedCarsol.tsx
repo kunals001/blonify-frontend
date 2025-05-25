@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import ImageKit from './Image';
-import Head from 'next/head';
 
 interface Post {
   _id: string;
@@ -15,10 +14,6 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
 
   return (
     <>
-     <Head>
-      <title>{post?.title}</title>
-      <link rel="preload" as='image' href={`${post?.coverImg}`} type='image/webp'/>
-    </Head>
     <div className='md:relative w-full overflow-hidden rounded-xl flex flex-row md:block gap-[1vh] md:gap-0 bg-gradient-to-b from-transparent to-green-200'>
         <Link href={`/article/${post?.slug}`}>
             <ImageKit 
@@ -28,7 +23,6 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
               alt={post?.altText}
               className="w-[16vh] md:w-full md:relative block h-[11.5vh] md:h-[30vw] rounded-xl object-cover overflow-hidden"
               loading="eager"
-              priority={true}
               />
           </Link>
 

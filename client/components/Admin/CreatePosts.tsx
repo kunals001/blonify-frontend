@@ -1,6 +1,5 @@
 "use client"
 import ProtectedAdminRoute from '@/components/AdminProtect'
-import SunEditor from '@/components/SunEditor'
 import { LetterText, Pen, SquarePen } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { usePostStore } from '@/store/postStore'
@@ -10,6 +9,9 @@ import Upload from '@/components/upload'
 import { useAuthStore } from '@/store/authStore'
 import MobilePost from '../MobilePost'
 import InputPost from '../InputPost'
+import dynamic from 'next/dynamic'
+
+const SunEditor = dynamic(() => import('@/components/SunEditor'), { ssr: false })
 
 
 const Page = () => {
