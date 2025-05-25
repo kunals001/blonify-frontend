@@ -3,8 +3,11 @@ import DesktopCategories from "@/components/DesktopCategories"
 import WebHeadline from "@/components/WebHeadline"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import dynamic from "next/dynamic"
-import { Skeleton } from "@/components/ui/skeleton"
+import FeaturedPost from "@/components/FeaturedPost"
+import PostList from "@/components/PostList"
+import MobileCategories from "@/components/MobileCategories"
+import ShareLinks from "@/components/ShareLinks"
+import Navigate from "@/components/navigate"
 
 
 export type Post = {
@@ -23,32 +26,6 @@ export type Post = {
   islaptop?: boolean;
   isdaily?: boolean;
 };
-
-const FeaturedPost = dynamic(() => import('@/components/FeaturedPost'), {
-  ssr: false,
-  loading: () => <Skeleton className='w-full h-[26vh] md:w-full md:h-[15vw] lg:w-full lg:h-[26.5vw] rounded-xl bg-green-200' /> 
-});
-
-const PostList = dynamic(() => import('@/components/PostList'), {
-  ssr: false,
-  loading: () => <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' /> 
-});
-
-const MobileCategories = dynamic(() => import('@/components/MobileCategories'), {
-  ssr: false,
-  loading: () => <Skeleton className='w-full h-[3vh] rounded-lg bg-green-200' /> 
-});
-
-const ShareLinks = dynamic(() => import('@/components/ShareLinks'), {
-  ssr: false,
-  loading: () => <Skeleton className='w-full h-[3vh] md:h-[8vw] rounded-lg bg-green-200' /> 
-});
-
-const Navigate = dynamic(() => import('@/components/navigate'), {
-  ssr: false,
-  loading: () => <Skeleton className='w-full h-[1vh] md:h-[1vw] rounded-lg bg-green-200' /> 
-});
-
 
 const Page = () => {
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
