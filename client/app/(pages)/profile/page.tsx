@@ -71,7 +71,6 @@ const Page = () => {
 
             <form onSubmit={handleUpdate} className='flex flex-col w-full mt-[1vh] md:mt-[.8vw] lg:mt-[.8vw]'>
                 <div className="relative w-full flex items-center justify-center">
-                  <label htmlFor='user name' className='sr-only'>Name</label>
                     <input type="name" placeholder={user?.name} value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} className='w-full px-[2.8vh] md:px-[2vw] lg:px-[2vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-lg text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative' />
 
                     <User className='absolute text-prime left-0 pl-[.5vh] md:pl-[.5vw] lg:pl-[.5vw] cursor-pointer size-6 md:size-8 lg:size-8'/>
@@ -79,7 +78,7 @@ const Page = () => {
 
                  <div className="relative w-full flex items-center justify-center pt-[.7vh] md:pt-[.5vw] lg:pt-[.5vw]">
 
-                  <label htmlFor='user password' className='sr-only'>Password</label>
+                  
                     <input type="password" placeholder={"Set new password"} value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} className='w-full px-[2.8vh] md:px-[2vw] lg:px-[2vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-lg text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative' />
 
                     <Lock className='absolute text-prime left-0 pl-[.5vh] md:pl-[.5vw] lg:pl-[.5vw] cursor-pointer size-6 md:size-8 lg:size-8'/>
@@ -88,9 +87,9 @@ const Page = () => {
                 {error && <p className='text-sm text-red-500 '>{error}</p>}
 
                 <div className="flex items-center justify-between pt-[1vh] md:pt-[.8vw] lg:pt-[.8vw] px-[1vh] md:px-[.5vw] lg:px-[.5vw]">
-                   <button aria-label='Update User' type='submit' className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-prime px-[1.3vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-green-600 py-[.8vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Update User'}</button>
+                   <button type='submit' className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-prime px-[1.3vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-green-600 py-[.8vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Update User'}</button>
 
-                  <button aria-label='Logout' onClick={handlelogout} disabled={isLoading} className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-red-500 px-[1.3vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-red-600 py-[.8vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Logout'}</button>
+                  <button onClick={handlelogout} disabled={isLoading} className='text-[1.3vh] md:text-[1vw] lg:text-[1vw] font-second font-semibold text-zinc-200 bg-red-500 px-[1.3vh] md:px-[.5vw] lg:px-[.5vw] cursor-pointer hover:bg-red-600 py-[.8vh] md:py-[.2vw] lg:py-[.2vw] rounded-md'>{isLoading ? <Loader className='animate-spin mx-auto size-5 md:size-6 lg:size-7'/> : 'Logout'}</button>
                 </div>
                 
             </form>

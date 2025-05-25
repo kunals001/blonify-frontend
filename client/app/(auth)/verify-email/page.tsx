@@ -47,7 +47,7 @@ const Page = () => {
           </h1>
 
           <form onSubmit={handleSubmit} className="flex flex-col w-full relative mt-[1vh]">
-            <label htmlFor="verify-email" className="sr-only">Verify Email Address</label>
+
             <Input
               icon={Mail}
               type="text"
@@ -59,7 +59,6 @@ const Page = () => {
             {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
 
             <motion.button
-              aria-label="verify-email"
               whileHover={{ scale: 1.003 }}
               whileTap={{ scale: 0.95 }}
               type="submit"

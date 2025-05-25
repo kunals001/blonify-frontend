@@ -19,20 +19,19 @@ const Page = () => {
         We&rsquo;re available online — anytime, anywhere!
       </p>
 
-      <form className='w-full md:w-[40vw] flex flex-col pt-[1vh] md:pt-[1vw]'>
-        <label htmlFor='name' className='sr-only'>Name</label>
+      <form className='w-full md:w-[40vw] flex flex-col gap-[1vh] md:gap-[.5vw] pt-[1vh] md:pt-[1vw]'>
+
         <InputPost type="text" placeholder="Enter your name" />
 
-        <label htmlFor='name' className='sr-only'>Email</label>
+
         <InputPost  type="text" placeholder="Email address" />
 
-        <label htmlFor='content' className='sr-only'>content</label>
         <textarea
           placeholder='Enter your message'
-          className='w-full h-[15vh] rounded-2xl px-4 py-2 bg-white bg-opacity-30'
+          className='w-full h-[15vh] rounded-2xl px-4 py-2 bg-white bg-opacity-30 resize-none text-zinc-800'
         />
 
-        <button aria-label='contact' type='submit' className='w-full bg-prime text-white py-2 rounded-2xl mt-4'>
+        <button type='submit' className='w-full bg-prime text-white py-2 rounded-2xl mt-4'>
           Send
         </button>
       </form>

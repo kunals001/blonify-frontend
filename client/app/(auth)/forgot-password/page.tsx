@@ -50,7 +50,7 @@ const Page = () => {
 
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="flex flex-col w-full relative mt-[1vh]">
-              <label htmlFor="email" className="sr-only">Email Address</label>
+
               <Input
                 icon={Mail}
                 type="email"
