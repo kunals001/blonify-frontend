@@ -50,6 +50,7 @@ const Page = () => {
           </h2>
 
           <form onSubmit={handleSignup} className="flex flex-col w-full relative mt-[1vh]">
+            <label htmlFor="email" className="sr-only">Email Address</label>
             <Input
               icon={Mail}
               type="email"
@@ -57,6 +58,8 @@ const Page = () => {
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             />
+
+            <label htmlFor="password" className="sr-only">password</label>
             <Input
               icon={Lock}
               type="password"
@@ -72,6 +75,7 @@ const Page = () => {
             {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
 
             <motion.button
+              aria-label="Sign In"
               className="mt-5 w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 outline-none focus:ring-2 focus:ring-green-500 transition duration-200 cursor-pointer"
               whileHover={{ scale: 1.003 }}
               whileTap={{ scale: 0.98 }}

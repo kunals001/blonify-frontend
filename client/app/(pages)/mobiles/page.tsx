@@ -89,6 +89,7 @@ const Page = () => {  // <-- Uppercase 'P'
             {totalPages > 1 && (
               <div className="flex justify-center gap-3 mt-4">
                 <button
+                  aria-label='Previous'
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
                   className={`px-3 py-1 rounded ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white hover:bg-blue-600'}`}
@@ -101,6 +102,7 @@ const Page = () => {  // <-- Uppercase 'P'
                 </span>
 
                 <button
+                  aria-label='Next'
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
                   className={`px-3 py-1 rounded ${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white hover:bg-blue-600'}`}

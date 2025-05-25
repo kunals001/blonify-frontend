@@ -76,10 +76,10 @@ const Navbar = () => {
         
         {/*  Mobile Menu */}
         <div className="menu lg:hidden md:hidden flex items-center relative justify-center">
-            <Menu className='w-[3.5vh] h-[3.5vh] text-zinc-700 p-[1vw] rounded-md bg-green-200' onClick={() => setIsOpen(true)}/>
+            <Menu aria-label="Open menu" className='w-[3.5vh] h-[3.5vh] text-zinc-700 p-[1vw] rounded-md bg-green-200' onClick={() => setIsOpen(true)}/>
 
             <div className={` w-[16vh] h-[100vh] bg-green-200 transition-all duration-300 absolute -top-[1.1vh] -left-[1.1vh] z-10 ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-                <X className='absolute top-[1vh] right-[1vh] w-[3.5vh] h-[3.5vh] text-zinc-700 p-[1vw] rounded-md bg-green-100' onClick={() => setIsOpen(false)}/>
+                <X aria-label="Close menu" className='absolute top-[1vh] right-[1vh] w-[3.5vh] h-[3.5vh] text-zinc-700 p-[1vw] rounded-md bg-green-100' onClick={() => setIsOpen(false)}/>
 
                 <ul className='flex flex-col gap-[.5vh] items-center justify-center px-[3vh] pt-[10vh] w-[16vh]'>
                     {BarMenu.map((item)=>(
@@ -111,6 +111,7 @@ const Navbar = () => {
         <div className={`relative mobile-search md:hidden lg:hidden flex flex-col w-full items-center justify-center transition-all duration-500 ${isSearch ? 'visible' : 'overflow-hidden'}`} >
             {/* Search Input */}
               <div className='relative w-full'>
+                <label htmlFor="search" className="sr-only">Search</label>
                 <input 
                   type="text" 
                   placeholder='Search...'
@@ -119,9 +120,9 @@ const Navbar = () => {
                   className={`relative px-[1.5vh] pt-[.4vh] pb-[.2vw] w-full h-[4.2vh] bg-white outline-none rounded-full transition-all duration-300 ${isSearch ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} border-1 border-green-200 text-zinc-700 transition-all duration-300`}
                   name='search'
                 />
-                <div onClick={() => setIsSearch(prev => !prev)} className="rounded-full absolute right-0 top-0 bg-prime w-[5vh] flex items-center justify-center h-full">
+                <button aria-label='Search open' onClick={() => setIsSearch(prev => !prev)} className="rounded-full absolute right-0 top-0 bg-prime w-[5vh] flex items-center justify-center h-full">
                   <Search className='text-white'/>
-                </div>
+                </button>
               </div>
 
               {/* Search Results Dropdown */}
@@ -176,7 +177,7 @@ const Navbar = () => {
             <div className="">
             <div className="flex md:hidden lg:hidden ">
                 <Link href={'/profile'}>
-                    <div className='group  relative border-1 border-prime h-[4.5vh] w-[4.5vh] rounded-full flex items-center justify-center '>
+                    <div aria-label='User Profile' className='group  relative border-1 border-prime h-[4.5vh] w-[4.5vh] rounded-full flex items-center justify-center '>
                         {user && typeof user.profilePic === 'string' && (
                           <Image
                             src={user.profilePic}

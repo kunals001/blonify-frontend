@@ -95,6 +95,7 @@ const Page = () => {
         {filteredPosts.length > postsPerPage && (
           <div className="flex justify-center items-center gap-4 mt-4">
             <button
+              aria-label='Previous Page'
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
               className={`px-3 py-1 rounded ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'bg-prime text-white'}`}
@@ -107,6 +108,7 @@ const Page = () => {
             </span>
 
             <button
+              aria-label='Next Page'
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
               className={`px-3 py-1 rounded ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'bg-prime text-white'}`}

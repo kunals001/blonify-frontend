@@ -50,6 +50,7 @@ const Page = () => {
 
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="flex flex-col w-full relative mt-[1vh]">
+              <label htmlFor="email" className="sr-only">Email Address</label>
               <Input
                 icon={Mail}
                 type="email"
@@ -61,6 +62,7 @@ const Page = () => {
               {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
 
               <motion.button
+                aria-label='forgot-password'
                 whileHover={{ scale: 1.003 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
