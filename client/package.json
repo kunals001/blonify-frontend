@@ -6,8 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@imagekit/next": "^2.1.2",
@@ -35,7 +34,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@next/bundle-analyzer": "^15.4.0-canary.51",
     "@tailwindcss/postcss": "^4",
     "@types/draft-js": "^0.11.18",
     "@types/node": "^20",

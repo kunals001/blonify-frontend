@@ -31,7 +31,7 @@ const FeaturedPost = ({posts}: {posts: Post[]}) => {
             {posts
               .filter((post: Post) => post.isFeatured)
               .map((post: Post, index: number) => (
-                <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/2'>
+                <CarouselItem key={index} >
                   <FeaturedCarsol post={post} />
                 </CarouselItem>
             ))}
