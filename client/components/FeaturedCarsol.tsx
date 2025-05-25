@@ -16,7 +16,7 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
         <Link href={`/article/${post?.slug}`}><ImageKit w={1200} h={800} src={post?.coverImg}
               alt={post?.altText}
               className="w-full relative h-[26.5vh] md:h-[31vw] lg:h-[31vw] rounded-xl object-cover overflow-hidden"
-              priority={true}
+              
               /></Link>
 
               <div className="absolute bottom-0 w-full md:h-[5vw] h-[6vh] flex gap-[1vh] rounded-b-xl md:px-[1vw] px-[1vh] md:py-[1vw] py-[1vh] items-center bg-gradient-to-b backdrop-blur-sm from-transparent to-zinc-400">
