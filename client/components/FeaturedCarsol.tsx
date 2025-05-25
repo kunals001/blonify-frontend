@@ -20,7 +20,7 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
         <link
           rel="preload"
           as="image"
-          href={`${post.coverImg}?tr=w-500,h-400,fo-auto,f-webp,q-70`}
+          href={`${process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}/${post.coverImg}?tr=w-500,h-400,fo-auto,f-webp,q-70`}
           type="image/webp"
         />
       </Head>
