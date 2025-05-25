@@ -1,6 +1,6 @@
 import { Send, Copy } from 'lucide-react'
 import React, { useState } from 'react'
-import ImageKit from './Image'
+import Image from 'next/image'
 import Link from 'next/link';
 
 const ShareLinks = ({ className }: { className?: string }) => {
@@ -30,19 +30,19 @@ const ShareLinks = ({ className }: { className?: string }) => {
 
         {/* Instagram */}
         <Link href={shareLinks.instagram} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="/icons8-instagram-logo.svg" alt="Instagram share" className="w-[2.6vh] h-[2.6vh] md:w-[1.5vw] md:h-[1.5vw]" w={20} h={20} />
+          <Image src="/instagram.svg" alt="Instagram share" className="w-[2.6vh] h-[2.6vh] md:w-[1.5vw] md:h-[1.5vw]" width={20} height={20} priority/>
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Instagram</span>
         </Link>
 
         {/* Facebook */}
         <Link href={shareLinks.facebook} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="/icons8-facebook.svg" alt="Facebook share" className="w-[2vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={20} h={20} />
+          <Image src="/facebook.svg" alt="Facebook share" className="w-[2vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" width={20} height={20} priority/>
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Facebook</span>
         </Link>
 
         {/* WhatsApp */}
         <Link href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw]'>
-          <ImageKit src="/icons8-whatsapp.svg" alt="WhatsApp share" className="w-[3vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" w={20} h={20} />
+          <Image src={"/whatsapp.svg"} alt="WhatsApp share" className="w-[3vh] h-[3vh] md:w-[1.5vw] md:h-[1.5vw]" width={20} height={20} priority/>
           <span className='hidden md:block text-[.9vw] text-zinc-700'>WhatsApp</span>
         </Link>
 

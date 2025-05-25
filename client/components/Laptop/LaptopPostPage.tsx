@@ -91,7 +91,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     </h2>
                   <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg flex flex-col gap-[2vh] md:gap-[1vw] ">
                          <div className="">
-                            <ImageKit w={800} h={800} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[23vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' />
+                            <ImageKit w={1200} h={800} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' />
                          </div>
 
                          <div className="flex gap-[1vh] md:gap-[1vw] text-zinc-700">

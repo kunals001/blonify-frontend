@@ -8,15 +8,16 @@ interface ImageKitProps {
   w: number;
   h: number;
   alt: string;
+  priority?: boolean;
 }
 
-const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt }) => {
+const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt, priority  }) => {
   return (
     <IKImage
       src={src}
       urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}
       className={className}
-      loading="lazy"
+      loading={priority ? 'eager' : 'lazy'} // 👈 Use 'eager' for LCP
       alt={alt}
       width={w}
       height={h}
@@ -27,6 +28,7 @@ const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt }) => {
         },
       ]}
     />
+
   );
 };
 

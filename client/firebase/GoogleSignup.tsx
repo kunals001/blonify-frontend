@@ -43,7 +43,6 @@ const GoogleSignup = () => {
   return (
     <div className="google-signup">
     <button onClick={handleClick} className='mt-5 w-full py-[.7vh] px-2 md:px-2 text-white font-bold rounded-lg text-lg md:text-xl focus:outline-none focus:bg-gradient-to-r  from-fourth to-third focus:text-white transition duration-200 hover:cursor-pointer border-2 border-green-300 flex items-center gap-1 justify-center'> <img className='w-[3vh] h-[3vh] md:w-[2vw] md:h-[2vw]' src="/google.svg" alt="Sign Up with Google" />Sign Up with Google</button>
-    
     </div>
   )
 }
