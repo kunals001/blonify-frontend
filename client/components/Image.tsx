@@ -26,7 +26,7 @@ const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt, priority
           width: w,
           height: h,
           format: 'webp',
-          quality: 80,
+          quality: 70,
         },
       ]}
     />
