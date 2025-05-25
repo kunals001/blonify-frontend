@@ -1,7 +1,6 @@
 import React from 'react'
 import FeaturedCarsol from './FeaturedCarsol';
 import type{Post} from "@/app/page"
-import { Skeleton } from './ui/skeleton';
 
 
 const FeaturedPost = ({posts}: {posts: Post[]}) => {
@@ -28,7 +27,7 @@ const FeaturedPost = ({posts}: {posts: Post[]}) => {
             ))}
             </div>
         ) :(
-          <Skeleton className='w-full h-[26vh] md:w-full md:h-[15vw] lg:w-full lg:h-[26.5vw] rounded-xl bg-green-200' />
+          <h1>Loading...</h1>
         )}
 
     </div>

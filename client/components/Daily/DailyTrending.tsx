@@ -10,7 +10,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 import type { Post } from "@/app/(pages)/daily/page";
-import { Skeleton } from '../ui/skeleton';
 
 const DailyTrending = ({ posts }: { posts: Post[] }) => {
   
@@ -51,7 +50,7 @@ const DailyTrending = ({ posts }: { posts: Post[] }) => {
           <CarouselNext className='hidden md:block lg:block' />
         </Carousel>
       ) : (
-        <Skeleton className='w-full h-[26vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl bg-green-200' />
+        <h1>Loading...</h1>
       )}
     </div>
   );
