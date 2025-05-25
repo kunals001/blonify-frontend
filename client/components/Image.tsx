@@ -7,7 +7,7 @@ interface ImageKitProps {
   w: number;
   h: number;
   alt: string;
-  priority?: boolean; // ← Add this
+  priority?: boolean; 
 }
 
 const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt, priority }) => {
