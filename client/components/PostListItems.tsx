@@ -10,7 +10,7 @@ const PostListItems = ({post}:{post:Post}) => {
     <>
     <Head>
       <title>{post?.title}</title>
-      <link rel="preload" as='image' href={`${post?.coverImg}`} type='image/webp'/>
+      <link fetchPriority='high' rel="preload" as='image' href={`${post?.coverImg}`} type='image/webp'/>
     </Head>
     <div className='w-full flex gap-[1vh] md:gap-[.5vw] lg:gap-[.5vw] relative'>
 
