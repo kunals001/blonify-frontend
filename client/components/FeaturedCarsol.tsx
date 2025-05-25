@@ -17,10 +17,9 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
             <ImageKit 
               w={600} 
               h={400} 
-              src={post?.coverImg as string}
-              alt={post?.altText as string}
+              src={post?.coverImg}
+              alt={post?.altText}
               className="w-full relative h-[26.5vh] md:h-[30vw] lg:h-[30vw] rounded-xl object-cover overflow-hidden"
-              priority={true}
               />
             </Link>
 
