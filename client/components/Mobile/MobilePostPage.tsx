@@ -78,6 +78,11 @@ const MobilePostPage = ({post}:{post:Post}) => {
         {/* Mobile Share */}
         <ShareLinks className="md:hidden lg:hidden flex md:flex-col flex-row gap-[1vh] md:gap-[.5vw] items-center md:items-start pb-[1vh]"/>
 
+
+        <div className="py-[1vh] md:py-[.7vw]">
+        <ImageKit w={1200} h={800} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' />
+        </div>
+
         {/* Featured Card And Info */}
 
         <div className="w-full overflow-hidden relative">
