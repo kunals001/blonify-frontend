@@ -1,15 +1,11 @@
 "use client"
-import FeaturedPost from "@/components/FeaturedPost"
-import PostList from "@/components/PostList"
 import DesktopCategories from "@/components/DesktopCategories"
 import WebHeadline from "@/components/WebHeadline"
-import MobileCategories from "@/components/MobileCategories"
-import Navigate from "@/components/navigate"
-import ShareLinks from "@/components/ShareLinks"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import dynamic from "next/dynamic"
+import { Skeleton } from "@/components/ui/skeleton"
 
-// /types/Post.ts
 
 export type Post = {
   coverImg: string; // ✅ Only allow string if that's what's expected in components
@@ -28,7 +24,30 @@ export type Post = {
   isdaily?: boolean;
 };
 
+const FeaturedPost = dynamic(() => import('@/components/FeaturedPost'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-[26vh] md:w-full md:h-[15vw] lg:w-full lg:h-[26.5vw] rounded-xl bg-green-200' /> 
+});
 
+const PostList = dynamic(() => import('@/components/PostList'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' /> 
+});
+
+const MobileCategories = dynamic(() => import('@/components/MobileCategories'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-[3vh] rounded-lg bg-green-200' /> 
+});
+
+const ShareLinks = dynamic(() => import('@/components/ShareLinks'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-[3vh] md:h-[8vw] rounded-lg bg-green-200' /> 
+});
+
+const Navigate = dynamic(() => import('@/components/navigate'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-[1vh] md:h-[1vw] rounded-lg bg-green-200' /> 
+});
 
 
 const Page = () => {

@@ -3,11 +3,28 @@
 import React, { useEffect, useState } from 'react';
 import ProtectedAdminRoute from '@/components/AdminProtect';
 import DashSidebar from '@/components/Admin/DashSidebar';
-import CreatePosts from '@/components/Admin/CreatePosts';
 import { useSearchParams } from 'next/navigation';
-import DashPosts from '@/components/Admin/DashPosts';
-import DashUsers from '@/components/Admin/DashUsers';
-import DashCommets from '@/components/Admin/DashCommets';
+import dynamic from 'next/dynamic';
+
+const DashPosts = dynamic(() => import('@/components/Admin/DashPosts'), {
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
+
+const DashUsers = dynamic(() => import('@/components/Admin/DashUsers'), {
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
+
+const DashCommets = dynamic(() => import('@/components/Admin/DashCommets'), {
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
+
+const CreatePosts = dynamic(() => import('@/components/Admin/CreatePosts'), {
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
 
 const Page = () => {
   const searchParams = useSearchParams();

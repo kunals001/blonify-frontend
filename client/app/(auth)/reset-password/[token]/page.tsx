@@ -1,7 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import AUTHLAYOUT from '@/components/AuthLayout';
-import { motion } from 'framer-motion'
 import Input from '@/components/Input'
 import { Lock, Loader } from 'lucide-react';
 import { toast } from 'react-hot-toast'
@@ -42,8 +41,7 @@ const Page = () => {
 
     return (
       <AUTHLAYOUT>
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }} className="w-[95vw] rounded-2xl md:w-[30vw] lg:w-[32vw] backdrop-filter backdrop-blur-xl flex flex-col items-center justify-center bg-gray-700 bg-opacity-30 relative overflow-hidden">
+        <div className="w-[95vw] rounded-2xl md:w-[30vw] lg:w-[32vw] backdrop-filter backdrop-blur-xl flex flex-col items-center justify-center bg-gray-700 bg-opacity-30 relative overflow-hidden">
 
             <div className="relative w-full md:p-[1vw] p-[2vh] lg:p-[1.1vw]">
                 <h2 className='text-[3vh] md:text-[2vw] lg:text-[2vw] select-none mx-auto font-semibold text-center bg-gradient-to-r from-prime to-emerald-500 text-transparent bg-clip-text'>Reset Password</h2>
@@ -68,19 +66,17 @@ const Page = () => {
 
                     {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
 
-                    <motion.button 
+                    <button 
                       className='mt-5 w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 outline-none focus:ring-2 focus:ring-green-500 transition duration-200 cursor-pointer'
-                      whileHover={{ scale: 1.003 }}
-                      whileTap={{ scale: 0.98 }}
                       type='submit'
                       disabled={isLoading}
                     >
                       {isLoading ? <Loader className='animate-spin w-6 h-6 mx-auto' /> : "Reset Password"}
-                    </motion.button>
+                    </button>
                 </form>
             </div>
 
-        </motion.div>
+        </div>
       </AUTHLAYOUT>
     )
 }

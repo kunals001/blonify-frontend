@@ -1,15 +1,25 @@
 "use client"
 import ProtectedAdminRoute from '@/components/AdminProtect'
-import SunEditor from '@/components/SunEditor'
 import { LetterText, Pen, SquarePen } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
-import Upload from '@/components/upload'
 import { useAuthStore } from '@/store/authStore'
 import InputPost from '@/components/InputPost'
 import axios from 'axios'
 import { useParams } from 'next/navigation'
+import dynamic from 'next/dynamic'
+
+const SunEditor = dynamic(() => import('@/components/SunEditor'), {
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
+
+const Upload = dynamic(() => import('@/components/upload'), {
+  ssr: false,
+  loading: () => <p>Loading Editor...</p>,
+});
+
 
 const Page = () => {
   const [content, setContent] = useState('')

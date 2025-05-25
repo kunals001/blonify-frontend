@@ -4,10 +4,9 @@ import Head from 'next/head';
 import { useParams } from 'next/navigation';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import axios from 'axios';
-import DailyPostPage from "@/components/Daily/DailyPostPage"
-import MobilePostPage from "@/components/Mobile/MobilePostPage"
-import LaptopPostPage from "@/components/Laptop/LaptopPostPage"
 import "../../../globals.css"
+import dynamic from 'next/dynamic';
+import { Skeleton } from '@/components/ui/skeleton';
 
 
 export type Post ={
@@ -141,6 +140,21 @@ export type Post ={
   }[];
   userId?: string;
 }
+
+const DailyPostPage = dynamic(() => import('@/components/Daily/DailyPostPage'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-screen md:w-full md:h-screen lg:w-full lg:h-screen rounded-xl bg-green-200' /> 
+});
+
+const MobilePostPage = dynamic(() => import('@/components/Mobile/MobilePostPage'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-screen md:w-full md:h-screen lg:w-full lg:h-screen rounded-xl bg-green-200' /> 
+});
+
+const LaptopPostPage = dynamic(() => import('@/components/Laptop/LaptopPostPage'), {
+  ssr: false,
+  loading: () => <Skeleton className='w-full h-screen md:w-full md:h-screen lg:w-full lg:h-screen rounded-xl bg-green-200' /> 
+});
 
 
 const Page = () => {
