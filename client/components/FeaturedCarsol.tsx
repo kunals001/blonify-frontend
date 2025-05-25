@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import ImageKit from './Image'
-import { Loader } from 'lucide-react';
 
 interface Post {
   _id: string;
