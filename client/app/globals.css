@@ -6,8 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme{
-  --font-prime:'Barlow', sans-serif, Helvetica, Arial;
-  --font-second:'Poppins', sans-serif, Helvetica, Arial;
+  --font-prime: sans-serif;
+  --font-second: sans-serif;
   --color-prime:#2FD468;
   --color-second:#E8FEDF;
 }
@@ -23,6 +23,11 @@ body{
   line-height: 1.2;
   margin-top: 1vw;
   color: rgb(50, 50, 50);
+}
+
+.post-content a{
+  
+  color: rgb(47, 118, 250);
 }
 
 .post-content img{
@@ -70,6 +75,11 @@ body{
     color: rgb(50, 50, 50);
   }
 
+  .post-content a{
+  
+  color: rgb(47, 118, 250);
+}
+
   .post-content img{
   border-radius: 1.5vh;
   object-fit: cover;
@@ -115,6 +125,11 @@ body{
     line-height: 1.3;
     margin-top: .7vh;
     color: rgb(50, 50, 50);
+  }
+
+  .post-content a{
+  
+  color: rgb(47, 118, 250);
   }
 
   .post-content img{
