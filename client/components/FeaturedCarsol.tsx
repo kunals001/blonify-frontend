@@ -13,7 +13,7 @@ interface Post {
 const FeaturedCarsol = ({ post }: { post: Post}) => {
   return (
     <div  className='relative overflow-hidden rounded-xl'>
-        <Link href={`/article/${post?.slug}`}><ImageKit w={1000} h={800} src={post?.coverImg}
+        <Link href={`/article/${post?.slug}`}><ImageKit w={800} h={800} src={post?.coverImg}
               alt={post?.altText}
               className="w-full relative h-[26.5vh] md:h-[31vw] lg:h-[31vw] rounded-xl object-cover overflow-hidden"
               priority={true}
