@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { formatDistanceToNow } from 'date-fns';
 import type{Post} from "@/app/page"
-import ImageKit from './Image';
+import Image from 'next/image';
 import Head from 'next/head';
 
 
@@ -14,7 +14,7 @@ const PostListItems = ({post}:{post:Post}) => {
     </Head>
     <div className='w-full flex gap-[1vh] md:gap-[.5vw] lg:gap-[.5vw] relative'>
 
-        <Link href={`/article/${post?.slug}`} ><ImageKit w={400} h={250} src={post?.coverImg} alt={post?.altText} className="w-[16vh] h-[11.5vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover" loading='eager' priority={true}/></Link>
+        <Link href={`/article/${post?.slug}`} ><Image width={400} height={250} src={post?.coverImg} alt={post?.altText} className="w-[16vh] h-[11.5vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover" loading='eager' priority={true}/></Link>
 
         {/* details */}
 
