@@ -7,17 +7,23 @@ interface ImageKitProps {
   w: number;
   h: number;
   alt: string;
-  priority?: boolean; 
+  loading?: 'eager' | 'lazy';
 }
 
-const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt, priority }) => {
+const ImageKit: React.FC<ImageKitProps> = ({
+  src,
+  className,
+  w,
+  h,
+  alt,
+  loading = 'lazy', // 👈 default value yahan set ki gayi hai
+}) => {
   return (
     <IKImage
       src={src}
       urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}
       className={className}
-      loading={priority ? 'eager' : 'lazy'} 
-      priority={priority} 
+      loading={loading}
       alt={alt}
       width={w}
       height={h}
