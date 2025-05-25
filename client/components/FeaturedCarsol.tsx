@@ -20,6 +20,7 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
               src={post?.coverImg}
               alt={post?.altText}
               className="w-full relative h-[26.5vh] md:h-[30vw] lg:h-[30vw] rounded-xl object-cover overflow-hidden"
+              priority={true}
               />
             </Link>
 

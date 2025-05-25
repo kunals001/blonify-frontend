@@ -102,7 +102,7 @@ const Navbar = () => {
 
 
         <Link href="/"><div className={`nav-logo-mobile w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
-            <Image width={40} height={40} src="/logo.svg" alt="logo" className='w-[3.2vh] h-[3.2vh]'/>
+            <Image width={40} height={40} src="/logo.svg" alt="logo" className='w-[3.2vh] h-[3.2vh]' priority={true}/>
             <h6 className='font-second text-[2.4vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
         </div></Link>
 
