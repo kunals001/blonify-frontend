@@ -7,12 +7,8 @@ import PostList from "@/components/PostList"
 import MobileCategories from "@/components/MobileCategories"
 import ShareLinks from "@/components/ShareLinks"
 import Navigate from "@/components/navigate"
-import dynamic from 'next/dynamic';
+import WebHeadline from "@/components/WebHeadline"
 
-const WebHeadline = dynamic(() => import('@/components/WebHeadline'), {
-  loading: () => <p>Loading...</p>,
-  ssr: true,
-});
 
 
 export type Post = {
