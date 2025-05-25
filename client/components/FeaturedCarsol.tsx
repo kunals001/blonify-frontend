@@ -19,9 +19,20 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
               h={400} 
               src={post?.coverImg}
               alt={post?.altText}
-              className="w-full relative h-[26.5vh] md:h-[30vw] lg:h-[30vw] rounded-xl object-cover overflow-hidden"
+              className="w-full relative h-[26.5vh] hidden md:block lg:block md:h-[30vw] lg:h-[30vw] rounded-xl object-cover overflow-hidden"
               priority={true}
-              /></Link>
+              />
+
+
+              <ImageKit 
+              w={350} 
+              h={250} 
+              src={post?.coverImg}
+              alt={post?.altText}
+              className="w-full relative h-[26.5vh] block md:hidden lg:hidden rounded-xl object-cover overflow-hidden "
+              priority={true}
+              />
+            </Link>
 
               <div className="absolute bottom-0 w-full md:h-[5vw] h-[6vh] flex gap-[1vh] rounded-b-xl md:px-[1vw] px-[1vh] md:py-[1vw] py-[1vh] items-center bg-gradient-to-b backdrop-blur-sm from-transparent to-zinc-400">
                 <h1 className='text-[2vh] md:text-[1.7vw] lg:text-[1.7vw] hover:underline leading-none cursor-pointer font-semibold text-zinc-800'>{post?.title}</h1>
