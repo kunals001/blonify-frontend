@@ -15,14 +15,17 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
   return (
     <>
 
-    <Head>
-        <title>{post?.title}</title>
-        <link
-          rel="preload"
-          as="image"
-          href={`${process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}/${post?.coverImg}?tr=w=500,h=400,fo-auto,f-webp,q-70`}
-        />
-    </Head>
+    {post?.coverImg && (
+  <Head>
+    <title>{post.title}</title>
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href={`${process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}/${post.coverImg}?tr=w-500,h-400,fo-auto,f-webp,q-70`}
+    />
+  </Head>
+   )}
     <div className='relative overflow-hidden rounded-xl'>
         <Link href={`/article/${post?.slug}`}>
             <ImageKit 
