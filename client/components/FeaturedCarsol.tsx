@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import ImageKit from './Image';
 
 interface Post {
   _id: string;
@@ -14,9 +14,9 @@ const FeaturedCarsol = ({ post }: { post: Post}) => {
   return (
     <div className='relative overflow-hidden rounded-xl'>
         <Link href={`/article/${post?.slug}`}>
-            <Image 
-              width={600} 
-              height={400} 
+            <ImageKit 
+              w={600} 
+              h={400} 
               src={post?.coverImg as string}
               alt={post?.altText as string}
               className="w-full relative h-[26.5vh] md:h-[30vw] lg:h-[30vw] rounded-xl object-cover overflow-hidden"

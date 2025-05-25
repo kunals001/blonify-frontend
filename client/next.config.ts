@@ -4,12 +4,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ik.imagekit.io',
-        port: '',
-        pathname: '/**',   
-      },
-      {
-        protocol: 'https',
         hostname: 'avatar.iran.liara.run',
         port: '',
         pathname: '/**',

@@ -6,9 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "analyze": "ANALYZE=true npm run build"
-
+    "lint": "next lint"
   },
   "dependencies": {
     "@imagekit/next": "^2.1.2",
@@ -22,7 +20,6 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.7.1",
-    "framer-motion": "^12.11.0",
     "imagekit": "^6.0.0",
     "lucide-react": "^0.510.0",
     "next": "15.3.2",
@@ -36,7 +33,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@next/bundle-analyzer": "^15.4.0-canary.51",
     "@tailwindcss/postcss": "^4",
     "@types/draft-js": "^0.11.18",
     "@types/node": "^20",
