@@ -1,11 +1,16 @@
 "use client"
 import React, { useState, useEffect } from 'react'
-import AUTHLAYOUT from '@/components/AuthLayout';
 import Input from '@/components/Input'
 import { Lock, Loader } from 'lucide-react';
 import { toast } from 'react-hot-toast'
 import { useAuthStore } from '@/store/authStore'
 import { useRouter, useParams } from 'next/navigation'
+import dynamic from 'next/dynamic';
+
+const AUTHLAYOUTS = dynamic(() => import('@/components/AuthLayout'), {
+  ssr: false, 
+  loading: () => <p>Loading animation...</p>,
+});
 
 const Page = () => {
     const [password, setPassword] = useState("");
@@ -40,7 +45,7 @@ const Page = () => {
     }
 
     return (
-      <AUTHLAYOUT>
+      <AUTHLAYOUTS>
         <div className="w-[95vw] rounded-2xl md:w-[30vw] lg:w-[32vw] backdrop-filter backdrop-blur-xl flex flex-col items-center justify-center bg-gray-700 bg-opacity-30 relative overflow-hidden">
 
             <div className="relative w-full md:p-[1vw] p-[2vh] lg:p-[1.1vw]">
@@ -77,7 +82,7 @@ const Page = () => {
             </div>
 
         </div>
-      </AUTHLAYOUT>
+      </AUTHLAYOUTS>
     )
 }
 

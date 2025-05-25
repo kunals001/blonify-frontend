@@ -1,6 +1,5 @@
 "use client"
 
-import AUTHLAYOUT from '@/components/AuthLayout';
 import { useState, useEffect } from 'react'
 import Input from '@/components/Input'
 import { Mail, ArrowLeft } from 'lucide-react';
@@ -8,6 +7,12 @@ import { toast } from 'react-hot-toast'
 import { useAuthStore } from '@/store/authStore'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic';
+
+const AUTHLAYOUTS = dynamic(() => import('@/components/AuthLayout'), {
+  ssr: false, 
+  loading: () => <p>Loading animation...</p>,
+});
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -35,7 +40,7 @@ const Page = () => {
   };
 
   return (
-    <AUTHLAYOUT>
+    <AUTHLAYOUTS>
       <div
         className="w-[95vw] rounded-2xl md:w-[30vw] lg:w-[32vw] backdrop-filter backdrop-blur-xl flex flex-col items-center justify-center bg-gray-700 bg-opacity-30 relative overflow-hidden"
       >
@@ -85,7 +90,7 @@ const Page = () => {
           </Link>
         </div>
       </div>
-    </AUTHLAYOUT>
+    </AUTHLAYOUTS>
   );
 };
 

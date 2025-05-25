@@ -1,10 +1,21 @@
 import type { NextConfig } from "next";
-
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ['avatar.iran.liara.run'], // ✅ Add this line
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        port: '',
+        pathname: '/**',   
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatar.iran.liara.run',
+        port: '',
+        pathname: '/**',
+      },
+    ], 
   },
-};
+}
 
 export default nextConfig;

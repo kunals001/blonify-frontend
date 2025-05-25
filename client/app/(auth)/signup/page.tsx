@@ -1,5 +1,4 @@
 "use client"
-import AUTHLAYOUTS from '@/components/AuthLayout'
 import { useState } from 'react'
 import Input from '@/components/Input'
 import { Lock, Mail, User,Loader } from 'lucide-react'
@@ -9,6 +8,12 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { Skeleton } from '@/components/ui/skeleton'
+
+
+const AUTHLAYOUTS = dynamic(() => import('@/components/AuthLayout'), {
+  ssr: false, 
+  loading: () => <p>Loading animation...</p>,
+});
 
 const PasswordStrengthMeter = dynamic(() => import('@/components/PasswordStrengthMeter'), {
   ssr: false,

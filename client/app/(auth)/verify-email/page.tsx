@@ -1,12 +1,18 @@
 "use client";
 
 import { useAuthStore } from "@/store/authStore";
-import AUTHLAYOUTS from '@/components/AuthLayout';
 import { useState, useEffect } from 'react';
 import Input from '@/components/Input';
 import { Mail } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
+
+const AUTHLAYOUTS = dynamic(() => import('@/components/AuthLayout'), {
+  ssr: false, 
+  loading: () => <p>Loading animation...</p>,
+});
+
 
 const Page = () => {
   const [code, setCode] = useState("");
