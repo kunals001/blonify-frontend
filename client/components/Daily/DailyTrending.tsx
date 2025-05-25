@@ -51,7 +51,7 @@ const DailyTrending = ({ posts }: { posts: Post[] }) => {
           <CarouselNext className='hidden md:block lg:block' />
         </Carousel>
       ) : (
-        <Skeleton className='w-full h-[24vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl bg-green-200' />
+        <Skeleton className='w-full h-[26vh] md:w-full md:h-[15vw] lg:w-full lg:h-[16vw] rounded-xl bg-green-200' />
       )}
     </div>
   );

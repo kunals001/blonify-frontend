@@ -1,4 +1,3 @@
-
 import { Image as IKImage } from '@imagekit/next';
 import React from 'react';
 
@@ -8,14 +7,17 @@ interface ImageKitProps {
   w: number;
   h: number;
   alt: string;
+  priority?: boolean; // ← Add this
 }
 
-const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt}) => {
+const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt, priority }) => {
   return (
     <IKImage
       src={src}
       urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}
       className={className}
+      loading={priority ? 'eager' : 'lazy'} 
+      priority={priority} 
       alt={alt}
       width={w}
       height={h}
@@ -23,10 +25,11 @@ const ImageKit: React.FC<ImageKitProps> = ({ src, className, w, h, alt}) => {
         {
           width: w,
           height: h,
+          format: 'webp',
+          quality: 80,
         },
       ]}
     />
-
   );
 };
 
