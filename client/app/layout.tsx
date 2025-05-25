@@ -4,7 +4,6 @@ import { Toaster } from 'react-hot-toast'
 import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/components/AuthProvider";
 import Footer from "@/components/Footer";
-import {Poppins ,Poppins2} from './fonts';
 
 export const metadata: Metadata = {
   title: "Blonify",
@@ -22,7 +21,7 @@ export default function RootLayout({
         <link rel="preload" href="../public/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
         <link rel="preload" href="../public/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
       </head>
-      <body className={`${Poppins.variable} ${Poppins2.variable}`} cz-shortcut-listen="true">
+      <body className={`font-prime`} cz-shortcut-listen="true">
         <AuthProvider>
         <Navbar />
         {children}

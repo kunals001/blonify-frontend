@@ -71,7 +71,7 @@ const Navbar = () => {
    }, [searchTerm]);
 
   return (
-    <nav className='z-20 w-full flex items-center h-[6vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0'>
+    <nav className='z-20 w-full flex items-center h-[6vh] md:h-[4vw] lg:h-[4vw] px-[1vh] md:px-[13vw] lg:px-[15vw] justify-between  gap-[1vw] backdrop-filter backdrop-blur-xl select-none sticky top-0 '>
 
         
         {/*  Mobile Menu */}
@@ -84,7 +84,7 @@ const Navbar = () => {
                 <ul className='flex flex-col gap-[.5vh] items-center justify-center px-[3vh] pt-[10vh] w-[16vh]'>
                     {BarMenu.map((item)=>(
                         <Link href={item.href} key={item.href}>
-                            <li onClick={() => setIsOpen(false)} className='w-[15vh] px-[3vw] py-[.5vh] rounded-md bg-green-100 font-medium text-zinc-700 '>
+                            <li onClick={() => setIsOpen(false)} className='w-[15vh] px-[3vw] py-[.5vh] rounded-md bg-green-100 font-roboto text-zinc-700 '>
                                 {item.label}
                             </li>
                         </Link>
@@ -155,7 +155,7 @@ const Navbar = () => {
                 
                 {BarMenu.map((item)=>(
                     <Link href={item.href} key={item.href}>
-                        <li className='md:text-[1vw] lg:text-[1.1vw] px-[.7vw] py-[.2vw] rounded-full font-medium text-zinc-700 group hover:bg-green-200 transition-all duration-300 overflow-hidden leading-[1.3vw]'>
+                        <li className='md:text-[1vw] lg:text-[1.1vw] px-[.7vw] py-[.2vw] rounded-full text-zinc-700 group hover:bg-green-200 transition-all duration-300 overflow-hidden leading-[1.3vw] font-medium'>
                                 {item.label}
 
                              <div className="group-hover:translate-x-0 group-hover:opacity-100 w-full h-[2px] bg-zinc-700 transition-all duration-300 -translate-x-full opacity-0"></div>

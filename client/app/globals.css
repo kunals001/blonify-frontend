@@ -6,13 +6,14 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme{
+  --font-prime:'Barlow', sans-serif;
+  --font-second:'Poppins', sans-serif;
   --color-prime:#2FD468;
   --color-second:#E8FEDF;
 }
 
 body{
   background-color: #E8FEDF;
-  font-family: var(--font-prime);
 }
 
 /* Default - Large desktops */
