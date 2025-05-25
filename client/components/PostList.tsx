@@ -4,6 +4,7 @@ import PostListItems from './PostListItems'
 import ShareLinks from './ShareLinks'
 import Pagination from "./Pagination"; 
 import type{Post} from "@/app/page"
+import { Skeleton } from './ui/skeleton';
 
 const PostList = ({ posts }: { posts: Post[] }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -45,7 +46,7 @@ const PostList = ({ posts }: { posts: Post[] }) => {
           )}
         </div>
       ) : (
-        <h1>Loading</h1>
+        <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' />
       )}
 
       <div className="w-1/6 hidden md:flex lg:flex p-[.5vw] flex-col gap-[.5vw] h-[30vw] sticky top-15">
