@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import ShareLinks from "./ShareLinks";
 import type {Post} from "@/app/(pages)/article/[slug]/page"
-import ImageKit from "./Image";
+import Image from 'next/image';
 
 
  
@@ -48,14 +48,15 @@ const SuggestedPosts = ({ post }: { post: Post }) => {
             key={item._id}
             className=" p-3 rounded hover:shadow-md transition flex gap-[1vh] md:gap-[.5vw]"
           >
-            <ImageKit 
-              w={500}
-              h={400}
+            <Image
+              width={500}
+              height={400}
               src={
                 typeof item.coverImg === "string" ? item.coverImg : "/placeholder.jpg"
               }
               alt={item.altText || item.title || "Suggested post"}
               className="w-[16vh] h-[10vh] md:w-[10vw] md:h-[6vw] object-cover rounded"
+              loading="lazy"
             />
             <div className="">
             <h3 className="text-lg font-bold mt-1">{item.title}</h3>

@@ -9,7 +9,7 @@ import {
   upload,
 } from "@imagekit/next";
 import { useRef} from "react";
-import ImageKit from "./Image";
+import Image from "next/image";
 
 interface UploadProps {
   coverImg: string;
@@ -105,7 +105,7 @@ const Upload = ({ coverImg, setCoverImg, onUploadComplete }: UploadProps) => {
           </a>
           <br />
           {coverImg.match(/\.(jpeg|jpg|png|gif)$/) ? (
-            <ImageKit w={400} h={400} src={coverImg} alt="Preview" className="mt-2 w-48 h-auto rounded" />
+            <Image width={400} height={400} src={coverImg} alt="Preview" className="mt-2 w-48 h-auto rounded" loading="lazy"/>
           ) : coverImg.match(/\.(mp4|webm)$/) ? (
             <video controls className="mt-2 w-48 h-auto rounded">
               <source src={coverImg} type="video/mp4" />

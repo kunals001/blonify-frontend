@@ -2,7 +2,7 @@ import React from 'react'
 import { useAuthStore } from '@/store/authStore'
 import axios from 'axios';
 import {toast} from 'react-hot-toast'
-import ImageKit from './Image';
+import Image from 'next/image'
 
 interface User {
   profilePic: string
@@ -44,11 +44,11 @@ const Comment = ({ comment }: CommentProps) => {
   return (
     <div className='w-full px-[.5vh] md:px-[.5vw] lg:px-[.5vw] py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl bg-zinc-100 mt-[1vh]'>
       <div className="flex gap-[.5vh] md:gap-[.5vw] lg:gap-[.6vw] items-center text-center">
-        <ImageKit
+        <Image
           src={comment?.user?.profilePic}
           alt="profile pic"
-          w={30}
-          h={30}
+          width={30}
+          height={30}
           className="w-[2.8vh] md:w-[2vw] lg:w-[2vw] h-[2.8vh] md:h-[2vw] lg:h-[2vw] rounded-full object-cover"
         />
 

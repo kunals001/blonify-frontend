@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import type{Post} from "@/app/page"
-import ImageKit from '../Image'
+import Image from 'next/image';
 import Date from '../Date'
 
 const BestMobiles = ({post}:{post:Post}) => {
   return (
         <div className='w-full flex gap-[1vh] md:gap-[.5vw] lg:gap-[.5vw] relative'>
 
-        <Link href={`/article/${post?.slug}`} ><ImageKit w={700} h={700} src={post?.coverImg as string} alt={post?.altText as string} className="w-[16vh] h-[11.5vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover"/></Link>
+        <Link href={`/article/${post?.slug}`} ><Image width={600} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-[16vh] h-[11.5vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover"/></Link>
 
         {/* details */}
 

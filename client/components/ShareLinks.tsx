@@ -36,7 +36,7 @@ const ShareLinks = ({ className }: { className?: string }) => {
 
         {/* Facebook */}
         <Link href={shareLinks.facebook} target="_blank" rel="noopener noreferrer" className='flex items-center rounded-md hover:bg-green-200 gap-[.2vw] p-1'>
-          <Image src="/facebook.svg" alt="Facebook share" className="w-[3.5vh] h-[3.5vh] md:w-[1.5vw] md:h-[1.5vw]" width={20} height={20} />
+          <Image src="/facebook.svg" alt="Facebook share" className="w-[3.5vh] h-[3.5vh] md:w-[1.5vw] md:h-[1.5vw]" width={20} height={20}/>
           <span className='hidden md:block text-[.9vw] text-zinc-700'>Facebook</span>
         </Link>
 

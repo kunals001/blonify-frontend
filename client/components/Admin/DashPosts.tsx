@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/table"
 import Link from 'next/link';
 import toast from 'react-hot-toast';
-import ImageKit from '../Image';
+import Image from 'next/image';
 
 
 const DashPosts = () => {
@@ -78,7 +78,7 @@ const DashPosts = () => {
                 <TableRow key={post._id} className='hover:bg-green-200'>
                   <TableCell className="font-medium text-gray-600 hover:underline">{post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : "N/A"}</TableCell>
                   <TableCell>
-                    <Link href={`/article/${post.slug}`}><ImageKit src={post?.coverImg as string} alt={post?.altText as string} w={50} h={50} className='w-25 h-15 rounded-md object-cover bg-gray-500'/></Link>
+                    <Link href={`/article/${post.slug}`}><Image src={post?.coverImg as string} alt={post?.altText as string} width={50} height={50} className='w-25 h-15 rounded-md object-cover bg-gray-500'/></Link>
 
                   </TableCell>
                   <TableCell className="font-medium hover:underline hover:text-gray-700 text-prime"><Link href={`/article/${post.slug}`}>{post.title}</Link></TableCell>

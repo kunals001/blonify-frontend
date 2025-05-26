@@ -7,9 +7,9 @@ import "@/app/globals.css";
 import RefreshManage from "@/components/RefreshManage";
 import NavigationBreadcrumb from '../navigate';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
-import ImageKit from '../Image';
+import Image from 'next/image';
 import "@/app/globals.css";
-import Head  from 'next/head';  
+ 
 
 
 const MobilePostPage = ({post}:{post:Post}) => {
@@ -60,19 +60,6 @@ const MobilePostPage = ({post}:{post:Post}) => {
 
   return (
     <>
-    <Head>
-         <link 
-            key={post.slug}
-            rel="preload" 
-            as="image"
-            href={post.coverImg}
-            imageSrcSet={`
-              ${post.coverImg}?w=400 400w,
-              ${post.coverImg}?w=800 800w
-            `}
-            imageSizes="(max-width: 768px) 100vw, 50vw"
-          />
-    </Head>
     <RefreshManage>
 
     <div className="">  
@@ -95,7 +82,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
 
 
         <div className="py-[1vh] md:py-[.7vw]">
-        <ImageKit w={800} h={700} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none'loading='eager' />
+        <Image width={800} height={700} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none'loading='eager' priority/>
         </div>
 
         {/* Featured Card And Info */}
@@ -105,7 +92,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     </h2>
                      <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg pb-[.5vh] md:pb-[.5vw] flex gap-[2vh] md:gap-[1vw] ">
                          <div className="pb-[.5vh] md:pb-[.5vw]">
-                            <ImageKit w={400} h={500} src={post?.innerImage as string} alt={post?.altText as string} className='w-[11vh] h-[15vh] md:w-[10vw] md:h-[15vw] lg:w-[10vw] lg:h-[15vw] object-cover rounded-md select-none' />
+                            <Image width={400} height={500} src={post?.innerImage as string} alt={post?.altText as string} className='w-[11vh] h-[15vh] md:w-[10vw] md:h-[15vw] lg:w-[10vw] lg:h-[15vw] object-cover rounded-md select-none' loading='eager'/>
                          </div>
 
                          <div className="py-[.5vh] md:py-[.5vw] flex flex-col gap-[.2vh] md:gap-[.2vw] text-zinc-700">

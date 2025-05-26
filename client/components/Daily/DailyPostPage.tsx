@@ -5,28 +5,14 @@ import Comments from '../Comments';
 import Navigate from '../navigate';
 import ShareLinks from '../ShareLinks';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
-import ImageKit from '../Image';
 import "@/app/globals.css";
-import Head  from 'next/head'; 
+import Image from 'next/image';
 
 
 const DailyPostPage = ({ post }: { post: Post}) => {
     
   return (
     <>
-    <Head>
-      <link 
-            key={post.slug}
-            rel="preload" 
-            as="image"
-            href={post.coverImg}
-            imageSrcSet={`
-              ${post.coverImg}?w=400 400w,
-              ${post.coverImg}?w=800 800w
-            `}
-            imageSizes="(max-width: 768px) 100vw, 50vw"
-          />
-    </Head>
     <RefreshManage>
     <article className='w-full min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] pt-[2vh] md:pt-[2vw] lg:p-[2.1vw] flex flex-col gap-[1vh] md:gap[.8vw] lg:gap-[.9vw]'>
 
@@ -45,7 +31,7 @@ const DailyPostPage = ({ post }: { post: Post}) => {
             <p className='md:text-[1vw] font-second font-medium text-zinc-700 hidden md:block lg:block md:w-[38vw] lg:w-[38vw] leading-none'>{post?.desc}</p>
         </div>
 
-        <ImageKit w={600} h={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover" loading='eager'/>
+        <Image width={600} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover" loading='eager' priority/>
         
       </div>
       {/* About post */}

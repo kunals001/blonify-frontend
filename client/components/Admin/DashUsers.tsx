@@ -24,7 +24,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import ImageKit from '../Image';
+import Image from 'next/image';
 
 interface UserItem {
   _id: string;
@@ -93,12 +93,12 @@ const DashPosts = () => {
                   </TableCell>
 
                   <TableCell>
-                    <ImageKit
+                    <Image
                       src={userItem.profilePic}
                       alt="profile"
                       className='w-12 h-12 rounded-full object-cover bg-gray-500'
-                      w={30}
-                      h={30}
+                      width={30}
+                      height={30}
                     />
                   </TableCell>
 

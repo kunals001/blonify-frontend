@@ -6,10 +6,10 @@ import ShareLinks from '../ShareLinks';
 import "@/app/globals.css";
 import RefreshManage from "@/components/RefreshManage";
 import NavigationBreadcrumb from '../navigate';
-import ImageKit from '../Image';
+import Image from 'next/image';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import "@/app/globals.css";
-import Head  from 'next/head'; 
+
 
 
 const LaptopPostPage = ({post}:{post:Post}) => {
@@ -67,19 +67,6 @@ const LaptopPostPage = ({post}:{post:Post}) => {
 
   return (
     <>
-    <Head>
-       <link 
-            key={post.slug}
-            rel="preload" 
-            as="image"
-            href={post.coverImg}
-            imageSrcSet={`
-              ${post.coverImg}?w=400 400w,
-              ${post.coverImg}?w=800 800w
-            `}
-            imageSizes="(max-width: 768px) 100vw, 50vw"
-          />
-    </Head>
     <RefreshManage>
 
     <div className="">
@@ -106,7 +93,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     </h2>
                   <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg flex flex-col gap-[2vh] md:gap-[1vw] ">
                          <div className="">
-                            <ImageKit w={700} h={600} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' loading='eager' />
+                            <Image width={700} height={600} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' loading='eager' priority/>
                          </div>
 
                          <div className="flex gap-[1vh] md:gap-[1vw] text-zinc-700">
