@@ -54,14 +54,14 @@ useEffect(() => {
         <div className="category">
           <ul className="flex gap-[.4vw]">
             {menuItems.map((item) => (
-              <Link href={item.href} key={item.href}>
-                <li
-                  className={`px-[1vw] py-[.3vw] rounded-full bg-green-200
-                   text-center flex items-center justify-center text-[1vw] text-medium text-zinc-700 ease-in-out hover:bg-green-400 hover:text-white transition-all duration-300 border-1 border-prime cursor-pointer`}
+              <li className='px-[1vw] py-[.3vw] rounded-full bg-green-100
+                   text-center flex items-center justify-center text-[1vw] text-medium text-zinc-900 ease-in-out hover:bg-green-400 hover:text-white transition-all duration-300 border-1 border-prime cursor-pointer' key={item.href}>
+                <Link
+                  href={item.href}
                 >
                   {item.label}
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

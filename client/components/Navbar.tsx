@@ -95,16 +95,21 @@ const Navbar = () => {
 
         {/*  Logo */}
 
-        <Link href="/"><div className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
+        <Link href="/" aria-label="Go to homepage">
+        <div className={`nav-logo w-[10vh] hidden md:flex lg:flex md:gap-[.5vw] lg:gap-[.5vw] items-center select-none `}>
             <Image width={40} height={40} src="/logo.svg" alt="logo" className='w-[3.5vh] h-[3.5vh] md:w-[1.9vw] md:h-[1.9vw] lg:w-[1.8vw] lg:h-[1.8vw]' priority={true}/>
             <h6 className='font-second text-[2.2vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
-        </div></Link>
+        </div>
+        </Link>
 
 
-        <Link href="/"><div className={`nav-logo-mobile w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
-            <Image width={40} height={40} src="/logo.svg" alt="logo" className='w-[3.2vh] h-[3.2vh]' priority={true}/>
-            <h6 className='font-second text-[2.4vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700 '>Blonify</h6>
-        </div></Link>
+        <Link href="/" aria-label="Go to homepage">
+          <div className={`nav-logo-mobile w-[10vh] flex gap-[1vw] md:hidden lg:hidden items-center select-none transition-all duration-500 ${isSearch ? 'hidden' : 'visible'}`}>
+          <Image width={40} height={40} src="/logo.svg" alt="Blonify logo" className='w-[3.2vh] h-[3.2vh]' priority />
+          <h6 className='font-second text-[2.4vh] md:text-[1.6vw] lg:text-[1.7vw] text-zinc-700'>Blonify</h6>
+           </div>
+        </Link>
+
 
         {/* Mobile Search bar */}
 
@@ -168,14 +173,14 @@ const Navbar = () => {
 
         {!user?(
              <div className=" flex md:gap-[.6vw] lg:gap-[.5vw]">
-        <Link href={'/signin'}><button className='group  relative text-zinc-800 px-[1vh] py-[.5vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.8vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-all duration-200'>Signin</button></Link>
+        <Link aria-label='Signin' href={'/signin'}><button className='group  relative text-zinc-800 px-[1vh] py-[.5vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.8vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-all duration-200'>Signin</button></Link>
 
-        <Link href={'/signup'}><button className='group hidden md:block lg:block relative text-zinc-800 px-[1vh] py-[.4vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.7vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-ease duration-200'>Signup</button></Link>
+        <Link aria-label='Signup' href={'/signup'}><button className='group hidden md:block lg:block relative text-zinc-800 px-[1vh] py-[.4vh] rounded-full bg-gradient-to-l from-green-300 via-lime-300 to-prime border-1 border-prime hover:cursor-pointer text-[1.7vh] md:text-[1vw] lg:text-[1.2vw] md:px-[1vw] md:py-[.1vw] lg:px-[1vw] lg:py-[.1vw] text-center transform active:scale-95 transition-ease duration-200'>Signup</button></Link>
         </div>
         ):(
             <div className="">
             <div className="flex md:hidden lg:hidden ">
-                <Link href={'/profile'}>
+                <Link aria-label='Profile' href={'/profile'}>
                     <div className='group  relative border-1 border-prime h-[4.5vh] w-[4.5vh] rounded-full flex items-center justify-center '>
                         {user && typeof user.profilePic === 'string' && (
                           <Image
@@ -193,7 +198,7 @@ const Navbar = () => {
 
 
             <div className={` group relative hidden md:w-[3.2vw] md:h-[3.2vw] lg:w-[3.3vw] lg:h-[3.3vw] rounded-full border-2 border-prime md:flex lg:flex items-center justify-center cursor-pointer `}>
-                <Link href={'/profile'}>
+                <Link aria-label='Profile' href={'/profile'}>
                 {user && typeof user.profilePic === 'string' && (
                   <Image
                     src={user.profilePic}
