@@ -23,7 +23,6 @@ const GoogleSignin = dynamic(() => import('@/firebase/GoogleSignin'), {
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [Error,setError] = useState<string | null>(null);
   const { signin, isLoading, error, isAuthenticated, checkAuth } = useAuthStore();
   const router = useRouter();
 
@@ -42,7 +41,7 @@ const Page = () => {
       router.push("/");
       await checkAuth();
     } catch (error) {
-      setError("Signin First");
+     console.log("Error while signing in:", error);
     }
   };
 
@@ -102,8 +101,6 @@ const Page = () => {
           </p>
         </div>
       </div>
-
-      {Error && <p className="text-green-500 font-semibold mt-2 mx-auto">{Error}</p>}
     </AUTHLAYOUTS>
   );
 };

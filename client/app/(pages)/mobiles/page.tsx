@@ -4,7 +4,6 @@ import IsMobile from '@/components/Mobile/IsMobile'
 import NavigationBreadcrumb from '@/components/navigate';
 import { Skeleton } from '@/components/ui/skeleton';
 import axios from 'axios';
-import { set } from 'date-fns';
 import React, { useEffect, useState } from 'react'
 
 export type Post = {
@@ -28,7 +27,6 @@ const POSTS_PER_PAGE = 10;
 
 const Page = () => {  // <-- Uppercase 'P'
   const [posts, setPosts] = useState<Post[]>([]);
-  const [error,setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
   axios.defaults.withCredentials = true;
@@ -39,7 +37,7 @@ const Page = () => {  // <-- Uppercase 'P'
         const response = await axios.get(`${API_URL_3}/get-all-posts`);
         setPosts(response.data);
       } catch (error) {
-        setError("Failed to fetch posts");
+        console.log("Error fetching posts:", error);
       }
     };
 
@@ -117,8 +115,6 @@ const Page = () => {  // <-- Uppercase 'P'
         ) : (
           <Skeleton className='w-full h-[10vh] md:h-[16vw] lg:h-[16vw] rounded-xl bg-green-200' />
         )}
-
-        {error && <p>{error}</p>}
       </div>
     </div>
   )

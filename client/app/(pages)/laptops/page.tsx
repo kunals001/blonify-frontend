@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import NavigationBreadcrumb from '@/components/navigate'
 import { Skeleton } from "@/components/ui/skeleton"
-import { set } from 'date-fns'
 
 
 export type Post = {
@@ -28,7 +27,6 @@ export type Post = {
 const Page = () => {
   const [posts, setposts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [error,setError] = useState<string | null>(null);
   const postsPerPage = 10;
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
   axios.defaults.withCredentials = true;
@@ -40,7 +38,7 @@ const Page = () => {
       const data = response.data;
       setposts(data);
     } catch (error) {
-      setError("Failed to fetch posts");
+      console.log("Error fetching posts:", error);
     }
    }
 
@@ -119,8 +117,6 @@ const Page = () => {
             </button>
           </div>
         )}
-
-        {error && <p>{error}</p>}
       </div>
     </div>
   )
