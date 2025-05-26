@@ -2,13 +2,13 @@
 import SuggestedPosts from '../SuggestedPosts'
 import RefreshManage from "@/components/RefreshManage";
 import Comments from '../Comments';
+import Navigate from '../navigate';
+import ShareLinks from '../ShareLinks';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import ImageKit from '../Image';
 import "@/app/globals.css";
 import Head from 'next/head';
-import dynamic from "next/dynamic"
-const Navigate = dynamic(() => import('../navigate'), { ssr: false })
-const ShareLinks = dynamic(() => import('../ShareLinks'), { ssr: false })
+
 
 const DailyPostPage = ({ post }: { post: Post}) => {
     

@@ -6,9 +6,8 @@ import Heading from "@/components/headingscom"
 import MobileCategories from "@/components/MobileCategories"
 import WebHeadline from "@/components/WebHeadline"
 import PostList from "@/components/PostList"
-import dynamic from "next/dynamic"
-const Navigate = dynamic(() => import('@/components/navigate'), { ssr: false })
-const ShareLinks = dynamic(() => import('@/components/ShareLinks'), { ssr: false })
+import Navigate from "@/components/navigate"
+import ShareLinks from "@/components/ShareLinks"
 
 
 export type Post = {
