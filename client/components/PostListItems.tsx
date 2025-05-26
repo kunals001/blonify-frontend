@@ -25,11 +25,12 @@ const PostListItems = ({post}:{post:Post}) => {
              {/* discription */}
 
              <p className='text-[1.2vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 w-[25vh] md:w-[30vw] lg:w-[30vw] leading-none'>{post?.desc?.slice(0, 80)}
-              <Link href={`/article/${post?.slug}`} ><span className='text-prime text-[1vh] md:text-[1vw] lg:text-[1vw] px-[.5vh] md:px-[.5vw] lg:px-[.5vw] rounded-full cursor-pointer border-1 border-prime ml-[1vh] md:ml-[.5vw] inline-block'>Read more</span></Link>
             </p>
 
-            <div className="text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 hover:underline leading-none hidden md:block mt-[1vw]">
-                <p>Written by <span className='text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] text-prime '>Kunal Singh </span> on <span className='ext-[1vh] md:text-[1.1vw] lg:text-[1.2vw] text-gray-500 '> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span></p>
+            <div className="pb-[.3vh] md:pb-[.3vw] pl-[1vh] pt-[.5vh] md:pt-[.5vw] items-center">
+            <p className='text-[1vh] md:text-[.8vw] lg:text-[.8vw] font-second text-zinc-500'>Written by <span className='text-prime'>Kunal Singh</span>on 
+            <span className='text-zinc-500 text-[.8vh] md:text-[.8vw] lg:text-[.8vw] w-[14vh] md:w-[14vw] lg:w-[11vw] font-second '> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span>
+            </p>
             </div>
         </div>
 
