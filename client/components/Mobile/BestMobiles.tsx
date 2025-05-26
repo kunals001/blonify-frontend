@@ -21,9 +21,11 @@ const BestMobiles = ({post}:{post:Post}) => {
              <p className='text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 w-[25vh] md:w-[30vw] lg:w-[30vw] leading-none'>{post?.desc?.slice(0, 80)}
             </p>
 
-            <div className="text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 hover:underline leading-none hidden md:block mt-[1vw]">
-                <p>Written by <span className='text-[1vh] md:text-[1.1vw] lg:text-[1.2vw] text-prime '>Kunal Singh </span> on <span className='ext-[1vh] md:text-[1.1vw] lg:text-[1.2vw] text-gray-500 '> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span></p>
-            </div>
+             <div className="text-[1vh] md:text-[1.1vw] lg:text-[1.1vw] md:pb-[.3vw] pt-[.2vh] md:pt-[.5vw] items-cente text-zinc-500">
+               <p className=''>Written by <span className='text-prime'>Kunal Singh </span>on 
+               <span className=''> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span>
+               </p>
+               </div>
         </div>
 
     </div>
