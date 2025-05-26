@@ -154,8 +154,8 @@ const Navbar = () => {
             <ul className='flex rounded-full md:px-[.2vw] md:py-[.1vw] lg:px-[.2vw] lg:py-[.1vw]  items-center justify-center '>
                 
                 {BarMenu.map((item)=>(
-                    <li key={item.href}>
-                        <Link href={item.href} className='md:text-[1vw] lg:text-[1.1vw] px-[.7vw] py-[.2vw] rounded-full text-zinc-700 group hover:bg-green-200 transition-all duration-300 overflow-hidden leading-[1.3vw] font-medium'>
+                    <li className='md:text-[1vw] lg:text-[1.1vw] px-[.7vw] py-[.2vw] rounded-full text-zinc-700 group hover:bg-green-200 transition-all duration-300 overflow-hidden leading-[1.3vw] font-medium' key={item.href}>
+                        <Link href={item.href} >
                                 {item.label}
 
                              <div className="group-hover:translate-x-0 group-hover:opacity-100 w-full h-[2px] bg-zinc-700 transition-all duration-300 -translate-x-full opacity-0"></div>
