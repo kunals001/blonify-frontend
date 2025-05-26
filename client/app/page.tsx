@@ -56,8 +56,6 @@ const Page = () => {
 
       <Navigate/>
 
-      {/* Mobiles category */}
-
       <MobileCategories/>
 
       {/* Headline */}
