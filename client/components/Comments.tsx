@@ -85,7 +85,9 @@ const Comments = ({postId}:CommentsProps) => {
 
           <textarea name='content' value={content} onChange={(e) => setContent(e.target.value)} maxLength={300} placeholder='Write a comment' className='relative w-full text-[1.3vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 py-[.5vh] md:py-[.3vw] lg:py-[.3vw] bg-zinc-100 rounded-xl h-[6vh] md:h-[3.8vw] lg:h-[4.2vw] border-1 border-prime outline-none px-[1vh] md:px-[1vw] lg:px-[1vw] resize-none'/>
 
-          <button type='submit' className='hover:cursor-pointer'><SendHorizontal className='absolute text-[1vh] md:text-[1vw] lg:text-[1vw] bottom-[1.4vh] right-[1vh] md:bottom-[1vw] md:right-[1vw] lg:bottom-[1.5vw] lg:right-[1.5vw] text-white px-[.5vh] py-[.2vh] rounded-sm bg-prime size-6 md:size-7 cursor-pointer'/></button>
+          <button 
+          aria-label='submit comment'
+          type='submit' className='hover:cursor-pointer'><SendHorizontal className='absolute text-[1vh] md:text-[1vw] lg:text-[1vw] bottom-[1.4vh] right-[1vh] md:bottom-[1vw] md:right-[1vw] lg:bottom-[1.5vw] lg:right-[1.5vw] text-white px-[.5vh] py-[.2vh] rounded-sm bg-prime size-6 md:size-7 cursor-pointer'/></button>
       </form>
 
       {comment.length === 0 ?(

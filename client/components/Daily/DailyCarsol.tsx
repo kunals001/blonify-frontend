@@ -13,7 +13,6 @@ const DailyCarsol = ({ post }: { post: Post}) => {
 
             <div className="pt-[.5vh] md:pt-[.5vw] lg:pt-[.4vw] flex gap-[.5vw] md:gap-[1vw]  md:justify-start">
                 <h1 className='text-[2vh] md:text-[1.4vw] lg:text-[1.2vw] font-second text-zinc-700 leading-none cursor-pointer hover:underline font-semibold'>{post?.title}</h1>
-
             </div>
 
            <Date post={post} />

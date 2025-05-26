@@ -9,6 +9,7 @@ import NavigationBreadcrumb from '../navigate';
 import ImageKit from '../Image';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import "@/app/globals.css";
+import Head from 'next/head';
 
 
 const LaptopPostPage = ({post}:{post:Post}) => {
@@ -65,6 +66,10 @@ const LaptopPostPage = ({post}:{post:Post}) => {
 
 
   return (
+    <>
+    <Head>
+        <link fetchPriority='high' rel="preload" as='image' href={`${post?.coverImg}`} type='image/webp'/>
+    </Head>
     <RefreshManage>
 
     <div className="">
@@ -78,7 +83,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="flex flex-col gap-[.4vh] md:gap-[.2vw] lg:gap-[.2vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
             <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none md:w-[40vw] w-full'>{post?.title}</h1>
 
-            <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-700 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-prime'> Kunal Singh </span> on <span className='text-gray-500'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
+            <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-900 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-green-600'> Kunal Singh </span> on <span className='text-gray-700'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
         </div>
 
         {/* Mobile Share */}
@@ -91,7 +96,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     </h2>
                   <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg flex flex-col gap-[2vh] md:gap-[1vw] ">
                          <div className="">
-                            <ImageKit w={1200} h={800} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' />
+                            <ImageKit w={700} h={600} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' loading='eager' />
                          </div>
 
                          <div className="flex gap-[1vh] md:gap-[1vw] text-zinc-700">
@@ -141,7 +146,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
         <div className="mt-[1vh] md:mt-[1vw] overflow-hidden">
             <div className="flex gap-[.3vh] md:gap-1 items-center md:h-[4vh] lg:h-[5vh] h-[3vh]">
                 <div className='bg-prime h-full md:w-[1vh] w-[.8vh]'></div>
-                <h5 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>LAUNCH</h5>
+                <h4 className='text-[1.9vh] md:text-[1.1vw] lg:text-[1.3vw] font-semibold text-prime '>LAUNCH</h4>
             </div>
 
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
@@ -155,7 +160,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                         item.bg ?? ''
                         }`}
                     >
-                        <h6 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h6>
+                        <h5 className="hover:underline w-[10vh] md:w-[10vw] shrink-0">{item.label}</h5>
                         <p className="font-medium break-words whitespace-normal">{item.value}</p>
                     </div>
                     ))}
@@ -546,6 +551,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
     </article>
     </div>
     </RefreshManage>
+    </>
   )
 }
 
