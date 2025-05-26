@@ -10,8 +10,7 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import LaptopCarousel from './LaptopCarousel'
 import RefreshManage from "@/components/RefreshManage";
-
-import type { Post } from "@/app/(pages)/laptops/page";
+import type{Post} from "@/app/page"
 import { Skeleton } from '../ui/skeleton'
 
 interface IsLaptopProps {

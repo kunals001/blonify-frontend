@@ -6,16 +6,12 @@ import Heading from "@/components/headingscom"
 import MobileCategories from "@/components/MobileCategories"
 import ShareLinks from "@/components/ShareLinks"
 import WebHeadline from "@/components/WebHeadline"
-import dynamic from 'next/dynamic'
-
-const Navigate = dynamic(() => import('@/components/navigate'), { ssr: false })
-
-const PostList = dynamic(() => import('@/components/PostList'), { ssr: true })
-
+import PostList from "@/components/PostList"
+import Navigate from "@/components/navigate"
 
 
 export type Post = {
-  coverImg: string; // ✅ Only allow string if that's what's expected in components
+  coverImg: string; 
   title: string;
   slug: string;
   desc: string;

@@ -4,26 +4,10 @@ import DailyRecent from "@/components/Daily/DailyRecent";
 import DailyTrending from "@/components/Daily/DailyTrending";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import type { Post } from "@/app/page";
 import dynamic from 'next/dynamic'
 
 const NavigationBreadcrumb = dynamic(() => import('@/components/navigate'), { ssr: false })
-
-export type Post = {
-  coverImg: string | File | null;
-  title: string;
-  slug: string | null;
-  desc: string | null;
-  content: string;
-  category: string | null;
-  isFeatured: boolean | null;
-  altText: string | null;
-  _id: string;
-  createdAt?: string | number | null;
-  updatedAt?: string | number | null;
-  ismobile?: boolean | null;
-  islaptop?: boolean | null;
-  isdaily?: boolean | null;
-};
 
 const Page = () => {
   const [posts, setposts] = useState<Post[]>([]);

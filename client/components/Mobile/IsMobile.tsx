@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from 'embla-carousel-autoplay'
 import MobileCarousel from './MobileCarousel'
-import type{Post} from "@/app/(pages)/mobiles/page"
+import type{Post} from "@/app/page"
 import { Skeleton } from '../ui/skeleton'
 
 interface IsMobileProps {

@@ -5,24 +5,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import NavigationBreadcrumb from '@/components/navigate'
 import { Skeleton } from "@/components/ui/skeleton"
-
-
-export type Post = {
-  coverImg: string | File | null;
-  title: string;
-  slug: string | null;
-  desc: string | null;
-  content: string;
-  category: string | null;
-  isFeatured: boolean | null;
-  altText: string | null;
-  _id: string;
-  createdAt?: string | number | null;
-  updatedAt?: string | number | null;
-  ismobile?: boolean | null;
-  islaptop?: boolean | null;
-  isdaily?: boolean | null;
-};
+import type{Post} from "@/app/page"
 
 const Page = () => {
   const [posts, setposts] = useState<Post[]>([]);

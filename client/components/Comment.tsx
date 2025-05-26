@@ -1,6 +1,5 @@
 import React from 'react'
 import { useAuthStore } from '@/store/authStore'
-import { formatDistanceToNow } from 'date-fns';
 import axios from 'axios';
 import {toast} from 'react-hot-toast'
 import ImageKit from './Image';
@@ -67,9 +66,7 @@ const Comment = ({ comment }: CommentProps) => {
         )}
 
         <p className='text-[.9vh] md:text-[.7vw] lg:text-[.7vw] text-zinc-500 font-second text-center'>
-          {comment?.createdAt
-            ? formatDistanceToNow(new Date(comment.createdAt), { addSuffix: true })
-            : 'Unknown'}
+          {comment?.createdAt ? new Date(comment.createdAt).toLocaleDateString() : 'Unknown'}
         </p>
       </div>
 

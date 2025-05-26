@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import DailyRecentPost from './DailyRecentPost'
 import Pagination from "../Pagination";
-import type { Post } from "@/app/(pages)/daily/page";
+import type{Post} from "@/app/page"
 import { Skeleton } from '../ui/skeleton';
 
 const DailyRecent = ({posts}: {posts: Post[]}) => {

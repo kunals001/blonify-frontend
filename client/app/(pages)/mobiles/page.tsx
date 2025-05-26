@@ -5,23 +5,7 @@ import NavigationBreadcrumb from '@/components/navigate';
 import { Skeleton } from '@/components/ui/skeleton';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-
-export type Post = {
-  coverImg: string | File | null;
-  title: string;
-  slug: string | null;
-  desc: string | null;
-  content: string;
-  category: string | null;
-  isFeatured: boolean | null;
-  altText: string | null;
-  _id: string;
-  createdAt?: string | number | null;
-  updatedAt?: string | number | null;
-  ismobile?: boolean | null;
-  islaptop?: boolean | null;
-  isdaily?: boolean | null;
-};
+import type{Post} from "@/app/page"
 
 const POSTS_PER_PAGE = 10;
 

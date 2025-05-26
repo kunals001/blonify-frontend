@@ -1,11 +1,14 @@
 import Link from 'next/link'
-import { formatDistanceToNow } from 'date-fns';
 import type{Post} from "@/app/page"
 import Image from 'next/image';
 import Head from 'next/head';
+import Date from './Date';
 
 
 const PostListItems = ({post}:{post:Post}) => {
+
+  
+
   return (
     <>
     <Head>
@@ -27,11 +30,7 @@ const PostListItems = ({post}:{post:Post}) => {
              <p className='text-[1.2vh] md:text-[1.1vw] lg:text-[1.2vw] font-second font-medium text-zinc-700 w-[25vh] md:w-[30vw] lg:w-[30vw] leading-none'>{post?.desc?.slice(0, 80)}
             </p>
 
-             <div className="text-[1vh] md:text-[1.1vw] lg:text-[1.1vw] md:pb-[.3vw] pt-[.2vh] md:pt-[.5vw] items-cente text-zinc-800">
-              <p className=''>Written by <span className='text-zinc-900'>Kunal Singh </span>on 
-              <span className=''> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span>
-              </p>
-              </div>
+            <Date post={post} />
         </div>
 
     </div>

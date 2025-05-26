@@ -1,8 +1,8 @@
 import React from 'react'
-import { formatDistanceToNow } from 'date-fns';
 import Link from 'next/link';
 import ImageKit from '../Image';
-import type { Post } from "@/app/(pages)/daily/page";
+import type{Post} from "@/app/page"
+import Date from '../Date'
 
 
 const DailyCarsol = ({ post }: { post: Post}) => {
@@ -16,11 +16,7 @@ const DailyCarsol = ({ post }: { post: Post}) => {
 
             </div>
 
-           <div className="pb-[.3vh] md:pb-[.3vw] pl-[1vh] pt-[.5vh] md:pt-[.5vw] items-center">
-            <p className='text-[1vh] md:text-[.8vw] lg:text-[.8vw] font-second text-zinc-500'>Written by <span className='text-prime'>Kunal Singh</span>on 
-            <span className='text-zinc-500 text-[.8vh] md:text-[.8vw] lg:text-[.8vw] w-[14vh] md:w-[14vw] lg:w-[11vw] font-second '> {post?.createdAt? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true }): 'Unknown'}</span>
-            </p>
-          </div>
+           <Date post={post} />
        </div>
     </div>
   )
