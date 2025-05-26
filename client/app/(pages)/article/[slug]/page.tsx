@@ -191,7 +191,6 @@ const Page = () => {
         <title>{post?.title}</title>
         <meta name="description" content={post?.desc} />
         <meta name="keywords" content={post?.keywords} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
         <div className='overflow-hidden'>

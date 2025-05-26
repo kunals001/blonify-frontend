@@ -68,7 +68,13 @@ const LaptopPostPage = ({post}:{post:Post}) => {
   return (
     <>
     <Head>
-        <link fetchPriority='high' rel="preload" as='image' href={`${post?.coverImg}`} type='image/webp'/>
+       <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          href={post.coverImg}
+          type="image/webp"
+        />
     </Head>
     <RefreshManage>
 

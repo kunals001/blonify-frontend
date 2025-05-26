@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from 'react-hot-toast'
-import Navbar from "@/components/Navbar";
 import { AuthProvider } from "@/components/AuthProvider";
-import Footer from "@/components/Footer";
+import LayoutShell from "@/components/Layoutshell";
 
 export const metadata: Metadata = {
   title: "Blonify",
@@ -19,9 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-prime`} cz-shortcut-listen="true">
         <AuthProvider>
-        <Navbar />
+        <LayoutShell>
         {children}
-        <Footer/>
+        </LayoutShell>
         <Toaster position="top-right" />
         </AuthProvider>
       </body>

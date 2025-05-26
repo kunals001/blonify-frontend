@@ -1,26 +1,32 @@
 
-import ShareLinks from '../ShareLinks'
 import SuggestedPosts from '../SuggestedPosts'
 import RefreshManage from "@/components/RefreshManage";
 import Comments from '../Comments';
-import NavigationBreadcrumb from '../navigate';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import ImageKit from '../Image';
 import "@/app/globals.css";
 import Head from 'next/head';
-
+import dynamic from "next/dynamic"
+const Navigate = dynamic(() => import('../navigate'), { ssr: false })
+const ShareLinks = dynamic(() => import('../ShareLinks'), { ssr: false })
 
 const DailyPostPage = ({ post }: { post: Post}) => {
     
   return (
     <>
     <Head>
-      <link fetchPriority='high' rel="preload" as='image' href={`${post?.coverImg}`} type='image/webp'/>
+      <link
+          rel="preload"
+          as="image"
+          fetchPriority="high"
+          href={post.coverImg}
+          type="image/webp"
+        />
     </Head>
     <RefreshManage>
     <article className='w-full min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] pt-[2vh] md:pt-[2vw] lg:p-[2.1vw] flex flex-col gap-[1vh] md:gap[.8vw] lg:gap-[.9vw]'>
 
-      <NavigationBreadcrumb/>
+      <Navigate/>
 
 
       <div className="flex flex-col justify-between md:flex-row lg:flex-row">

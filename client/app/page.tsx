@@ -4,10 +4,11 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import Heading from "@/components/headingscom"
 import MobileCategories from "@/components/MobileCategories"
-import ShareLinks from "@/components/ShareLinks"
 import WebHeadline from "@/components/WebHeadline"
 import PostList from "@/components/PostList"
-import Navigate from "@/components/navigate"
+import dynamic from "next/dynamic"
+const Navigate = dynamic(() => import('@/components/navigate'), { ssr: false })
+const ShareLinks = dynamic(() => import('@/components/ShareLinks'), { ssr: false })
 
 
 export type Post = {
@@ -26,6 +27,7 @@ export type Post = {
   islaptop?: boolean;
   isdaily?: boolean;
 };
+
 
 const Page = () => {
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3
