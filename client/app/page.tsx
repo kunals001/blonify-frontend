@@ -3,14 +3,14 @@ import DesktopCategories from "@/components/DesktopCategories"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Heading from "@/components/headingscom"
-import FeaturedPost from "@/components/FeaturedPost"
-import PostList from "@/components/PostList"
 import MobileCategories from "@/components/MobileCategories"
 import ShareLinks from "@/components/ShareLinks"
 import WebHeadline from "@/components/WebHeadline"
 import dynamic from 'next/dynamic'
 
 const Navigate = dynamic(() => import('@/components/navigate'), { ssr: false })
+
+const PostList = dynamic(() => import('@/components/PostList'), { ssr: true })
 
 
 
@@ -69,10 +69,6 @@ const Page = () => {
       {/* Desktop Category */}
 
       <DesktopCategories/>
-
-      {/* Featured Post */}
-
-      <FeaturedPost posts={posts} />
 
       <Heading text={"Recent Posts"} />
 
