@@ -17,6 +17,7 @@ const AUTHLAYOUTS = dynamic(() => import('@/components/AuthLayout'), {
 const Page = () => {
   const [code, setCode] = useState("");
   const { verifyEmail, isLoading, error, isAuthenticated, checkAuth } = useAuthStore();
+  const [Error,setError] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const Page = () => {
       await checkAuth();
       router.push("/");
     } catch (error) {
+      setError("Verify First");
       toast.error("Verify failed");
     }
   };
@@ -69,6 +71,8 @@ const Page = () => {
           </form>
         </div>
       </div>
+
+      {Error && <p className="text-green-500 font-semibold mt-2 mx-auto">{Error}</p>}
     </AUTHLAYOUTS>
   );
 };

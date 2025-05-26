@@ -27,6 +27,7 @@ export type Post = {
 
 const Page = () => {
   const [posts, setposts] = useState<Post[]>([]);
+  const [error,setError] = useState<string | null>(null);
   const API_URL_3 = process.env.NEXT_PUBLIC_API_KEY_3;
   axios.defaults.withCredentials = true;
 
@@ -38,6 +39,7 @@ const Page = () => {
         const data = response.data;
         setposts(data);
       } catch (error) {
+        setError("Failed to fetch posts");
       }
     };
 
@@ -51,6 +53,8 @@ const Page = () => {
       <DailyTrending posts={posts} />
 
       <DailyRecent posts={posts} />
+
+      {error && <p>{error}</p>}
     </div>
   );
 };
