@@ -2,6 +2,7 @@
 import DesktopCategories from "@/components/DesktopCategories"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import Heading from "@/components/headingscom"
 import FeaturedPost from "@/components/FeaturedPost"
 import PostList from "@/components/PostList"
 import MobileCategories from "@/components/MobileCategories"
@@ -73,7 +74,7 @@ const Page = () => {
 
       <FeaturedPost posts={posts} />
 
-      <h4 className="text-[1.8vh] md:text-[1.5vw] lg:text-[1.5vw] font-medium  text-zinc-700">Recent Posts</h4>
+      <Heading text={"Recent Posts"} />
 
       <PostList posts={posts}/>
 
