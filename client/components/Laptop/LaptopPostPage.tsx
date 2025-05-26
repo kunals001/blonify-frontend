@@ -9,7 +9,7 @@ import NavigationBreadcrumb from '../navigate';
 import ImageKit from '../Image';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import "@/app/globals.css";
-import Head from 'next/head';
+import Head  from 'next/head'; 
 
 
 const LaptopPostPage = ({post}:{post:Post}) => {
@@ -68,13 +68,17 @@ const LaptopPostPage = ({post}:{post:Post}) => {
   return (
     <>
     <Head>
-       <link
-          rel="preload"
-          as="image"
-          fetchPriority="high"
-          href={post.coverImg}
-          type="image/webp"
-        />
+       <link 
+            key={post.slug}
+            rel="preload" 
+            as="image"
+            href={post.coverImg}
+            imageSrcSet={`
+              ${post.coverImg}?w=400 400w,
+              ${post.coverImg}?w=800 800w
+            `}
+            imageSizes="(max-width: 768px) 100vw, 50vw"
+          />
     </Head>
     <RefreshManage>
 

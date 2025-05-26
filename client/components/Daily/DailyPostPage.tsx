@@ -7,7 +7,7 @@ import ShareLinks from '../ShareLinks';
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import ImageKit from '../Image';
 import "@/app/globals.css";
-import Head from 'next/head';
+import Head  from 'next/head'; 
 
 
 const DailyPostPage = ({ post }: { post: Post}) => {
@@ -15,13 +15,17 @@ const DailyPostPage = ({ post }: { post: Post}) => {
   return (
     <>
     <Head>
-      <link
-          rel="preload"
-          as="image"
-          fetchPriority="high"
-          href={post.coverImg}
-          type="image/webp"
-        />
+      <link 
+            key={post.slug}
+            rel="preload" 
+            as="image"
+            href={post.coverImg}
+            imageSrcSet={`
+              ${post.coverImg}?w=400 400w,
+              ${post.coverImg}?w=800 800w
+            `}
+            imageSizes="(max-width: 768px) 100vw, 50vw"
+          />
     </Head>
     <RefreshManage>
     <article className='w-full min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] pt-[2vh] md:pt-[2vw] lg:p-[2.1vw] flex flex-col gap-[1vh] md:gap[.8vw] lg:gap-[.9vw]'>
