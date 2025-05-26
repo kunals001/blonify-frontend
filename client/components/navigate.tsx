@@ -21,7 +21,7 @@ const NavigationBreadcrumb = () => {
   return (
     <div className="py-[.5vw] md:py-[.3vw]">
       <Breadcrumb>
-        <BreadcrumbList>
+        <BreadcrumbList className="text-[1.7vh] md:text-[1vw] text-zinc-900">
           <BreadcrumbItem >
             <BreadcrumbLink href="/">Home</BreadcrumbLink>
           </BreadcrumbItem>

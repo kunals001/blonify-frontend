@@ -33,7 +33,6 @@ const Page = () => {
       await checkAuth();
       router.push("/");
     } catch (error) {
-      console.error(error);
       toast.error("Verify failed");
     }
   };

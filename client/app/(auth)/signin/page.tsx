@@ -41,7 +41,6 @@ const Page = () => {
       router.push("/");
       await checkAuth();
     } catch (error) {
-      console.log(error);
     }
   };
 

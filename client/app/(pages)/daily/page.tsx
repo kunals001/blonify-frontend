@@ -38,7 +38,6 @@ const Page = () => {
         const data = response.data;
         setposts(data);
       } catch (error) {
-        console.log("Error fetching posts:", error);
       }
     };
 

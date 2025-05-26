@@ -44,7 +44,6 @@ const Page = () => {
           toast.success("Profile updated successfully");
           await checkAuth();
         } catch (error) {
-          console.log(error);
           toast.error("Profile update failed");
         }
      };

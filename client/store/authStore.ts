@@ -199,8 +199,7 @@ export const useAuthStore = create<AuthState>((set,get) =>({
       const response = await axios.get(`${API_URL}/check-auth`);
       set({ user: response.data.user, isAuthenticated: true, isCheckingAuth: false });
     } catch (error:any) {
-      const msg =
-        error?.response?.data?.message || "Signup failed"; 
+      const msg = error?.response?.data?.message || "Signup failed"; 
       set({ error: msg, isLoading: false, isCheckingAuth: false });
     }
   },

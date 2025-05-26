@@ -37,7 +37,6 @@ const Page = () => {  // <-- Uppercase 'P'
         const response = await axios.get(`${API_URL_3}/get-all-posts`);
         setPosts(response.data);
       } catch (error) {
-        console.log("Error fetching posts:", error);
       }
     };
 
