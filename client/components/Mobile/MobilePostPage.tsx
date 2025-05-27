@@ -66,25 +66,27 @@ const MobilePostPage = ({post}:{post:Post}) => {
     <div className="px-[1vh] md:px-[13vw] lg:px-[15vw]">  
     <NavigationBreadcrumb/>
     </div>
+
+    <div className="w-full flex flex-col md:flex-row  px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden">
+        <div className="flex flex-col gap-[.5vh] md:gap-[.3vw] lg:gap-[.3vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
+            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.7vw] font-semibold text-zinc-700 leading-none md:w-[40vw] w-full'>{post?.title}</h1>
+
+            <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-900 pt-[.6vh] md:pt-[1vw] lg:pt-[1vw]'>Written by <span className='text-green-600'> Kunal Singh </span> on <span className='text-gray-700'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
+
+            {/* Mobile Share */}
+           <ShareLinks className="md:hidden lg:hidden flex md:flex-col flex-row gap-[1vh] md:gap-[.5vw] items-center md:items-start"/>
+
+            <p className='md:text-[1vw] font-second font-medium text-zinc-700 hidden md:block lg:block md:w-[38vw] lg:w-[38vw] leading-none'>{post?.desc}</p>
+        </div>
+
+        <Image width={600} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover hidden md:block lg:block" loading='eager' priority/>
         
-    <article className='w-full flex flex-col md:flex-row min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden'>
+      </div>
+        
+    <article className='w-full flex flex-col md:flex-row min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden mt-[1.5vh] md:mt-[1.1vw] lg:mt-[1.2vw]'>
+
 
     <div className="w-full">
-        <div className="flex flex-col gap-[.4vh] md:gap-[.2vw] lg:gap-[.2vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
-            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none md:w-[40vw] w-full'>{post?.title}</h1>
-
-            <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-900 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-green-600'> Kunal Singh </span> on <span className='text-gray-700'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
-
-        </div>
-
-        {/* Mobile Share */}
-        <ShareLinks className="md:hidden lg:hidden flex md:flex-col flex-row gap-[1vh] md:gap-[.5vw] items-center md:items-start pb-[1vh]"/>
-
-
-        <div className="py-[1vh] md:py-[.7vw]">
-        <Image width={800} height={700} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none'loading='eager' priority/>
-        </div>
-
         {/* Featured Card And Info */}
 
         <div className="w-full overflow-hidden relative">
@@ -95,7 +97,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                             <Image width={400} height={500} src={post?.innerImage as string} alt={post?.altText as string} className='w-[11vh] h-[15vh] md:w-[10vw] md:h-[15vw] lg:w-[10vw] lg:h-[15vw] object-cover rounded-md select-none' loading='eager'/>
                          </div>
 
-                         <div className="py-[.5vh] md:py-[.5vw] flex flex-col gap-[.2vh] md:gap-[.2vw] text-zinc-700">
+                         <div className="py-[.5vh] md:py-[.5vw] flex flex-col gap-[.2vh] md:gap-[.2vw] text-zinc-700 mt-3 md:mt-0">
                           {infoItems.map(({ icon: Icon, value }, index) => (
                             <span
                               key={index}

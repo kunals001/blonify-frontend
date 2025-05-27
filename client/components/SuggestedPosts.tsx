@@ -5,8 +5,6 @@ import Link from "next/link";
 import ShareLinks from "./ShareLinks";
 import type {Post} from "@/app/(pages)/article/[slug]/page"
 import Image from 'next/image';
-
-
  
 
 const SuggestedPosts = ({ post }: { post: Post }) => {
@@ -39,7 +37,7 @@ const SuggestedPosts = ({ post }: { post: Post }) => {
   }, [post,API_URL_3]);
 
   return (
-    <div className="mt-[2vh] md:mt-[5vw] lg:mt-[6vw]">
+    <div className="mt-[1vh] md:mt-0">
       <h2 className="text-xl font-semibold mb-4">Suggested Posts</h2>
       <div className="grid grid-cols-1 lg:grid-rows-1 gap-1 md:gap-3">
         {suggested.map((item) => (
