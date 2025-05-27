@@ -295,10 +295,10 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                     { label: 'Type', value: post.battery?.[0]?.type, bg: 'bg-green-200' },
                     { label: 'Capacity', value:post.battery?.[0]?.capacity},
                     { label: 'Fastcharge', value: post.battery?.[0]?.fastcharge, bg: 'bg-green-200' },
-                    { label: 'Wiredcharge', value: post.battery?.[0]?.wiredcharge},
-                    { label: 'Wirelesscharge', value: post.battery?.[0]?.wirelesscharge, bg: 'bg-green-200' },
-                    { label: 'Standbybackup', value: post.battery?.[0]?.standbybackup},
-                    { label: 'Gamingbackup', value: post.battery?.[0]?.gamingbackup, bg: 'bg-green-200' },
+                    { label: 'Wired', value: post.battery?.[0]?.wiredcharge},
+                    { label: 'Wireless', value: post.battery?.[0]?.wirelesscharge, bg: 'bg-green-200' },
+                    { label: 'Standby', value: post.battery?.[0]?.standbybackup},
+                    { label: 'Gaming', value: post.battery?.[0]?.gamingbackup, bg: 'bg-green-200' },
                     ].map((item, index) => (
                     <div
                         key={index}
@@ -412,7 +412,7 @@ const LaptopPostPage = ({post}:{post:Post}) => {
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
                     {[
                     { label: "Speakers", value: post.sound?.[0]?.speaker, bg: 'bg-green-200' },
-                    { label: 'Headphonejack', value:post.sound?.[0]?.headphonejack},
+                    { label: '3.5mm jack', value:post.sound?.[0]?.headphonejack},
                     { label: 'Quality', value: post.sound?.[0]?.quality, bg: 'bg-green-200' },
                     ].map((item, index) => (
                     <div

@@ -17,7 +17,6 @@ const SunEditor = dynamic(() => import('@/components/SunEditor'), { ssr: false }
 const Page = () => {
     const [content,setContent] = useState('');
     const [coverImg,setCoverImg] = useState("");
-    const [innerImage,setInnerImage] = useState("");
     const router = useRouter();
     const {createPost,error,isLoading} = usePostStore();
     const {user} = useAuthStore();
@@ -82,6 +81,7 @@ const Page = () => {
             const platform = [
               {
                 os: formData.get("os") as string,
+                osversion: formData.get("osversion") as string,
                 chipset: formData.get("chipset") as string,
                 cpu: formData.get("cpu") as string,
                 gpu: formData.get("gpu") as string,
@@ -203,7 +203,6 @@ const Page = () => {
                 content: content,
                 category: formData.get("category") as string,
                 coverImg: coverImg,
-                innerImage:innerImage,
                 altText: formData.get("altText") as string,
                 ismobile:formData.get("ismobile") as string,
                 islaptop:formData.get("islaptop") as string,
@@ -303,11 +302,6 @@ const Page = () => {
                     
                 </div>
 
-                <div className="w-full flex items-center justify-between md:px-[.5vw] lg:px-[.6vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative">
-
-                    <Upload coverImg={innerImage} setCoverImg={setInnerImage} />
-                    
-                </div>
 
                 <MobilePost />
 

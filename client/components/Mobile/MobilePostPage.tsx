@@ -18,7 +18,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
    const infoItems = [
   {
     icon: CalendarCheck,
-    value: post.launch?.[0]?.date,
+    value: post.launch?.[0]?.status,
   },
   {
     icon: Smartphone,
@@ -66,65 +66,59 @@ const MobilePostPage = ({post}:{post:Post}) => {
     <div className="px-[1vh] md:px-[13vw] lg:px-[15vw]">  
     <NavigationBreadcrumb/>
     </div>
-
-    <div className="w-full flex flex-col md:flex-row  px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden">
-        <div className="flex flex-col gap-[.5vh] md:gap-[.3vw] lg:gap-[.3vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
-            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.7vw] font-semibold text-zinc-700 leading-none md:w-[40vw] w-full'>{post?.title}</h1>
-
-            <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-900 pt-[.6vh] md:pt-[1vw] lg:pt-[1vw]'>Written by <span className='text-green-600'> Kunal Singh </span> on <span className='text-gray-700'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
-
-            {/* Mobile Share */}
-           <ShareLinks className="md:hidden lg:hidden flex md:flex-col flex-row gap-[1vh] md:gap-[.5vw] items-center md:items-start"/>
-
-            <p className='md:text-[1vw] font-second font-medium text-zinc-700 hidden md:block lg:block md:w-[38vw] lg:w-[38vw] leading-none'>{post?.desc}</p>
-        </div>
-
-        <Image width={600} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover hidden md:block lg:block" loading='eager' priority/>
-        
-      </div>
         
     <article className='w-full flex flex-col md:flex-row min-h-screen px-[1vh] md:px-[13vw] lg:px-[15vw] gap-[1vh] md:gap-[.5vw] lg:gap-[.6vw] overflow-hidden mt-[1.5vh] md:mt-[1.1vw] lg:mt-[1.2vw]'>
 
-
     <div className="w-full">
+
+         <div className="flex flex-col gap-[.4vh] md:gap-[.2vw] lg:gap-[.2vw] py-[2vh] md:py-[1.1vw] lg:py-[1.2vw] px-[.2vh] md:px-[.5vw] lg:px-[.5vw]">
+            <h1 className='text-[2.7vh] md:text-[1.7vw] lg:text-[1.8vw] font-semibold text-zinc-700 leading-none md:w-[40vw] w-full'>{post?.title}</h1>
+
+            <p className='text-[1.2vh] md:text-[.8vw] lg:text-[.8vw] font-second font-medium text-zinc-900 pt-[.6vh] md:pt-[.5vw] lg:pt-[.6vw]'>Written by <span className='text-green-600'> Kunal Singh </span> on <span className='text-gray-700'>{post?.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown'}</span></p>
+        </div>
+
+        {/* Mobile Share */}
+        <ShareLinks className="md:hidden lg:hidden flex md:flex-col flex-row gap-[1vh] md:gap-[.5vw] items-center md:items-start pb-[1vh]"/>
+
         {/* Featured Card And Info */}
 
         <div className="w-full overflow-hidden relative">
-                   <h2 className="w-full px-[1.3vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-300 text-zinc-700 font-second text-[1.6vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold rounded-t-lg">{post?.altText}
+                   <h2 className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-300 text-zinc-700 font-second text-[1.8vh] md:text-[1.3vw] lg:text-[1.4vw] font-semibold rounded-t-lg">{post?.altText}
                     </h2>
-                     <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg pb-[.5vh] md:pb-[.5vw] flex gap-[2vh] md:gap-[1vw] ">
-                         <div className="pb-[.5vh] md:pb-[.5vw]">
-                            <Image width={400} height={500} src={post?.innerImage as string} alt={post?.altText as string} className='w-[11vh] h-[15vh] md:w-[10vw] md:h-[15vw] lg:w-[10vw] lg:h-[15vw] object-cover rounded-md select-none' loading='eager'/>
+                  <div className="w-full px-[1vh] md:px-[.9vw] py-[.5vh] md:py-[.5vw] bg-green-200 text-white font-second text-[1.4vh] md:text-[1.2vw] lg:text-[1.3vw] font-semibold rounded-b-lg flex flex-col gap-[2vh] md:gap-[1vw] ">
+                         <div className="">
+                            <Image width={700} height={600} src={post?.coverImg as string} alt={post?.altText as string} className='w-full h-[26.5vh] md:w-full md:h-[23vw] lg:w-full lg:h-[23vw] object-cover rounded-md select-none' loading='eager' priority/>
                          </div>
 
-                         <div className="py-[.5vh] md:py-[.5vw] flex flex-col gap-[.2vh] md:gap-[.2vw] text-zinc-700 mt-3 md:mt-0">
+                         <div className="flex gap-[1vh] md:gap-[1vw] text-zinc-700">
                           {infoItems.map(({ icon: Icon, value }, index) => (
                             <span
                               key={index}
-                              className="text-[1.2vh] md:text-[1vw] flex gap-[.5vh] md:gap-[.5vw] items-center"
+                              className="text-[1.3vh] md:text-[1vw] flex gap-[.5vh] md:gap-[.5vw] items-center"
                             >
                               <Icon className="size-3 md:size-6" />
                               {value || "N/A"}
                             </span>
                           ))}
                         </div>
-                     </div>
-                     <div className="w-full px-[.5vh] md:px-[.5vw] absolute top-[60%] left-[30%] md:left-[25%] pr-[15vh] md:pr-[13vw] flex gap-[.5vh]">
+
+                    <div className="w-full px-[.5vh] pb-[1vh] md:pb-[1vh] md:px-[.5vw] flex gap-[.5vh] md:gap-[.5vw]">
                      {featureCards.map(({ Icon, title, subtitle }, index) => (
                        <div
                          key={index}
-                         className="flex flex-col w-[6.7vh] md:w-[7.6vw] bg-green-300 rounded-sm min-h-[6vh] md:min-h-[10vh] p-[.4vh] md:p-[.5vw] gap-[.4vh]"
+                         className="flex flex-col w-[9.8vh] md:w-[8vw] bg-green-300 rounded-sm min-h-[6vh] md:min-h-[10vh] p-[.4vh] md:p-[.5vw] gap-[.4vh] text-zinc-700"
                        >
-                         <Icon className="size-4 md:size-8" />
+                         <Icon className="size-5 md:size-8" />
                          <span className="text-[1.3vh] md:text-[1.2vw] font-semibold leading-none">
                            {title || "N/A"}
                          </span>
-                         <span className="text-[.8vh] md:text-[.8vw] font-medium leading-none">
+                         <span className="text-[1vh] md:text-[.8vw] font-medium leading-none">
                            {subtitle || "N/A"}
                          </span>
                        </div>
                      ))}
-                    </div>
+                </div>
+              </div>
         </div>
 
         
@@ -325,10 +319,10 @@ const MobilePostPage = ({post}:{post:Post}) => {
                     { label: 'Type', value: post.battery?.[0]?.type, bg: 'bg-green-200' },
                     { label: 'Capacity', value:post.battery?.[0]?.capacity},
                     { label: 'Fastcharge', value: post.battery?.[0]?.fastcharge, bg: 'bg-green-200' },
-                    { label: 'Wiredcharge', value: post.battery?.[0]?.wiredcharge},
-                    { label: 'Wirelesscharge', value: post.battery?.[0]?.wirelesscharge, bg: 'bg-green-200' },
-                    { label: 'Standbybackup', value: post.battery?.[0]?.standbybackup},
-                    { label: 'Gamingbackup', value: post.battery?.[0]?.gamingbackup, bg: 'bg-green-200' },
+                    { label: 'Wired', value: post.battery?.[0]?.wiredcharge},
+                    { label: 'Wireless', value: post.battery?.[0]?.wirelesscharge, bg: 'bg-green-200' },
+                    { label: 'Standby', value: post.battery?.[0]?.standbybackup},
+                    { label: 'Gaming', value: post.battery?.[0]?.gamingbackup, bg: 'bg-green-200' },
                     ].map((item, index) => (
                     <div
                         key={index}
@@ -442,7 +436,7 @@ const MobilePostPage = ({post}:{post:Post}) => {
                 <div className="flex flex-col font-semibold cursor-pointer divide-y divide-zinc-200">
                     {[
                     { label: "Speakers", value: post.sound?.[0]?.speaker, bg: 'bg-green-200' },
-                    { label: 'Headphonejack', value:post.sound?.[0]?.headphonejack},
+                    { label: '3.5mm jack', value:post.sound?.[0]?.headphonejack},
                     { label: 'Quality', value: post.sound?.[0]?.quality, bg: 'bg-green-200' },
                     ].map((item, index) => (
                     <div
