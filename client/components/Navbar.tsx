@@ -40,7 +40,7 @@ const Navbar = () => {
     { label: "Home", href: "/" },
     { label: "Daily", href: "/daily" },
     { label: "Mobiles", href: "/mobiles" },
-    { label: "Laptops", href: "/laptops" },
+    { label: "Tools", href: "/tools" },
     { label: "About", href: "/about" },
     { label: "Contact Us", href: "/contact-us" },
     ]

@@ -7,7 +7,7 @@ const MobileCategories = () => {
   const menuItems = [
     { label: "Daily", href: "/daily" },
     { label: "Mobiles", href: "/mobiles" },
-    { label: "Laptops", href: "/laptops" },
+    { label: "Tools", href: "/tools" },
   ];
 
   return (
