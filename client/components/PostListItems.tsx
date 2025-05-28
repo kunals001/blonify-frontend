@@ -12,7 +12,7 @@ const PostListItems = ({post}:{post:Post}) => {
     <>
     <div className='w-full flex md:gap-[.5vw] lg:gap-[.5vw] relative'>
 
-        <Link href={`/article/${post?.slug}`} ><Image width={500} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-[16vh] h-[12vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover" loading='eager' priority/></Link>
+        <Link href={`/article/${post?.slug}`} ><Image width={500} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-[16vh] h-[12vh] md:w-[25vw] md:h-[16vw] lg:w-[25vw] lg:h-[16vw] rounded-xl object-cover" loading='eager' priority={true}/></Link>
 
         {/* details */}
 

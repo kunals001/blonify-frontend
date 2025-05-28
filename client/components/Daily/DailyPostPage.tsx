@@ -31,7 +31,7 @@ const DailyPostPage = ({ post }: { post: Post}) => {
             <p className='md:text-[1vw] font-second font-medium text-zinc-700 hidden md:block lg:block md:w-[38vw] lg:w-[38vw] leading-none'>{post?.desc}</p>
         </div>
 
-        <Image width={600} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover" loading='eager' priority/>
+        <Image width={600} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:w-[27vw] md:h-[15vw] rounded-xl object-cover" loading='eager' priority={true}/>
         
       </div>
       {/* About post */}
