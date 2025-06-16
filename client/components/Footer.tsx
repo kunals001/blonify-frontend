@@ -10,9 +10,25 @@ const Footer = () => {
 <footer className="bg-second">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
+            <form className="md:w-[33vw] w-full flex md:flex-col flex-row md:gap-0 gap-2 py-[2vh]">
+             <input
+               type="text"
+               placeholder="Subscribe to our newsletter"
+               className="w-full text-zinc-800 placeholder:text-zinc-400 bg-zinc-100 border-2 border-green-400 outline-none rounded-2xl
+               px-4 py-2 md:px-[1vw] md:py-[0.5vw]
+               text-sm md:text-[1.1vw] placeholder:text-sm md:placeholder:text-[1vw]"
+                />
 
-            </div>
+             <button
+               type="submit"
+               className="bg-gradient-to-l from-prime to-emerald-500 text-white font-medium rounded-xl
+               px-4 py-2 md:px-[1.5vw] md:py-[0.5vw]
+               text-sm md:text-[1vw] md:mt-[0.8vw] mt-0 cursor-pointer"
+               >
+                 Subscribe
+               </button>
+             </form>
+             
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quick links</h2>

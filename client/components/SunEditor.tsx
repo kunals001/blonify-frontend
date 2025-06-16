@@ -16,7 +16,7 @@ const SunEditorComponent: React.FC<Props> = ({ setcontent, onchange }) => {
   const insertMedia = (url: string) => {
     if (!editorInstance) return;
 
-    if (url.match(/\.(jpeg|jpg|gif|png|webp)$/)) {
+    if (url.match(/\.(jpeg|jpg|gif|png|webp|avif)$/)) {
       editorInstance.insertHTML(`<img src="${url}" alt="Uploaded" style="max-width: 100%;" />`);
     } else if (url.match(/\.(mp4|webm|ogg)$/)) {
       editorInstance.insertHTML(`

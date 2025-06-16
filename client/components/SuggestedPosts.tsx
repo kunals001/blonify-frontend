@@ -57,8 +57,8 @@ const SuggestedPosts = ({ post }: { post: Post }) => {
               loading="lazy"
             />
             <div className="">
-            <h3 className="text-lg font-bold mt-1">{item.title}</h3>
-            <p className="text-sm text-gray-600">{item.desc?.slice(0, 70)}...</p></div>
+            <h3 className="text-lg font-bold mt-1 leading-none">{item.title.slice(0, 40)}...</h3>
+            <p className="text-sm text-gray-600 leading-none mt-1 md:mt-2">{item.desc?.slice(0, 70)}...</p></div>
           </Link>
         ))}
       </div>

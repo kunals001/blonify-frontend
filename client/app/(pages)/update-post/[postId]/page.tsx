@@ -101,7 +101,7 @@ const Page = () => {
     <ProtectedAdminRoute>
       <div className="w-full min-h-screen md:pt-[2vw] lg:p-[2.1vw] hidden md:flex lg:flex flex-col md:gap[.8vw] lg:gap-[.9vw]">
         <h1 className="text-[3vh] md:text-[2vw] lg:text-[2vw] select-none mx-auto font-semibold text-center bg-gradient-to-r from-prime to-emerald-500 text-transparent bg-clip-text">
-          Create A Post
+          Update Post
         </h1>
 
         <form
@@ -194,10 +194,6 @@ const Page = () => {
 
           <div className="w-full flex items-center justify-between md:px-[.5vw] lg:px-[.6vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative">
             <Upload coverImg={coverImg} setCoverImg={setCoverImg} />
-          </div>
-
-          <div className="w-full flex items-center justify-between md:px-[.5vw] lg:px-[.6vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative">
-            <Upload coverImg={innerImage} setCoverImg={setInnerImage} />
           </div>
 
           {/* content */}
