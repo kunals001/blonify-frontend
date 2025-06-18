@@ -7,7 +7,6 @@ import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import Upload from '@/components/upload'
 import { useAuthStore } from '@/store/authStore'
-import MobilePost from '../MobilePost'
 import InputPost from '../InputPost'
 import dynamic from 'next/dynamic'
 
