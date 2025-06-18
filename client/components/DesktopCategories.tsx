@@ -19,7 +19,6 @@ const DesktopCategories = () => {
 
   const menuItems = [
     { label: "Daily", href: "/daily" },
-    { label: "Mobiles", href: "/mobiles" },
     { label: "Tools", href: "/tools" },
   ];
   const router = useRouter();

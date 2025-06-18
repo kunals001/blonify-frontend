@@ -12,7 +12,7 @@ const DailyCarsol = ({ post }: { post: Post}) => {
             <Link href={`/article/${post?.slug}`} ><Image width={500} height={400} src={post?.coverImg as string} alt={post?.altText as string} className="w-full h-[26.5vh] md:h-[15vw] lg:h-[16vw] rounded-xl object-cover" loading='eager' priority/></Link>
 
             <div className="pt-[.5vh] md:pt-[.5vw] lg:pt-[.4vw] flex gap-[.5vw] md:gap-[1vw]  md:justify-start">
-                <h1 className='text-[2vh] md:text-[1.4vw] lg:text-[1.2vw] font-second text-zinc-700 leading-none cursor-pointer hover:underline font-semibold'>{post?.title}</h1>
+                <h1 className='text-[2vh] md:text-[1.4vw] lg:text-[1.2vw] font-second text-zinc-700 leading-none cursor-pointer hover:underline font-semibold'>{post?.title.slice(0, 40)}...</h1>
             </div>
 
            <Date post={post} />
