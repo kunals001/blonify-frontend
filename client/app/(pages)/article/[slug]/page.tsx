@@ -6,7 +6,6 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import axios from 'axios';
 import "../../../globals.css"
 import DailyPostPage from '@/components/Daily/DailyPostPage';
-import MobilePostPage from '@/components/Mobile/MobilePostPage';
 
 
 export type Post ={
@@ -180,7 +179,6 @@ const Page = () => {
 
         <div className='overflow-hidden'>
           {post?.isdaily && <DailyPostPage post={post} />}
-          {post?.ismobile && <MobilePostPage post={post} />}
         </div>
     </>
   )

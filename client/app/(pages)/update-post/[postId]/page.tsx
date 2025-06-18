@@ -31,6 +31,8 @@ const Page = () => {
   const [category, setCategory] = useState('')
   const [highlight, setHighlight] = useState('')
   const [keywords, setKeywords] = useState('')
+  const [isdaily, setIsDaily] = useState('')
+  const [isFeatured, setIsFeatured] = useState('')
 
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
@@ -57,6 +59,8 @@ const Page = () => {
         setCategory(data.category)
         setHighlight(data.highlight)
         setKeywords(data.keywords)
+        setIsDaily(data.isdaily)
+        setIsFeatured(data.isFeatured)
       } catch (error) {
         console.error('Error fetching post:', error)
       }
@@ -84,6 +88,8 @@ const Page = () => {
         coverImg,
         innerImage,
         altText,
+        isdaily,
+        isFeatured
       }
 
       setIsLoading(true)
@@ -106,7 +112,7 @@ const Page = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col w-full mt-[1vh] md:mt-[.8vw] lg:mt-[.8vw] gap-[.6vw]"
+          className="flex flex-col w-full mt-[1vh] md:mt-[.8vw] lg:mt-[.8vw] gap-[.6vw] md:px-[13vw]"
         >
           {/* title */}
           <div className="relative w-full flex items-center justify-center">
@@ -195,6 +201,18 @@ const Page = () => {
           <div className="w-full flex items-center justify-between md:px-[.5vw] lg:px-[.6vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative">
             <Upload coverImg={coverImg} setCoverImg={setCoverImg} />
           </div>
+
+          <div className="w-full flex gap-[2vw]">
+              <select value={isdaily} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setIsDaily(e.target.value)} name='isdaily' className='px-[.5vw] py-[.5vw] outline-none rounded-xl bg-zinc-100 text-[1vw] cursor-pointer h-[2.7vw] border-1 border-prime w-full'>
+                <option value="false" >isDaily</option>
+                <option value='true' >true</option>
+              </select>
+
+              <select value={isFeatured} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setIsFeatured(e.target.value)} name='isFeatured' className='px-[.5vw] py-[.5vw] outline-none rounded-xl bg-zinc-100 text-[1vw] cursor-pointer h-[2.7vw] border-1 border-prime w-full'>
+                <option value="false" >isFeatured</option>
+                <option value='true' >true</option>
+              </select>
+            </div>
 
           {/* content */}
 

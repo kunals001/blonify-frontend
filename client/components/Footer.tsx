@@ -40,9 +40,6 @@ const Footer = () => {
                           <Link href="/daily" className="hover:underline">Daily</Link>
                       </li>
                       <li>
-                          <Link href="/mobiles" className="hover:underline">Mobiles</Link>
-                      </li>
-                      <li>
                           <Link href="/tools" className="hover:underline">Tools</Link>
                       </li>
 

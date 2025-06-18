@@ -60,7 +60,7 @@ export const usePostStore = create<PostState>((set, get) => ({
     set({ error: msg, isLoading: false });
     throw new Error(msg);
   }
-},
+  },
 
   getPosts: async () => {
     const { user } = useAuthStore.getState();

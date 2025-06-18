@@ -31,170 +31,6 @@ const Page = () => {
         e.preventDefault();
         try {
             const formData = new FormData(e.currentTarget);
-
-             // 1. Network Section
-            const network = [
-            {
-                technology: formData.get("technology") as string,
-                towbands: formData.get("towbands") as string,
-                threebands: formData.get("threebands") as string,
-                fourbands: formData.get("fourbands") as string,
-                fivebands: formData.get("fivebands") as string,
-                speed: formData.get("speed") as string,
-            },
-            ];
-
-            // Launch
-
-            const launch = [
-              {
-                date: formData.get("date") as string,
-                status: formData.get("status") as string,
-              },
-            ];
-
-            // 2. Body Section
-            const body = [
-              {
-                dimensions: formData.get("dimensions") as string,
-                weight: formData.get("weight") as string,
-                build: formData.get("build") as string,
-                sim: formData.get("sim") as string,
-              },
-            ];
-
-            // Display
-
-            const display = [
-              {
-                type: formData.get("type") as string,
-                size: formData.get("size") as string,
-                resolution: formData.get("resolution") as string,
-                refreshrate: formData.get("refreshrate") as string,
-                protection: formData.get("protection") as string,
-                pixle: formData.get("pixle") as string,
-                big: formData.get("big") as string,
-              },
-            ];
-
-            // 3. Platform Section
-            const platform = [
-              {
-                os: formData.get("os") as string,
-                osversion: formData.get("osversion") as string,
-                chipset: formData.get("chipset") as string,
-                cpu: formData.get("cpu") as string,
-                gpu: formData.get("gpu") as string,
-                process: formData.get("process") as string,
-                ram: formData.get("ram") as string,
-              },
-            ];
-
-         // 4. Memory Section
-         const memory = [
-           {
-             cardslot: formData.get("cardslot") as string,
-             ram: formData.get("ram") as string,
-             storage: formData.get("storage") as string,
-           },
-         ];
-
-         // Permormance
-         const permormance = [
-           {
-             antutuscore: formData.get("antutuscore") as string,
-             geeksbenchscore: formData.get("geeksbenchscore") as string,
-             fps: formData.get("pubgfps") as string,
-           },
-         ];
-
-         // Battery
-
-         const battery = [
-           {
-             type: formData.get("type") as string,
-             capacity: formData.get("capacity") as string,
-             fastcharge: formData.get("fastcharge") as string,
-             gamingbackup: formData.get("gamingbackup") as string,
-             standbybackup: formData.get("standbybackup") as string,
-             mah: formData.get("mah") as string,
-             wiredcharge: formData.get("wiredcharge") as string,
-             wirelesscharge: formData.get("wirelesscharge") as string,
-           },
-         ];
-
-
-         // Main camera
-
-         const maincam = [
-           {
-            type: formData.get("type") as string,
-            mp: formData.get("mp") as string,
-            resolution: formData.get("resolution") as string,
-            zoom: formData.get("zoom") as string,
-            features: formData.get("features") as string,
-            videofps: formData.get("videofps") as string,
-            mega: formData.get("mega") as string,
-            pixel: formData.get("pixel") as string,
-           },
-         ];
-
-
-         // Front camera
-
-         const frontcam = [
-           {
-            type: formData.get("type") as string,
-            mp: formData.get("mp") as string,
-            resolution: formData.get("resolution") as string,
-            features: formData.get("features") as string,
-            videofps: formData.get("videofps") as string,
-           },
-         ];
-
-         // Sound
-
-         const sound = [
-           {
-               speaker: formData.get("speaker") as string,
-               headphonejack: formData.get("headphonejack") as string,
-               quality: formData.get("quality") as string
-           }
-         ]
-
-         // Comms
-
-         const comms = [
-           {
-               wifi: formData.get("wifi") as string,
-               bluetooth: formData.get("bluetooth") as string,
-               gps: formData.get("gps") as string,
-               nfc: formData.get("nfc") as string
-           }
-         ]
-
-         // Features
-
-         const features = [
-           {
-               sensor: formData.get("sensor") as string,
-               fingerprint: formData.get("fingerprint") as string,
-               faceunlock: formData.get("faceunlock") as string,
-               ir: formData.get("ir") as string
-           }
-         ]
-
-         // Mics
-
-         const mics = [
-           {
-               color: formData.get("color") as string,
-               quality: formData.get("quality") as string,
-               model: formData.get("model") as string,
-               price: formData.get("price") as string,
-           }
-         ]
-  
             const data = {
                 title: formData.get("title") as string,
                 desc: formData.get("desc") as string,
@@ -204,28 +40,8 @@ const Page = () => {
                 category: formData.get("category") as string,
                 coverImg: coverImg,
                 altText: formData.get("altText") as string,
-                ismobile:formData.get("ismobile") as string,
-                islaptop:formData.get("islaptop") as string,
                 isdaily:formData.get("isdaily") as string,
-                rating:formData.get("ismobile") as string,
                 isFeatured: formData.get("isFeatured") as string,
-                userId: user?._id,
-                 network,
-                 body,
-                 launch,
-                 display,
-                 platform,
-                 memory,
-                 permormance,
-                 battery,
-                 maincam,
-                 frontcam,
-                 sound,
-                 comms,
-                 features,
-                 mics,
-
-                 
             }
 
             await createPost(data);
@@ -234,8 +50,6 @@ const Page = () => {
             console.log(error);
         }
     }
-
-
 
   return (
     <ProtectedAdminRoute>
@@ -298,12 +112,21 @@ const Page = () => {
 
                 <div className="w-full flex items-center justify-between md:px-[.5vw] lg:px-[.6vw] outline-none py-[1vh] md:py-[.5vw] lg:py-[.5vw] rounded-xl text-[1.3vh] md:text-[1vw] lg:text-[1vw] bg-zinc-100 border-1 border-prime font-second font-medium text-zinc-700 relative">
 
-                    <Upload coverImg={coverImg} setCoverImg={setCoverImg} />
+                  <Upload coverImg={coverImg} setCoverImg={setCoverImg} />
                     
                 </div>
 
+                <div className="w-full flex gap-[2vw]">
+                  <select name='isdaily' className='px-[.5vw] py-[.5vw] outline-none rounded-xl bg-zinc-100 text-[1vw] cursor-pointer h-[2.7vw] border-1 border-prime w-full'>
+                    <option value="false" >isDaily</option>
+                    <option value='true' >true</option>
+                  </select>
 
-                <MobilePost />
+                  <select name='isFeatured' className='px-[.5vw] py-[.5vw] outline-none rounded-xl bg-zinc-100 text-[1vw] cursor-pointer h-[2.7vw] border-1 border-prime w-full'>
+                    <option value="false" >isFeatured</option>
+                    <option value='true' >true</option>
+                  </select>
+                </div>
 
                 {/* content */}
 
@@ -314,11 +137,11 @@ const Page = () => {
                 {/* Post */}
                 <button 
                 className='mt-5 w-full py-3 px-4 bg-gradient-to-r  from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600hover:to-emerald-700 outline-none focus:ring-2 focus:ring-green-500  transition duration-200 cursor-pointer'
-					type='submit'
-                    disabled={isLoading}
+					        type='submit'
+                  disabled={isLoading}
                 >
-					{isLoading ? "Posting..." : "Post"}
-				</button>
+					        {isLoading ? "Posting..." : "Post"}
+				        </button>
                 
             </form>
         </div>

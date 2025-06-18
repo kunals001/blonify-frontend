@@ -39,8 +39,6 @@ const Navbar = () => {
     const BarMenu = [
     { label: "Home", href: "/" },
     { label: "Daily", href: "/daily" },
-    { label: "Mobiles", href: "/mobiles" },
-    { label: "Tools", href: "/tools" },
     { label: "About", href: "/about" },
     { label: "Contact Us", href: "/contact-us" },
     ]
